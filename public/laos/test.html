@@ -1,0 +1,281 @@
+<html>
+    <head>
+        <body>
+            <script>
+                // const people = [
+                // {
+                //     "name": "Mike Smith",
+                //     "family": {
+                //     "mother": "Jane Smith",
+                //     "father": "Harry Smith",
+                //     "sister": "Samantha Smith"
+                //     },
+                //     "age": 35
+                // },
+                // {
+                //     name: 'Tom Jones',
+                //     family: {
+                //     mother: 'Norah Jones',
+                //     father: 'Richard Jones',
+                //     brother: 'Howard Jones'
+                //     },
+                //     age: 25
+                // }
+                // ];
+
+                // for (const {name: n, family: {father: f}} of people) {
+                // console.log('Name: ' + n + ', Father: ' + f);
+                // }
+
+                // // "Name: Mike Smith, Father: Harry Smith"
+                // // "Name: Tom Jones, Father: Richard Jones"
+
+                // var data = [{
+                //     "id": 0,
+                //     "name": "Company1",
+                //     "logoUrl": "/lib/assets/company1-logo.png",
+                //     "location": {
+                //         "country": "USA",
+                //         "state": "California",
+                //         "city": "Napa"
+                //     },
+                //     "active": false
+                //     }, {
+                //     "id": 1,
+                //     "name": "Company2",
+                //     "logoUrl": "/lib/assets/company2-logo.png",
+                //     "location": {
+                //         "country": "Germany",
+                //         "state": "",
+                //         "city": "Berlin"
+                //     },
+                //     "active": false
+                //     }, {
+                //     "id": 2,
+                //     "name": "Company3",
+                //     "logoUrl": "/lib/assets/company3-logo.png",
+                //     "location": {
+                //         "country": "USA",
+                //         "state": "Michigan",
+                //         "city": "Detroit"
+                //     },
+                //     "active": false
+                //     }];
+
+                // var res = data.filter(v => v.location.country === 'USA');
+
+                // console.log(res);
+
+                var laosPrograms = [
+                    {
+                        "tourID": "VT21NN",
+                        "description": "เที่ยวเวียงจันทน์ นอน 1 คืน กลับช่วงเช้าวันที่สอง",
+                        "city": "เวียงจันทน์",
+                        "days": 2,
+                        "highlights": "ประตูชัย พระธาตุหลวง หอพระแก้ว วัดสีเมือง",
+                        "trip": {
+                            "start": "หนองคาย",
+                            "end": "หนองคาย"
+                        },
+                        "name": "เวียงจันทน์ 2 วัน",
+                        "salePlan": 
+                            [{
+                                "saleCode": "20000",
+                                "included": "รวม รถ ด่าน ค่าเข้าชม",
+                                "excluded": "ไม่รวม ไกด์ อาหาร ที่พัก ตั๋วเครื่องบิน",
+                                "promotion" : "",
+                                "ticket": 2,
+                                "hotel": 0,
+                                "guide": 0,
+                                "meal": 0,
+                                "flight": 0,
+                                "pricePerPax": [
+                                    {"pax": 1, "price": 5900},
+                                    {"pax": 2, "price": 3300},
+                                    {"pax": 3, "price": 2600},
+                                    {"pax": 4, "price": 2300}                                   
+                                ]
+                            },
+                            {
+                                "saleCode": "21000",
+                                "included": "รวม รถ ด่าน ค่าเข้าชม ที่พัก",
+                                "excluded": "ไม่รวม ไกด์ อาหาร ตั๋วเครื่องบิน",
+                                "promotion" : "",
+                                "ticket": 2,
+                                "hotel": 1,
+                                "guide": 0,
+                                "meal": 0,
+                                "flight": 0,
+                                "pricePerPax": [
+                                    {"pax": 1, "price": 6900},
+                                    {"pax": 2, "price": 3800},
+                                    {"pax": 3, "price": 3100},
+                                    {"pax": 4, "price": 2800}                                   
+                                ]
+                            },
+                            {
+                                "saleCode": "21030",
+                                "included": "รวม รถ ด่าน ค่าเข้าชม ที่พัก อาหาร",
+                                "excluded": "ไม่รวม ไกด์ ตั๋วเครื่องบิน",
+                                "promotion" : "",
+                                "ticket": 2,
+                                "hotel": 1,
+                                "guide": 0,
+                                "meal": 3,
+                                "flight": 0,
+                                "pricePerPax": [
+                                    {"pax": 1, "price": 9200},
+                                    {"pax": 2, "price": 5100},
+                                    {"pax": 3, "price": 3900},
+                                    {"pax": 4, "price": 3400}                                   
+                                ]
+                            },
+                            {
+                                "saleCode": "21230",
+                                "included": "รวม รถ ด่าน ค่าเข้าชม ที่พัก ไกด์บรรยาย",
+                                "excluded": "ไม่รวม ตั๋วเครื่องบิน",
+                                "promotion" : "",
+                                "ticket": 2,
+                                "hotel": 1,
+                                "guide": 2,
+                                "meal": 3,
+                                "flight": 0,
+                                "pricePerPax": [
+                                    {"pax": 1, "price": 9900},
+                                    {"pax": 2, "price": 5800},
+                                    {"pax": 3, "price": 5600},
+                                    {"pax": 4, "price": 4200}                                   
+                                ]
+                            }]   
+                    },
+                    {
+                        "tourID": "VT11UU",
+                        "description": "เที่ยวเวียงจันทน์ 1 วันไปกลับ",
+                        "city": "เวียงจันทน์",
+                        "days": 1,
+                        "highlights": "ประตูชัย พระธาตุหลวง หอพระแก้ว วัดสีเมือง",
+                        "trip": {
+                            "start": "อุดร",
+                            "end": "อุดร"
+                        },
+                        "name": "เวียงจันทน์ 1 วัน",
+                        "salePlan": 
+                            [{
+                                "saleCode": "20000",
+                                "included": "รวม รถ ด่าน ค่าเข้าชม",
+                                "excluded": "ไม่รวม ไกด์ อาหาร ที่พัก ตั๋วเครื่องบิน",
+                                "promotion" : "",
+                                "ticket": 2,
+                                "hotel": 0,
+                                "guide": 0,
+                                "meal": 0,
+                                "flight": 0,
+                                "pricePerPax": [
+                                    {"pax": 1, "price": 5900},
+                                    {"pax": 2, "price": 3500},
+                                    {"pax": 3, "price": 2500},
+                                    {"pax": 4, "price": 1900}                                   
+                                ]
+                            },
+                            {
+                                "saleCode": "20010",
+                                "included": "รวม รถ ด่าน ค่าเข้าชม อาหาร",
+                                "excluded": "ไม่รวม ที่พัก ไกด์ ตั๋วเครื่องบิน",
+                                "promotion" : "",
+                                "ticket": 2,
+                                "hotel": 0,
+                                "guide": 0,
+                                "meal": 1,
+                                "flight": 0,
+                                "pricePerPax": [
+                                    {"pax": 1, "price": 6900},
+                                    {"pax": 2, "price": 3800},
+                                    {"pax": 3, "price": 2800},
+                                    {"pax": 4, "price": 2200}                                   
+                                ]
+                            },
+                            {
+                                "saleCode": "20110",
+                                "included": "รวม รถ ด่าน ค่าเข้าชม ไกด์ อาหาร",
+                                "excluded": "ไม่รวม ที่พัก ตั๋วเครื่องบิน",
+                                "promotion" : "",
+                                "ticket": 2,
+                                "hotel": 0,
+                                "guide": 1,
+                                "meal": 1,
+                                "flight": 0,
+                                "pricePerPax": [
+                                    {"pax": 1, "price": 7500},
+                                    {"pax": 2, "price": 4200},
+                                    {"pax": 3, "price": 3200},
+                                    {"pax": 4, "price": 2600}                                   
+                                ] 
+                            }]   
+                    }
+                ];
+
+                // ค้นหา tourID //
+                console.log("หาโปรแกรม เฉพาะเวียงจันทน์"); 
+                console.log( laosPrograms.filter(e => e.city === "เวียงจันทน์") );
+
+                console.log("หาโปรแกรม เวียงจันทน์ เดินทาง 1 วัน"); 
+                console.log( laosPrograms.filter( (e => e.city === "เวียงจันทน์") && (e => e.days === 1) ));
+
+                console.log("หาโปรแกรม เลือกจากจุดรับส่ง");
+                console.log( laosPrograms.filter(e => e.trip.start === "อุดร") );
+
+                console.log("หาโปรแกรม ตามจำนวนวันที่เดินทาง");
+                console.log( laosPrograms.filter(e => e.days === 2) );
+
+                // ค้นหา tourID + salePlan ระบุเงื่อนไขการเดินทาง//
+                console.log("หาโปรแกรม รวมที่พัก");
+                console.log( laosPrograms.filter(e => e.salePlan.some(s => s.hotel > 0)));
+
+                console.log("หาโปรแกรม ไม่รวมที่พัก");
+                console.log( laosPrograms.filter(e => e.salePlan.some(s => s.hotel === 0)));
+    
+
+                // ค้นหา tourID + salePlan + price/pax ระบุเงื่อนไขราคาและจำนวนผู้เดินทาง // 
+                console.log("หาโปรแกรม งบคนละไม่เกิน 2,000 บาท ไปไหนได้บ้าง");
+                console.log( laosPrograms.filter(e => e.salePlan.some(s => s.pricePerPax.some(p => p.price < 2000))));
+
+            
+
+                console.log("หาโปรแกรม เวียงจันทน์ เดินทาง 2 วัน ราคา ต่ำกว่า 2,200"); 
+                console.log( laosPrograms.filter( (e => e.city === "เวียงจันทน์") && (e => e.days === 2) ).filter(e => e.salePlan.some(s => s.pricePerPax.some(p => p.price < 2200)))  );
+
+               
+                console.log("หาโปรแกรม เวียงจันทน์ เดินทาง 2 วัน จำนวน 3 ท่าน ราคา ต่ำกว่า 2,500");
+
+                // เลือกโปรแกรม ที่เดินทาง 4 คน ตกคนละไม่เกิน 2,000 บาท
+                // console.log( laosPrograms.filter(e => e.salePlan.some(s => s.pricePerPax. < 2000)));
+
+                // เริ่มค้นหา
+                // 1. ไม่รู้จะไปไหน อยากเลือกจาก "งบ" และ "จำนวนผู้เดินทาง" ให้ app เสนอโปรแกรมมาให้
+                // เลือกตามงบและจำนวนผู้เดินทาง  (ลูกค้าระบุผู้เดินทาง 3 ท่าน งบไม่เกิน 3,000 บาท/ท่าน)
+                // Expected output = tourID + saleCode
+                // VT21NNTXX0X = 2,600 ,  VT11UUTXX0X = 2,500 , VT11UUTXX1X = 2,800
+                // key of pricePerPax == 3 && value of pricePerPax <= 3000
+                // สิ่งที่ต้องแสดงลูกค้า โปรแกรมอะไร กี่วัน ราคาต่อท่าน รับส่งที่ไหน แผนการเดินทางรวมอะไรบ้าง ปุ่มกดเข้า modal(ขอชื่อ เบอร์โทร อีเมล์) หน้าใบเสนอราคา
+                
+
+
+
+                // 2. มีโปรแกรมในใจแล้ว อยากเลือกจากงบ และ จำนวนผู้เดินทาง พร้อมเข้าหน้า salePlan เลือกแผนการเดินทาง
+                // ลูกค้าเลือกจากโปรแกรม , จำนวนผู้เดินทาง , จุดรับส่ง
+
+                
+
+
+//import data from 't.json';
+fetch('price_VT.json')
+    .then(response => response.json())
+    .then(data => {console.log("hello"); console.log(data.filter(e => (e.price <= 2000) && (e.pax === 10)))});
+
+
+               
+
+            </script>
+        </body>
+    </head>
+</html>

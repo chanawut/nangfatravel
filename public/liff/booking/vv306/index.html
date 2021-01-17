@@ -1,0 +1,1654 @@
+<!doctype html>
+<html lang="th" prefix="og: http://ogp.me/ns#">
+<meta property="og:title" content="ทัวร์ หินสามวาฬ บึงกาฬ หนองคาย วังเวียง น้ำงึม เวียงจันทน์ 3 วัน">
+<meta property="og:type" content="website">
+<meta property="og:description" content="ทัวร์ หินสามวาฬ บึงกาฬ หนองคาย วังเวียง น้ำงึม เวียงจันทน์ 3 วัน โปรแกรม และ ราคา">
+<meta property="og:url" content="https://nangfatravel.com/liff/booking/vv304/">
+<meta property="og:site_name" content="นางฟ้าทราเวล เที่ยวลาว ต่อวีซ่า บัตรผ่านแดนหนองคาย">
+<meta property="og:image" content="https://nangfatravel.com/assets/640x640/bk-3rocks-1-640x640.jpg">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3 วัน ทัวร์ หินสามวาฬ บึงกาฬ หนองคาย วังเวียง น้ำงึม เวียงจันทน์ - ราคา และโปรแกรม</title>
+  <link rel="stylesheet" href="/liff/css/style.css?cache=12456">
+  <link href="https://use.fontawesome.com/releases/v5.13.1/css/all.css" rel="stylesheet" type="text/css"/>
+  <link href="https://use.fontawesome.com/releases/v5.13.1/css/v4-shims.css" rel="stylesheet" type="text/css"/>
+  <link href="https://fonts.googleapis.com/css?family=Sarabun" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+  <link rel="stylesheet" href="/liff/css/jquery.datetimepicker.css">
+  <link href="/liff/css/darkbox.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <!-- <script src="/liff/js/vconsole.min.js"></script>
+    <script>
+      var vConsole = new VConsole();
+    </script> -->
+    
+    <script src="/liff/booking/js/config.js"></script>
+    <script> 
+      // เริ่ม set ค่าตัวแปร
+      const callbackUrl = window.location.protocol + '//' + window.location.host + window.location.pathname.replace("index.html","");
+      // inLine ตัวอย่าง https://line.me/R/app/1654480389-bYdxVVJx?liff.state=%2Fbooking%2Fvt101%3Fpick%3Dnknk%26pax%3D1-3%26price%3D3,600%26depo%3D1,600%26ext%3D0%23hashtag
+      // external ตัวอย่าง https://nangfatravel.com/liff/booking/vt101/index.html?pick=nknk&pax=1-3&price=3,600&depo=1,600&ext=0#hashtag
+      const queryString = decodeURIComponent(window.location.search);
+      const params = new URLSearchParams(queryString);
+      
+      const myLiff = getConfig.myLiff;
+      
+         // init
+        const program_code = "vv306";
+        const program_name = "หินสามวาฬ บึงกาฬ หนองคาย วังเวียง น้ำงึม เวียงจันทน์";
+        const program_period = "3 วัน";
+        const coverUrl = "https://nangfatravel.com/assets/buengkan-hinsamwan-1.jpg";
+        
+        // ถ้า logged liff มา ให้เก็บข้อมูล user ไว้
+        var userPicUrl = "";
+        var userId = "";
+        var userStatus = "";
+        var userDisplayName = "";
+        var userEmail = "";
+        var userOs = "";
+
+        // เผื่อเปลี่ยนตำแหน่งนัดหมายที่ด่าน ดึงค่าจาก config.js
+        var meeting_location = getConfig.meeting_location; 
+        var meeting_label = getConfig.meeting_label;
+       
+        // เผื่อเปลี่ยน staff ให้ไปแก้ใน config.js
+        var staff = "";
+        var staff_desc = ""; 
+        var staff_pic = ""; 
+
+        // ค่า param ที่ส่งมาจาก card message
+        var pick = params.get("pick");  // code จุดรับส่งคณะ
+        var pax = params.get("pax");  //ผู้เดินทางต่อกรุ๊ป
+        var price = params.get("price");   // ราคารวม
+        var deposit = params.get("depo");   // จำนวนเงินมัดจำ 
+        var deposit_date = "";  // วันที่ต้องมัดจำ      
+        var contact_date = "";  // วันที่ลูกค้าเลือกเดินทาง
+        var contact_name = "";  // ชื่อลูกค้า
+        var contact_tel = "";   // เบอร์ลูกค้า
+        var place = "";         // แปลง code จุดรับส่งเป็น text
+        var cost = 0;
+        var remain = 0;
+        var invoiceNo = formatDate(new Date()) + (Math.floor(Math.random()*90000) + 10000); // create invoice no.
+
+        //  คำนวณ มัดจำ และ คงเหลือ
+        if (deposit != null && price != null) {
+          deposit = deposit.replace(/,/,"");  
+          cost = price.replace(/,/,"");   // ราคารวมเอาไว้คำนวณ 
+        } else {
+          deposit = 0;
+        }
+        remain = parseInt(cost)-parseInt(deposit);  // จำนวณเงินคงเหลือที่ต้องชำระ
+
+        // ปรับการแสดงผลใน flex message
+        pax = "เดินทาง " + pax + " ท่าน";
+        price = "รวมค่าใช้จ่าย " + numberWithCommas(cost) + " บาท/กรุ๊ป";
+   
+        // ระบุตำแหน่งรับส่ง และ defind value ให้ staff ไว้แสดงใน flex
+        if (pick == "nknk") {
+            place = "รับส่งที่ ด่านหนองคาย";
+            staff = getConfig.staff_nk;
+            staff_desc = getConfig.staff_nk_desc;
+            staff_pic = getConfig.staff_nk_pic;
+        } else if (pick == "udud") {
+            place = "รับส่งที่ สนามบินอุดร";
+            staff = getConfig.staff_ud;
+            staff_desc = getConfig.staff_ud_desc;
+            staff_pic = getConfig.staff_ud_pic;
+        } 
+    </script>
+    
+   <!-- เลือกจุดเริ่มเดินทาง -->
+   <div class="container" id="startPoint-container">
+    <div class="navbar" style="background: #2d88ff;">
+      <div class="profile-pic">
+        <img src="https://nangfatravel.com/assets/half-logo.png" alt="" />
+  <!--       <div class="notification"></div> -->
+      </div>
+      <span>ราคาทัวร์</span>
+    </div>
+
+      <p>
+        <div class="container" style="width: 80%; display: flex; flex-direction: column; align-items: center;">
+          <img src="/assets/nknk.svg" alt="" width="40%"/> 
+          <button class="button button1" id="btnStart_nknk" onclick="startPointAt('nknk')">รับส่งที่ด่านหนองคาย <i class="fas fa-chevron-circle-right"></i></button><br>
+        </div>
+
+        <div class="container" style="width: 80%; display: flex; flex-direction: column; align-items: center;">
+          <img src="/assets/udud.svg" alt="" width="40%"/> 
+          <button class="button button1" id="btnStart_udud" onclick="startPointAt('udud')">รับส่งที่สนามบินอุดร <i class="fas fa-chevron-circle-right"></i></button><br>
+        </div>
+    <p>
+  </div>
+
+  <script>
+    // ปิดช่องราคาทัวร์ไว้ก่อน
+    document.getElementById("startPoint-container").style.display = "none";
+    var checkprice = params.get("checkprice");  // สถานะว่าจะโชว์ จุดรับส่งคณะหรือไม่
+    // ถ้ามี param ส่งมาให้โชว์ส่วนราคา ค่อยแสดง block
+    if (checkprice == "yes") {
+      document.getElementById("startPoint-container").style.display = "block";
+    }
+    
+    // ถ้ามีการกดเลือกจุดรับส่ง เพื่อเช็คราคา
+    function startPointAt(thisPlace){
+      var msg = {
+                              "type": "text",
+                              "text": program_code + "_" +thisPlace
+                };
+      sendMessage(msg, '');
+    }
+
+    // ส่ง text กลับโดย liff
+    async function sendMessage(message,alertThis) {
+      if (liff.getContext().type !== "none") {
+        await liff.sendMessages([message])  
+        .then(() => {
+          if (alertThis != '') {
+            alert(alertThis);
+          }
+          liff.closeWindow(); // ส่งแล้วให้ปิด Liff ด้วย
+        })
+        .catch((err) => {
+          alert('มีข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้งนะคะ หรือ โทร 086-8616550 โดยตรงได้เลยนะคะ (หรือลองเพิ่มเพื่อนไลน์ @nangfatravel และจองในไลน์อีกครั้งนะคะ) - error: ', err);
+          liff.closeWindow();
+        });      
+      }
+    } 
+  </script>
+
+    <!-- ปุ่มเช็คค่าใช้จ่าย -->
+    <div class="container" id="checkprice-container">
+        <div class="navbar" style="background: #2d88ff;">
+          <a href="#">
+            <!-- <i class="fas fa-edit" aria-hidden="true"></i> -->
+          </a>
+          <div class="profile-pic">
+            <img src="https://nangfatravel.com/assets/half-logo.png" alt="" />
+      <!--       <div class="notification"></div> -->
+          </div>
+          <span>นางฟ้าทราเวล</span>
+        </div>
+        
+            <div class="conditions_items">
+                <i class="fas fa-chevron-circle-right"></i> ใบอนุญาตท่องเที่ยว 51/00835
+                <i class="fas fa-chevron-circle-right"></i> ไลน์ @nangfatravel <br>
+                <i class="fas fa-chevron-circle-right"></i> โทร <a href="tel:0868616550" style="text-decoration: none;"> 086-8616550 </a> 
+                <i class="fas fa-chevron-circle-right"></i> สำรอง 083-6666318
+            </div>
+            <p>
+        <div style="text-align: center;">
+            <a href="https://line.me/R/ti/p/%40nangfatravel" target="_blank"><button class="button button1" id="btnMsg"><i class="fab fa-line"></i> สอบถามค่าใช้จ่าย (คลิก)</button></a>
+        </div>
+        <p>
+    </div>
+
+    <!-- ส่วน ปุ่มสำรองการเดินทาง -->
+    <div class="container" id="booking-container">
+        <div class="navbar" style="background: #2d88ff;">
+          <a href="#">
+            <i class="fas fa-edit" aria-hidden="true"></i>
+          </a>
+          <div class="profile-pic">
+            <img src="https://nangfatravel.com/assets/half-logo.png" alt="" />
+      <!--       <div class="notification"></div> -->
+          </div>
+          <span>จองทัวร์ (โปรดระบุ)</span>
+        </div>
+        <div class="conditions">
+                <div class="field-container">
+                    <input class="field-input" id="contact_date" name="contact_date" type="text" value="" placeholder=" ">
+                    <label class="field-placeholder" for="inputName"><i class="far fa-calendar-alt"></i> วันเดินทาง เช่น 25-01-2021 </label>
+                </div>
+                <div class="field-container">
+                  <input class="field-input" id="contact_name" name="contact_name" type="text" placeholder=" ">
+                  <label class="field-placeholder" for="inputName"><i class="far fa-address-book"></i> ชื่อผู้ติดต่อ </label>
+                </div>
+                <div class="field-container">
+                    <input class="field-input" id="contact_tel" name="contact_tel" type="text" placeholder=" ">
+                    <label class="field-placeholder" for="inputName"><i class="fas fa-mobile-alt"></i> เบอร์ติดต่อกลับ เช่น 0868616550 </label>
+                </div>
+                <div class="conditions_items">
+                    <div id="pax"><i class="fas fa-chevron-circle-right"></i> </div>
+                    <div id="price"><i class="fas fa-chevron-circle-right"></i> </div>
+                    <div id="place"><i class="fas fa-chevron-circle-right"></i> </div>
+                </div>
+                
+                 <!-- code ปฏิทิน -->
+                <script src="/liff/js/jquery.min.js"></script>  
+                <script src="/liff/js/jquery.datetimepicker.full.js"></script>
+                <script type="text/javascript">   
+                    $(function(){
+                        
+                        $.datetimepicker.setLocale('th'); // ต้องกำหนดเสมอถ้าใช้ภาษาไทย และ เป็นปี พ.ศ.
+
+                        // กรณีใช้แบบ input
+                        $("#contact_date").datetimepicker({
+                            timepicker:false,
+                            minDate:0,
+                            format:'d-m-Y',  // กำหนดรูปแบบวันที่ ที่ใช้ เป็น 00-00-0000			
+                            lang:'th',  // ต้องกำหนดเสมอถ้าใช้ภาษาไทย และ เป็นปี พ.ศ.
+                            onSelectDate:function(dp,$input){
+                                var yearT=new Date(dp).getFullYear()-0;  
+                                var yearTH=yearT; //+543;
+                                var fulldate=$input.val();
+                                var fulldateTH=fulldate.replace(yearT,yearTH);
+                                $input.val(fulldateTH);
+                            },
+                        });       
+                    });
+                    </script>
+
+                <div style="text-align: center;">
+                    <button class="button button1" id="btnMsg" onclick="check_if_valid()">สำรองการเดินทาง (คลิก)  <i class="fab fa-line"></i></button>
+                </div>
+                <div class="conditions_remarks" style="color:grey;">
+                  <i class="fas fa-clipboard-check"></i> หลังกดปุ่ม "สำรองการเดินทาง" ทัวร์ขออนุญาตแจ้ง <u>จำนวนและวันที่มัดจำ</u> ในเอกสารใบจองให้ทราบนะคะ
+                </div>
+        </div>
+      </div>
+
+<!-- ===================================== เร่ิมโปรแกรมเดินทาง ===================================== -->
+<!-- <script src="/liff/js/jquery-2.1.4.js"></script> -->
+<script src="/liff/js/darkbox.js"></script>
+<div class="container">
+        <div class="navbar">
+          <a href="#">
+            <i class="fas fa-route" aria-hidden="true"></i>
+          </a>
+          <div class="profile-pic">
+            <img src="https://nangfatravel.com/assets/half-logo.png" alt="" />
+      <!--       <div class="notification"></div> -->
+          </div>
+          <span>โปรแกรมเดินทาง</span>
+        </div>
+        
+        <div class="header">
+          <div class="color-overlay">
+            <!-- <div class="day-number">|</div> -->
+            <div class="date-right">
+              <div id="program_name" class="day-name"></div>
+              <div class="month">สอบถามเพิ่มเติม โทร 086-8616550</div>
+            </div>
+          </div>
+          <div id="program_period" class="actionbutton"></div>
+        </div>
+        <div class="timeline">
+          <ul>
+            <li>
+              <div class="bullet pink"></div>
+              <div class="time">วันแรก</div>
+              <div class="desc">
+                <h3>เดินทางเช้า</h3>
+                <h4>ระหว่าง 8:30-10:30 น.<br>ลูกค้าแจ้งเวลาที่สะดวกได้ค่ะ</h4>
+              </div>
+            </li>
+            <li>
+              <div class="bullet green"></div>
+              <div class="time"></div>
+              <div class="desc">
+                <h3>นำเที่ยว</h3>
+                <h4>หินสามวาฬ วัดภูทอก(คลิกที่รูปนะคะ)</h4>  
+                <div class="people">
+
+                  <img src="/assets/640x640/bk-3rocks-1-640x640.jpg"
+                  data-darkbox="/assets/640x640/bk-3rocks-1-640x640.jpg"
+                  data-darkbox-group="เช้าวันแรก"
+                  data-darkbox-description="<b>หินสามวาฬ</b><br>ก้อนหินขนาดใหญ่ 3 ก้อน ตั้งโดดเด่น คล้ายปลาวาฬเรียงตัวกัน"
+                  alt="<b>หินสามวาฬ</b><br>ก้อนหินขนาดใหญ่ 3 ก้อน ตั้งโดดเด่น คล้ายปลาวาฬเรียงตัวกัน">
+
+                  <img src="/assets/640x640/bk-3rocks-2-640x640.jpg"
+                  data-darkbox="/assets/640x640/bk-3rocks-2-640x640.jpg"
+                  data-darkbox-group="เช้าวันแรก"
+                  data-darkbox-description="<b>ทางขึ้นหินสามวาฬ</b><br>ต้องใช้รถออฟโรด ของอุทยานนำคณะเดินทางขึ้นไป"
+                  alt="<b>ทางขึ้นหินสามวาฬ</b><br>ต้องใช้รถออฟโรด ของอุทยานนำคณะเดินทางขึ้นไป">
+
+                  <img src="/assets/640x640/bk-3rock-3-640x640.jpg"
+                  data-darkbox="/assets/640x640/bk-3rock-3-640x640.jpg"
+                  data-darkbox-group="เช้าวันแรก"
+                  data-darkbox-description="<b>หินสามวาฬ</b><br>ก้อนหินขนาดใหญ่ 3 ก้อน ตั้งโดดเด่น คล้ายปลาวาฬเรียงตัวกัน"
+                  alt="<b>หินสามวาฬ</b><br>ก้อนหินขนาดใหญ่ 3 ก้อน ตั้งโดดเด่น คล้ายปลาวาฬเรียงตัวกัน">
+
+                  <img src="/assets/640x640/bk-phutok-3-640x640.jpg"
+                  data-darkbox="/assets/640x640/bk-phutok-3-640x640.jpg"
+                  data-darkbox-group="เช้าวันแรก"
+                  data-darkbox-description="<b>ภูทอก</b><br>ที่ตั้งของวัดเจติยาศรีวิหาร ขึ้นสะพานไม้และบันไดวนชมทัศนียภาพรอบๆ ภูทอกที่มีทั้งหมด 7 ชั้น"
+                  alt="<b>ภูทอก</b><br>ที่ตั้งของวัดเจติยาศรีวิหาร ขึ้นสะพานไม้และบันไดวนชมทัศนียภาพรอบๆ ภูทอกที่มีทั้งหมด 7 ชั้น">
+
+                  <img src="/assets/640x640/bk-phutok-2-640x640.jpg"
+                  data-darkbox="/assets/640x640/bk-phutok-2-640x640.jpg"
+                  data-darkbox-group="เช้าวันแรก"
+                  data-darkbox-description="<b>ภูทอก</b><br>ที่ตั้งของวัดเจติยาศรีวิหาร ขึ้นสะพานไม้และบันไดวนชมทัศนียภาพรอบๆ ภูทอกที่มีทั้งหมด 7 ชั้น"
+                  alt="<b>ภูทอก</b><br>ที่ตั้งของวัดเจติยาศรีวิหาร ขึ้นสะพานไม้และบันไดวนชมทัศนียภาพรอบๆ ภูทอกที่มีทั้งหมด 7 ชั้น">
+                  
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="bullet green"></div>
+              <div class="time">มื้อเที่ยงแนะนำ</div>
+              <div class="desc">
+                <h3>ร้านอาหาร บึงกาฬ</h3>
+                <h4>ร้านเสบียง แหนมเนืองคุณอ้อ ร้านแม่น้ำ ร้านครัวผู้ว่า</h4>
+              </div>
+            </li>
+            <li>
+              <div class="bullet green"></div>
+              <div class="time"></div>
+              <div class="desc">
+                <h3>นำเที่ยว</h3>
+                <h4>วัดอาฮง ไหว้หลวงพ่อพระใส พระธาตุหล้าหนอง ถ่ายรูปแลนด์มาร์กพญานาคริมโขง (คลิกที่รูปนะคะ)</h4>
+                <div class="people">
+
+                  <img src="/assets/640x640/bk-arhong-640x640.jpg"
+                  data-darkbox="/assets/640x640/bk-arhong-640x640.jpg"
+                  data-darkbox-group="บ่ายวันแรก"
+                  data-darkbox-description="<b>วัดอาฮง</b><br>จุดที่เชื่อว่าเป็นสะดือแม่น้ำโขง"
+                  alt="<b>วัดอาฮง</b><br>จุดที่เชื่อว่าเป็นสะดือแม่น้ำโขง">
+
+                  <img src="/assets/640x640/nk-phochai-640x640.jpg"
+                  data-darkbox="/assets/640x640/nk-phochai-640x640.jpg"
+                  data-darkbox-group="บ่ายวันแรก"
+                  data-darkbox-description="<b>วัดโพธ์ชัย</b><br>เข้าไหว้องค์หลวงพ่อพระใส พระคู่เมืองหนองคาย"
+                  alt="<b>วัดโพธ์ชัย</b><br>เข้าไหว้องค์หลวงพ่อพระใส พระคู่เมืองหนองคาย">
+
+                  <img src="/assets/640x640/nk-prathatlanong-640x640.jpg"
+                  data-darkbox="/assets/640x640/nk-prathatlanong-640x640.jpg"
+                  data-darkbox-group="บ่ายวันแรก"
+                  data-darkbox-description="<b>พระธาตุหล้าหนอง</b><br>หรือพระธาตุเก่าแก่ ตั้งอยู่กลางน้ำโขง"
+                  alt="<b>พระธาตุหล้าหนอง</b><br>หรือพระธาตุเก่าแก่ ตั้งอยู่กลางน้ำโขง">
+
+                  <img src="/assets/640x640/nk-nagalandmark-640x640.jpg"
+                  data-darkbox="/assets/640x640/nk-nagalandmark-640x640.jpg"
+                  data-darkbox-group="บ่ายวันแรก"
+                  data-darkbox-description="<b>แลนด์มาร์กพญานาค</b><br>ตั้งอยู่ริมโขง ณ วัดลำดวน จุดยอดนิยมสำหรับถ่ายรูปของนักท่องเที่ยว"
+                  alt="<b>แลนด์มาร์กพญานาค</b><br>ตั้งอยู่ริมโขง ณ วัดลำดวน จุดยอดนิยมสำหรับถ่ายรูปของนักท่องเที่ยว">
+                  
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="bullet green"></div>
+              <div class="time">เข้าที่พัก</div>
+              <div class="desc">
+                <h3>รร.กลางเมือง แอท หนองคาย </h3>
+                <h4>เดิน 1 นาที ถึงถนนคนเดินริมโขง - มีทุกวันเสาร์นะคะ (คลิกที่รูปนะคะ)</h4>
+                <div class="people">
+                  <img src="/assets/640x640/nk-klangmueng-hotel-1-640x640.jpg"
+                  data-darkbox="/assets/640x640/nk-klangmueng-hotel-1-640x640.jpg"
+                  data-darkbox-group="คืนแรก"
+                  data-darkbox-description="<b>รร.กลางเมือง แอท หนองคาย</b><br>เข้าพัก 2 ท่าน/ห้อง (ท่านที่สามเสริมที่นอน)"
+                  alt="<b>รร.กลางเมือง แอท หนองคาย</b><br>เข้าพัก 2 ท่าน/ห้อง (ท่านที่สามเสริมที่นอน)">
+         
+                 <img src="/assets/640x640/nk-klangmueng-hotel-2-640x640.jpg"
+                  data-darkbox="/assets/640x640/nk-klangmueng-hotel-2-640x640.jpg"
+                  data-darkbox-group="คืนแรก"
+                  data-darkbox-description="<b>รร.กลางเมือง แอท หนองคาย</b><br>เข้าพัก 2 ท่าน/ห้อง (ท่านที่สามเสริมที่นอน)"
+                  alt="<b>รร.กลางเมือง แอท หนองคาย</b><br>เข้าพัก 2 ท่าน/ห้อง (ท่านที่สามเสริมที่นอน)">
+         
+                  <img src="/assets/640x640/nk-klangmueng-hotel-3-640x640.jpg"
+                  data-darkbox="/assets/640x640/nk-klangmueng-hotel-3-640x640.jpg"
+                  data-darkbox-group="คืนแรก"
+                  data-darkbox-description="<b>รร.กลางเมือง แอท หนองคาย</b><br>เข้าพัก 2 ท่าน/ห้อง (ท่านที่สามเสริมที่นอน)"
+                  alt="<b>รร.กลางเมือง แอท หนองคาย</b><br>เข้าพัก 2 ท่าน/ห้อง (ท่านที่สามเสริมที่นอน)">
+                  
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="bullet pink"></div>
+              <div class="time">วันที่สอง</div>
+              <div class="desc">
+                <h3>เดินทางเข้าลาว</h3>
+                <h4>ระหว่าง 8:00-9:30 น.<br>ลูกค้าแจ้งเวลาที่สะดวกได้ค่ะ</h4>
+              </div>
+            </li>
+            <li>
+              <div class="bullet green"></div>
+              <div class="time"></div>
+              <div class="desc">
+                <h3>นำเที่ยว</h3>
+                <h4>วัดสีเมือง ประตูชัย มุ่งหน้าวังเวียง (คลิกที่รูปนะคะ)</h4>
+                <div class="people">
+                  <img src="/assets/640x640/vt-watsimueang-640x640.jpg"
+                  data-darkbox="/assets/640x640/vt-watsimueang-640x640.jpg"
+                  data-darkbox-group="เช้าวันที่สอง"
+                  data-darkbox-description="<b>วัดสีเมือง</b><br>ศาลหลักเมืองเก่าแก่ ชาวลาวนิยมมาขอพร (ยกเว้นขอเรื่องความรัก)"
+                  alt="<b>วัดสีเมือง</b><br>ศาลหลักเมืองเก่าแก่ ชาวลาวนิยมมาขอพร (ยกเว้นขอเรื่องความรัก)">
+         
+                  <img src="/assets/640x640/vt-pratuxay-640x640.jpg"
+                  data-darkbox="/assets/640x640/vt-pratuxay-640x640.jpg"
+                  data-darkbox-group="เช้าวันที่สอง"
+                  data-darkbox-description="<b>ประตูชัย</b><br>สถาปัตยกรรมฝรั่งเศส อนุสรณ์ความเสียสละของชาวลาวในสมัยสงคราม"
+                  alt="<b>ประตูชัย</b><br>สถาปัตยกรรมฝรั่งเศส อนุสรณ์ความเสียสละของชาวลาวในสมัยสงคราม">
+         
+                  <img src="/assets/640x640/vv-landscape-640x640.jpg"
+                  data-darkbox="/assets/640x640/vv-landscape-640x640.jpg"
+                  data-darkbox-group="เช้าวันที่สอง"
+                  data-darkbox-description="<b>มุ่งหน้าวังเวียง</b><br>จากเวียงจันทน์ ผ่านกาสีเข้าสู่วังเวียง ประมาณ 2-3 ชั่วโมง"
+                  alt="<b>มุ่งหน้าวังเวียง</b><br>จากเวียงจันทน์ ผ่านกาสีเข้าสู่วังเวียง ประมาณ 2-3 ชั่วโมง">
+                  
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="bullet green"></div>
+              <div class="time">มื้อเที่ยงแนะนำ</div>
+              <div class="desc">
+                <h3>ร้านอาหารวังเวียง</h3>
+                <h4>หลวงพระบางเบเกอรี่ นางบด</h4>
+              </div>
+            </li>
+            <li>
+              <div class="bullet green"></div>
+              <div class="time"></div>
+              <div class="desc">
+                <h3>นำเที่ยว</h3>
+                <h4>ถ้ำจัง สะพานส้ม บลูลากูน ล่องเรือน้ำซอง ถนนคนเดินวังเวียง (คลิกที่รูปนะคะ)</h4>
+                <div class="people">
+
+                  <img src="/assets/640x640/vv-jang-cave-1-640x640.jpg"
+                  data-darkbox="/assets/640x640/vv-jang-cave-1-640x640.jpg"
+                  data-darkbox-group="บ่ายวันที่สอง"
+                  data-darkbox-description="<b>ถ้ำจัง</b><br>ขึ้นชมวิวเมืองวังเวียงที่ถ้ำจัง"
+                  alt="<b>ถ้ำจัง</b><br>ขึ้นชมวิวเมืองวังเวียงที่ถ้ำจัง">
+
+                  <img src="/assets/640x640/vv-songbridge-1-640x640.jpg"
+                  data-darkbox="/assets/640x640/vv-songbridge-1-640x640.jpg"
+                  data-darkbox-group="บ่ายวันที่สอง"
+                  data-darkbox-description="<b>สะพานส้ม</b><br>แลนมาร์กและจุดถ่ายรูปยอดนิยมของวังเวียง"
+                  alt="<b>สะพานส้ม</b><br>แลนมาร์กและจุดถ่ายรูปยอดนิยมของวังเวียง">
+
+                  <img src="/assets/640x640/vv-blue-lagoon-1-640x640.jpg"
+                  data-darkbox="/assets/640x640/vv-blue-lagoon-1-640x640.jpg"
+                  data-darkbox-group="บ่ายวันที่สอง"
+                  data-darkbox-description="<b>บลูลากูน</b><br>แหล่งพักผ่อน ลงเล่นน้ำที่เมืองวังเวียง"
+                  alt="<b>บลูลากูน</b><br>แหล่งพักผ่อน ลงเล่นน้ำที่เมืองวังเวียง">
+
+                  <img src="/assets/640x640/vv-song-river-boat-2-640x640.jpg"
+                  data-darkbox="/assets/640x640/vv-song-river-boat-2-640x640.jpg"
+                  data-darkbox-group="บ่ายวันที่สอง"
+                  data-darkbox-description="<b>ล่องเรือแม่น้ำซอง</b><br>ชมบรรยากาศริมน้ำวังเวียง ระหว่างล่องเรือแม่น้ำซอง"
+                  alt="<b>ล่องเรือแม่น้ำซอง</b><br>ชมบรรยากาศริมน้ำวังเวียง ระหว่างล่องเรือแม่น้ำซอง">
+
+                  <img src="/assets/640x640/vv-walking-street-1-640x640.jpg"
+                  data-darkbox="/assets/640x640/vv-walking-street-1-640x640.jpg"
+                  data-darkbox-group="บ่ายวันที่สอง"
+                  data-darkbox-description="<b>ถนนคนเดินวังเวียง</b><br>เดินเที่ยวถนนคนเดิน เมืองวังเวียง"
+                  alt="<b>ถนนคนเดินวังเวียง</b><br>เดินเที่ยวถนนคนเดิน เมืองวังเวียง">
+
+                  <img src="/assets/640x640/vv-night-song-river-1-640x640.jpg"
+                  data-darkbox="/assets/640x640/vv-night-song-river-1-640x640.jpg"
+                  data-darkbox-group="บ่ายวันที่สอง"
+                  data-darkbox-description="<b>บรรยากาศริมน้ำซอง</b><br>อิสระชมบรรยากาศยามค่ำคืน เมืองวังเวียง"
+                  alt="<b>บรรยากาศริมน้ำซอง</b><br>อิสระชมบรรยากาศยามค่ำคืน เมืองวังเวียง">
+                  
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="bullet green"></div>
+              <div class="time">พักที่วังเวียง</div>
+              <div class="desc">
+                <h3>ที่พักรวมอาหารเช้า </h3>
+                <h4>รร.ทวีสุข | รร.วิไลวงศ์ | หรือ รร.ภูอ่างคำ (คลิกที่รูปนะคะ)</h4>
+                <div class="people">
+                  <img src="/assets/640x640/vv-taveesouk-hotel-640x640.jpg"
+                  data-darkbox="/assets/640x640/vv-taveesouk-hotel-640x640.jpg"
+                  data-darkbox-group="คืนที่สอง"
+                  data-darkbox-description="<b>รร.ทวีสุข</b><br>เข้าพัก 2 ท่าน/ห้อง (ท่านที่สามเสริมที่นอน)"
+                  alt="<b>รร.ทวีสุข</b><br>เข้าพัก 2 ท่าน/ห้อง (ท่านที่สามเสริมที่นอน)">
+         
+                 <img src="/assets/640x640/vv-vilayvong-hotel-640x640.jpg"
+                  data-darkbox="/assets/640x640/vv-vilayvong-hotel-640x640.jpg"
+                  data-darkbox-group="คืนที่สอง"
+                  data-darkbox-description="<b>รร.วิไลวงศ์</b><br>เข้าพัก 2 ท่าน/ห้อง (ท่านที่สามเสริมที่นอน)"
+                  alt="<b>รร.วิไลวงศ์</b><br>เข้าพัก 2 ท่าน/ห้อง (ท่านที่สามเสริมที่นอน)">
+         
+                  <img src="/assets/640x640/vv-phuangkham2-hotel-640x640.jpg"
+                  data-darkbox="/assets/640x640/vv-phuangkham2-hotel-640x640.jpg"
+                  data-darkbox-group="คืนที่สอง"
+                  data-darkbox-description="<b>รร.ภูอ่างคำ2</b><br>เข้าพัก 2 ท่าน/ห้อง (ท่านที่สามเสริมที่นอน)"
+                  alt="<b>รร.ภูอ่างคำ2</b><br>เข้าพัก 2 ท่าน/ห้อง (ท่านที่สามเสริมที่นอน)">
+                  
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="bullet pink"></div>
+              <div class="time">วันที่สาม</div>
+              <div class="desc">
+                <h3>เข้าน้ำงึม</h3>
+                <h4>เดินทางประมาณ 1 ชั่วโมง ครึ่ง</h4>
+                <div class="people">
+
+                  <img src="/assets/640x640/vt-namngum-2-640x640.jpg"
+                  data-darkbox="/assets/640x640/vt-namngum-2-640x640.jpg"
+                  data-darkbox-group="เช้าวันที่สาม"
+                  data-darkbox-description="<b>เขื่อนน้ำงึม</b><br>บรรยากาศธรรมชาติ พร้อมร้านอาหาร และล่องเรือในเขื่อน"
+                  alt="<b>เขื่อนน้ำงึม</b><br>บรรยากาศธรรมชาติ พร้อมร้านอาหาร และล่องเรือในเขื่อน">
+
+                  <img src="/assets/640x640/vt-namngum-640.jpg"
+                  data-darkbox="/assets/640x640/vt-namngum-640.jpg"
+                  data-darkbox-group="เช้าวันที่สาม"
+                  data-darkbox-description="<b>เขื่อนน้ำงึม</b><br>บรรยากาศธรรมชาติ พร้อมร้านอาหาร และล่องเรือในเขื่อน"
+                  alt="<b>เขื่อนน้ำงึม</b><br>บรรยากาศธรรมชาติ พร้อมร้านอาหาร และล่องเรือในเขื่อน">
+
+                  <img src="/assets/640x640/vv-namngum-4-640x640.jpg" 
+                  data-darkbox="/assets/640x640/vv-namngum-4-640x640.jpg"
+                  data-darkbox-group="เช้าวันที่สาม"
+                  data-darkbox-description="<b>เขื่อนน้ำงึม</b><br>บรรยากาศธรรมชาติ พร้อมร้านอาหาร และล่องเรือในเขื่อน"
+                  alt="<b>เขื่อนน้ำงึม</b><br>บรรยากาศธรรมชาติ พร้อมร้านอาหาร และล่องเรือในเขื่อน">
+
+                  </div>
+              </div>
+            </li>
+            <li>
+              <div class="bullet green"></div>
+              <div class="time">มื้อเที่ยงแนะนำ</div>
+              <div class="desc">
+                <h3>ร้านอาหารน้ำงึม</h3>
+                <h4>ทานมื้อเที่ยงริมแม่น้ำ หรือล่องเรือพร้อมทานมื้อเที่ยงได้นะคะ</h4>
+              </div>
+            </li>
+            <li >
+              <div class="bullet green"></div>
+              <div class="time"></div>
+              <div class="desc" >
+                <h3>กลับเวียงจันทน์ </h3>
+                <h4>พระธาตุหลวง ร้านหัตถกรรม ดิวตี้ฟรี (คลิกที่รูปนะคะ)</h4>
+                <div class="people">
+
+                  <img src="/assets/640x640/vt-prathatluang-2-640x640.jpg"
+                  data-darkbox="/assets/640x640/vt-prathatluang-2-640x640.jpg"
+                  data-darkbox-group="บ่ายวันที่สาม"
+                  data-darkbox-description="<b>พระธาตุหลวง</b><br>องค์พระธาตุสีทองอร่าม ใจกลางเวียงจันทน์ ศูนย์รวมจิตใจของชาวลาว"
+                  alt="<b>พระธาตุหลวง</b><br>องค์พระธาตุสีทองอร่าม ใจกลางเวียงจันทน์ ศูนย์รวมจิตใจของชาวลาว">
+         
+                  <img src="/assets/640x640/vt-fabric-640x640.jpg"
+                  data-darkbox="/assets/640x640/vt-fabric-640x640.jpg"
+                  data-darkbox-group="บ่ายวันที่สาม"
+                  data-darkbox-description="<b>ร้านหัตถกรรม</b><br>ชอปปิ้งผ้าซิ่น ผ้าไหม ทอมือลายเอกลักษณ์เฉพาะของลาว"
+                  alt="<b>ร้านหัตถกรรม</b><br>ชอปปิ้งผ้าซิ่น ผ้าไหม ทอมือลายเอกลักษณ์เฉพาะของลาว">
+
+                  <img src="/assets/640x640/vt-dutyfree-640x640.jpg"
+                  data-darkbox="/assets/640x640/vt-dutyfree-640x640.jpg"
+                  data-darkbox-group="บ่ายวันที่สาม"
+                  data-darkbox-description="<b>ดิวตี้ฟรี</b><br>แหล่งรวมของฝาก สินค้าปลอดภาษี"
+                  alt="<b>ดิวตี้ฟรี</b><br>แหล่งรวมของฝาก สินค้าปลอดภาษี">
+                  
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="bullet green"></div>
+              <div class="time"></div>
+              <div class="desc">
+                <h3>ออกจากลาว</h3>
+                <h4>ไม่เกิน 16:00 น. ส่งคณะที่ฝั่งไทยโดยสวัสดิภาพ</h4>
+              </div>
+            </li>
+          </ul>
+        </div>  
+      </div>
+      
+      <!-- ใส่ปุ่มแชร์ -->
+      <br>
+      <div style="text-align: center;">
+        <button class="button button1" id="btnShare" onclick="shareMsg()"><i class="fab fa-line"></i> แชร์ให้เพื่อน (คลิก)</button></a>
+      </div>
+
+      <div class="container">
+        <div class="navbar">
+          <a href="#">
+            <i class="fas fa-edit" aria-hidden="true"></i>
+          </a>
+          <span>เงื่อนไขการบริการ</span>
+        </div>
+        <div class="conditions">
+            <i class="far fa-check-circle"></i> รวม <br>
+            <div class="conditions_items" id="includedTerms" value="รถรับส่งข้ามสะพาน, ค่าด่านไทยและลาว, รถส่วนตัวในลาวรวมน้ำมัน, พร้อมคนขับนำเที่ยว , ที่พัก 2 คืน , ค่ารถเข้าหินสามวาฬ , ค่าเข้าชม และล่องเรือน้ำซอง">
+                <i class="fas fa-check"></i> รถรับส่งข้ามสะพาน <br>
+                <i class="fas fa-check"></i> ค่าด่านไทยและลาว <br>
+                <i class="fas fa-check"></i> รถส่วนตัวในลาวรวมน้ำมัน <br>
+                <i class="fas fa-check"></i> พร้อมคนขับนำเที่ยว <br>
+                <i class="fas fa-check"></i> ที่พัก 2 คืน <br>
+                <i class="fas fa-check"></i> ค่าเข้าชม และล่องเรือน้ำซอง <br>
+                <i class="fas fa-check"></i> ค่ารถอุทยานเข้าหินสามวาฬ <br>
+            </div>
+        </div>
+        <div class="conditions" id="excludedTerms" value="ค่าวีซ่าท่านที่ไม่ใช่คนไทย, อาหาร และล่องเรือน้ำงึม, สัตว์เลี้ยง, ค่าปรับศุลกากร ของต้องห้าม/ผิดกฏหมาย เข้าออกไทยลาว, vat และ หัก ณ ที่จ่าย(กรณีออกบิล)">
+            <i class="far fa-times-circle"></i> ไม่รวม <br>
+            <div class="conditions_items">
+                <i class="fas fa-times"></i> ค่าวีซ่าท่านที่ไม่ใช่คนไทย <br>
+                <i class="fas fa-times"></i> อาหาร และล่องเรือน้ำงึม<br>
+                <i class="fas fa-times"></i> สัตว์เลี้ยงเดินทาง <br>
+                <i class="fas fa-times"></i> ค่าปรับทางศุลกากร <br>
+                <i class="fas fa-times"></i> สินค้าต้องห้าม/ผิดกฏหมายข้ามด่าน <br>
+                <i class="fas fa-times"></i> vat และ หัก ณ ที่จ่าย (กรณีออกบิล) <br>
+            </div>
+        </div>
+        <div class="conditions" id="docRequired" value="ใช้พาสปอร์ตเท่านั้น">
+            <i class="fas fa-passport"></i> เอกสารเดินทาง <br>
+            <div class="conditions_items">
+                พาสปอร์ตอายุเหลือมากกว่า 6 เดือน เท่านั้น<br> 
+            </div>
+        </div>
+        <script>
+          var includedTerms = document.getElementById("includedTerms").getAttribute('value');
+          var excludedTerms = document.getElementById("excludedTerms").getAttribute('value');
+          var docRequired = document.getElementById("docRequired").getAttribute('value');
+        </script>
+        <div class="conditions">
+            <i class="fas fa-luggage-cart"></i> สำรองการเดินทาง <br>
+            <div class="conditions_items">
+              <i class="fas fa-chevron-circle-right"></i> ลูกค้ามัดจำก่อนเดินทาง (ทัวร์ขออนุญาตเรียกเก็บมัดจำขั้นต่ำ 30% ก่อนการเดินทางนะคะ) <br>
+              <i class="fas fa-chevron-circle-right"></i> แจ้งหน้าเอกสารผู้เดินทาง<br>
+              <i class="fas fa-chevron-circle-right"></i> และชำระส่วนที่เหลือในวันเดินทางก่อนเข้าลาวค่ะ<br>
+            </div>
+        </div>
+        <div class="conditions" style="color: #2d88ff;">
+          <i class="fas fa-award"></i> <u>ส่วนลด/คูปองโค้ด </u><br>
+          <div class="conditions_items">
+            <i class="fas fa-chevron-circle-right"></i> เด็กยังไม่ถึง 6 ขวบ ส่วนลด 150 บาท/ท่าน แจ้งหลังมัดจำได้เลยนะคะ<br>
+            <i class="fas fa-chevron-circle-right"></i> มีโค้ดคูปองหรือโปรโมชั่น แจ้งกับเราทางช่องแชท หรือโทรแจ้งได้เลยนะคะ<br>
+            <i class="fas fa-chevron-circle-right"></i> ทุกส่วนลด จะนำไปหักออกจาก "ส่วนคงเหลือที่ต้องชำระ" อีกครั้งค่ะ (ทัวร์จะระบุในใบเสร็จมัดจำให้ทราบนะคะ) <br>
+          </div>
+      </div>
+      </div>
+
+
+      <div class="container">
+        <div class="navbar">
+          <a href="#">
+            <i class="fas fa-edit" aria-hidden="true"></i>
+          </a>
+          <span>การคืนเงิน/การยกเลิก</span>
+        </div>
+        <div class="conditions">
+            <i class="far fa-check-circle"></i> ลูกค้าแจ้งยกเลิก <br>
+            <div class="conditions_remarks">
+                - ก่อนเดินทาง 15 วันขึ้นไป คืนมัดจำทั้งหมด<br>
+                - ก่อนเดินทาง 7 วันขึ้นไป คืนมัดจำ 50% <br>
+                - ก่อนเดินทางน้อยกว่า 7 วัน ขอสงวนสิทธิ์ในการคืนเงิน <br>
+                - กรณีผู้เดินทางไม่สามารถข้ามออกด่านได้ อาทิ ติดหมายคดี, วีซ่าหรือเอกสารหมดอายุ, เจ็บป่วยกระทันหัน, ไม่ปรากฏตัวในวันนัดหมาย(no show) ขอสงวนสิทธ์คืนเงิน  <br>
+                - กรณีระหว่างเดินทาง ผู้เดินทางงดเว้นการเข้าชมสถานที่ หรือเข้าพักระบุในโปรแกรม ขอสงวนสิทธ์คืนเงิน 
+            </div>
+        </div>
+        <div class="conditions">
+            <i class="far fa-check-circle"></i> ทัวร์แจ้งยกเลิก <br>
+            <div class="conditions_remarks">
+                - กรณีด่านปิด ณ วันเดินทาง อันเกิดจากภัยธรรมชาติ, เหตุทางการเมือง, หรือมีโรคระบาด ขอสงวนสิทธ์คืนเงิน
+            </div>
+        </div>
+      </div>
+
+      
+<!-- ===================================== จบโปรแกรมเดินทาง ===================================== -->
+    <script>
+      document.getElementById("program_name").append(program_name + " | " + program_code);
+      document.getElementById("program_period").append(program_period);
+      document.getElementById("pax").append(pax);
+      document.getElementById("price").append(price);
+      document.getElementById("place").append(place);
+    </script>
+              
+
+    <script> // เร่ิมเช็ค input fields หลังจากกดปุ่ม "สำรองการเดินทาง"
+      function check_if_valid() {        
+        // 1. เช็ค field "วันเดินทาง"
+        contact_date = document.getElementById("contact_date").value;
+        // 1.1 เช็คดูว่าเลือกวันเดินทางหรือยัง
+        if ( contact_date == "") { 
+                      alert("กรุณาใส่วันที่ต้องการเดินทางค่ะ หากยังไม่แน่ใจ เลือกวันคร่าวๆได้นะคะ");
+                      return false;
+        } else { 
+            // 1.2 ถ้าเลือกแล้ว ให้เช็ค format วันที่ (เผื่อว่า user พิมพ์เองแทนที่จะเลือกจากปฏิทิน)
+            // var matches = /^(\d{1,2})[-\/](\d{1,2})[-\/](\d{4})$/.exec(contact_date);
+            var matches = /^(0?[1-9]|[12][0-9]|3[01])[-\/](0?[1-9]|1[012])[-\/](\d{4})$/.exec(contact_date);
+            if (matches == null) {
+                alert("รูปแบบวันที่ไม่ถูกต้อง! กรุณาระบุวันที่อีกครั้งค่ะ");
+                return false;
+            }
+        } 
+        
+        // 2. เช็ค field ว่าง "ชื่อผู้ติดต่อ"
+        contact_name = document.getElementById("contact_name").value;
+        if (contact_name == "") { 
+                      alert("นางฟ้าขอทราบชื่อผู้ติดต่ออีกครั้งนะคะ");
+                      return false;
+        } 
+        
+        // 3. เช็ค field ว่าง "เบอร์โทร"
+        contact_tel = document.getElementById("contact_tel").value;
+        if (contact_tel == "") {
+                      alert("ขอทราบเบอร์ติดต่อกลับอีกครั้งนะคะ");
+                      return false;
+        } else { // เช็ค format เบอร์โทร ด้วย
+            var matches = /^0[0-9]{8,9}$/.exec(contact_tel.split("-").join(""));
+            if (matches == null) {
+                alert("รูปแบบเบอร์โทรไม่ถูกต้องค่ะ! ขอทราบอีกครั้งนะคะ");
+                return false;}
+        }
+
+        // ถ้า user ใส่ข้อมูลทั้งหมดแล้ว 
+        // ใน field วันเดินทาง ให้แสดง xx-xx-xxxx เป็นแบบ ค.ศ. ไปก่อน
+        document.getElementById("contact_tel").value = matches;
+        deposit_date = getDepositDate(contact_date);
+
+        // setInvoiceToDb(invoiceNo);
+
+        // ถ้าเช็ค fields แล้ว valid ค่อยส่ง flex เข้าห้องแชท
+        sendMsg();
+      }
+    </script>       
+
+    <script src="https://static.line-scdn.net/liff/edge/versions/2.3.0/sdk.js"></script>
+    <script> // fuction send flex message เข้าในห้อง line
+        async function sendMsg() {
+        if (liff.getContext().type !== "none") {
+          // สร้าง js object สำหรับ bubble1 (liff ส่งได้ทีละไม่เกิน 5 bubbles)
+          var bubble1 = {
+                          "type": "carousel",
+                          "contents": [
+                          {
+                            "type": "bubble",
+                            "body": {
+                              "type": "box",
+                              "layout": "vertical",
+                              "contents": [
+                                {
+                                  "type": "text",
+                                  "text": "จองทัวร์ #"+ program_code +" (รายละเอียดมัดจำ)",
+                                  "weight": "bold",
+                                  "size": "sm",
+                                  "align": "end",
+                                  "color": "#666666",
+                                  "decoration": "underline"
+                                },
+                                {
+                                  "type": "text",
+                                  "text": "ผู้จอง คุณ " + contact_name,
+                                  "size": "sm",
+                                  "color": "#357EC7",
+                                  "wrap": true,
+                                  "align": "end"
+                                },
+                                {
+                                  "type": "text",
+                                  "text": "โทร " + contact_tel,
+                                  "size": "sm",
+                                  "color": "#357EC7",
+                                  "wrap": true,
+                                  "align": "end"
+                                },
+                                {
+                                  "type": "text",
+                                  "text": pax + " | วันที่ " + getDateTH(contact_date),
+                                  "size": "sm",
+                                  "color": "#357EC7",
+                                  "wrap": true,
+                                  "align": "end"
+                                },
+                                {
+                                  "type": "text",
+                                  "text": "ทัวร์ " + program_name,
+                                  "weight": "bold",
+                                  "size": "md",
+                                  "margin": "md"
+                                },
+                                {
+                                  "type": "text",
+                                  "text": program_period + " | " + place,
+                                  "size": "sm",
+                                  "wrap": true
+                                },
+                                {
+                                  "type": "box",
+                                  "layout": "horizontal",
+                                  "contents": [
+                                    {
+                                      "type": "text",
+                                      "text": "ค่าใช้จ่ายทั้งหมดต่อกรุ๊ป",
+                                      "size": "sm",
+                                      "color": "#555555",
+                                      "flex": 0
+                                    },
+                                    {
+                                      "type": "text",
+                                      "text": numberWithCommas(cost) + " บาท",
+                                      "size": "sm",
+                                      "color": "#111111",
+                                      "align": "end"
+                                    }
+                                  ]
+                                },
+                                {
+                                  "type": "separator",
+                                  "margin": "xs"
+                                },
+                                {
+                                  "type": "box",
+                                  "layout": "vertical",
+                                  "margin": "sm",
+                                  "spacing": "xs",
+                                  "contents": [
+                                    {
+                                      "type": "text",
+                                      "text": "สำรองการเดินทาง",
+                                      "size": "sm",
+                                      "wrap": true,
+                                      "align": "end"
+                                    },
+                                    {
+                                      "type": "box",
+                                      "layout": "horizontal",
+                                      "margin": "xxl",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "text": "ชำระมัดจำ",
+                                          "size": "md",
+                                          "weight": "bold",
+                                          //"color": "#FF0000"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "text": numberWithCommas(deposit)+" บาท",
+                                          "size": "md",
+                                          //"color": "#FF0000",
+                                          "align": "end",
+                                          "weight": "bold"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "box",
+                                      "layout": "horizontal",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "text": "ภายใน",
+                                          //"color": "#FF0000",
+                                          "size": "md"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "text": getDateTH(deposit_date),
+                                          "size": "md",
+                                          //"color": "#FF0000",
+                                          "align": "end"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "separator",
+                                      "margin": "md"
+                                    },
+                                    {
+                                      "type": "box",
+                                      "layout": "horizontal",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "text": "ที่บัญชี:",
+                                          "size": "md",
+                                          "color": "#555555",
+                                          "weight": "bold"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "text": getConfig.my_bank_account,
+                                          "size": "md",
+                                          "color": "#555555",
+                                          "align": "start",
+                                          "weight": "bold"
+                                        }
+                                      ],
+                                      "paddingTop": "15px"
+                                    },
+                                    {
+                                      "type": "box",
+                                      "layout": "horizontal",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "text": "1) " + getConfig.bank_name_1,
+                                          "size": "sm",
+                                          "color": getConfig.bank_color_code_1
+                                        },
+                                        {
+                                          "type": "text",
+                                          "text": getConfig.bank_account_1,
+                                          "size": "sm",
+                                          "color": getConfig.bank_color_code_1,
+                                          "align": "start"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "box",
+                                      "layout": "horizontal",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "text": "2) " + getConfig.bank_name_2,
+                                          "size": "sm",
+                                          "color": getConfig.bank_color_code_2
+                                        },
+                                        {
+                                          "type": "text",
+                                          "text": getConfig.bank_account_2,
+                                          "size": "sm",
+                                          "color": getConfig.bank_color_code_2,
+                                          "align": "start"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "box",
+                                      "layout": "horizontal",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "text": " ", //"3) กรุงศรี",
+                                          "size": "sm",
+                                          "color": "#D4A017"
+                                        },
+                                        {
+                                          "type": "text",
+                                          "text": " ", //"694-112-441-1",
+                                          "size": "sm",
+                                          "color": "#D4A017",
+                                          "align": "start"
+                                        }
+                                      ]
+                                    },
+                                    // {
+                                    //   "type": "box",
+                                    //   "layout": "horizontal",
+                                    //   "contents": [
+                                    //     {
+                                    //       "type": "text",
+                                    //       "text": " ", //"4) กรุงเทพ",
+                                    //       "size": "sm",
+                                    //       "color": "#1e4598"
+                                    //     },
+                                    //     {
+                                    //       "type": "text",
+                                    //       "text": " " ,//"648-025-052-8",
+                                    //       "size": "sm",
+                                    //       "color": "#1e4598",
+                                    //       "align": "start"
+                                    //     }
+                                    //   ]
+                                    // },
+                                    {
+                                      "type": "separator",
+                                      "margin": "sm"
+                                    },
+                                    {
+                                      "type": "box",
+                                      "layout": "horizontal",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "text": "คงเหลือชำระวันเดินทาง",
+                                          "size": "sm",
+                                          "color": "#555555",
+                                          "flex": 0
+                                        },
+                                        {
+                                          "type": "text",
+                                          "text": numberWithCommas(remain)+" บาท",
+                                          "size": "sm",
+                                          "color": "#111111",
+                                          "align": "end"
+                                        }
+                                      ],
+                                      "margin": "md"
+                                    }
+                                  ],
+                                  "paddingAll": "10px",
+                                  "backgroundColor": "#F0FFFF",
+                                  "cornerRadius": "10px",
+                                  "paddingTop": "5px",
+                                  "borderWidth": "1px",
+                                  "borderColor": "#3B9C9C"
+                                },
+                                {
+                                  "type": "separator",
+                                  "margin": "sm"
+                                },
+                                {
+                                  "type": "text",
+                                  "text": "หลังแจ้งมัดจำ(คอนเฟิร์มจอง) ทัวร์ขออนุญาตส่งใบเสร็จมัดจำให้ทราบนะคะ (มีโค้ดคูปองส่วนลด หรือเด็กไม่ถึง 6 ขวบ แจ้งได้เลยนะคะ)",
+                                  "size": "xxs",
+                                  "wrap": true,
+                                  "margin": "md",
+                                  "align": "end"
+                                },
+                                {
+                                  "type": "separator",
+                                  "margin": "md"
+                                },
+                                {
+                                  "type": "box",
+                                  "layout": "horizontal",
+                                  "margin": "sm",
+                                  "contents": [
+                                    {
+                                      "type": "text",
+                                      "text": "หมายเลขการจอง:",
+                                      "size": "xs",
+                                      "color": "#aaaaaa",
+                                      "flex": 0
+                                    },
+                                    {
+                                      "type": "text",
+                                      "text": invoiceNo,
+                                      "color": "#aaaaaa",
+                                      "size": "xs",
+                                      "align": "end"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "styles": {
+                              "body": {
+                                "backgroundColor": "#F5F5DC"
+                              },
+                              "footer": {
+                                "separator": true
+                              }
+                            }
+                          },
+                          {
+                            "type": "bubble",
+                            "hero": {
+                              "type": "image",
+                              "url": staff_pic,
+                              "size": "full",
+                              "aspectRatio": "20:13",
+                              "aspectMode": "cover",
+                              "action": {
+                                "type": "uri",
+                                "uri": staff_pic
+                              }
+                            },
+                            "body": {
+                              "type": "box",
+                              "layout": "vertical",
+                              "contents": [
+                                {
+                                  "type": "text",
+                                  "text": staff,
+                                  "weight": "bold",
+                                  "size": "lg"
+                                },
+                                {
+                                  "type": "text",
+                                  "text": staff_desc,
+                                  "weight": "bold",
+                                  "size": "md"
+                                },
+                                {
+                                  "type": "box",
+                                  "layout": "vertical",
+                                  "margin": "lg",
+                                  "spacing": "sm",
+                                  "contents": [
+                                    {
+                                      "type": "box",
+                                      "layout": "baseline",
+                                      "spacing": "sm",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "text": "รวม",
+                                          "color": "#008000",
+                                          "size": "sm",
+                                          "flex": 1
+                                        },
+                                        {
+                                          "type": "text",
+                                          "text": includedTerms,
+                                          "wrap": true,
+                                          "color": "#008000",
+                                          "size": "xs",
+                                          "flex": 5
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "box",
+                                      "layout": "baseline",
+                                      "spacing": "sm",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "text": "ไม่รวม",
+                                          "color": "#a52a2a",
+                                          "size": "sm",
+                                          "flex": 1
+                                        },
+                                        {
+                                          "type": "text",
+                                          "text": excludedTerms,
+                                          "wrap": true,
+                                          "color": "#a52a2a",
+                                          "size": "xs",
+                                          "flex": 5
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "box",
+                                      "layout": "baseline",
+                                      "spacing": "sm",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "text": "เอกสาร",
+                                          "size": "xs",
+                                          "flex": 1
+                                        },
+                                        {
+                                          "type": "text",
+                                          "text": docRequired,
+                                          "wrap": true,
+                                          "size": "xs",
+                                          "flex": 5
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "footer": {
+                              "type": "box",
+                              "layout": "vertical",
+                              "spacing": "sm",
+                              "contents": [
+                                {
+                                  "type": "button",
+                                  "style": "primary",
+                                  "height": "sm",
+                                  "action": {
+                                    "type": "uri",
+                                    "label": meeting_label,
+                                    "uri": meeting_location
+                                  }
+                                },
+                                {
+                                  "type": "spacer",
+                                  "size": "sm"
+                                }
+                              ],
+                              "flex": 0
+                            }
+                          },
+                          {
+                            "type": "bubble",
+                            "hero": {
+                              "type": "image",
+                              "url": "https://nangfatravel.com/assets/ptt-nongkhai-border.jpg",
+                              "size": "full",
+                              "aspectRatio": "20:13",
+                              "aspectMode": "cover",
+                              "action": {
+                                "type": "uri",
+                                "uri": "https://goo.gl/maps/GyS9Tjk2Y3wRxais9"
+                              }
+                            },
+                            "body": {
+                              "type": "box",
+                              "layout": "vertical",
+                              "contents": [
+                                {
+                                  "type": "text",
+                                  "text": "เดินทางมาถึงด่านก่อน 8:30 น.",
+                                  "weight": "bold",
+                                  "size": "lg"
+                                },
+                                {
+                                  "type": "text",
+                                  "text": "แวะทานอาหาร/กาแฟ ทำธุระส่วนตัว",
+                                  "weight": "bold",
+                                  "size": "md"
+                                },
+                                {
+                                  "type": "text",
+                                  "text": "ที่ ปตท. สาขาด่านหนองคาย ได้นะคะ",
+                                  "weight": "bold",
+                                  "size": "md"
+                                },
+                                {
+                                  "type": "box",
+                                  "layout": "vertical",
+                                  "margin": "lg",
+                                  "spacing": "sm",
+                                  "contents": [
+                                    {
+                                      "type": "box",
+                                      "layout": "baseline",
+                                      "spacing": "sm",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "text": "เปิด",
+                                          "color": "#008000",
+                                          "size": "sm",
+                                          "flex": 1
+                                        },
+                                        {
+                                          "type": "text",
+                                          "text": "ตีห้า - สี่ทุ่ม ค่ะ",
+                                          "wrap": true,
+                                          "color": "#008000",
+                                          "size": "sm",
+                                          "flex": 5
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "box",
+                                      "layout": "baseline",
+                                      "spacing": "sm",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "text": "ร้าน",
+                                          "size": "sm",
+                                          "flex": 1
+                                        },
+                                        {
+                                          "type": "text",
+                                          "text": "คาเฟ่อเมซอน , เซเว่น , ครัวลองแล , KFC , ข้าวขาหมู , ก๋วยเตี๋ยวเรือ ",
+                                          "wrap": true,
+                                          "size": "sm",
+                                          "flex": 5
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            "footer": {
+                              "type": "box",
+                              "layout": "vertical",
+                              "spacing": "sm",
+                              "contents": [
+                                {
+                                  "type": "button",
+                                  "style": "primary",
+                                  "height": "sm",
+                                  "action": {
+                                    "type": "uri",
+                                    "label": "ตำแหน่ง ปตท.ด่าน (คลิก)",
+                                    "uri": "https://goo.gl/maps/GyS9Tjk2Y3wRxais9"
+                                  }
+                                },
+                                {
+                                  "type": "spacer",
+                                  "size": "sm"
+                                }
+                              ],
+                              "flex": 0
+                            }
+                          },
+                          {
+                            "type": "bubble",
+                            "body": {
+                              "type": "box",
+                              "layout": "vertical",
+                              "contents": [
+                                {
+                                  "type": "image",
+                                  "url": coverUrl,
+                                  "size": "full",
+                                  "aspectMode": "cover",
+                                  "aspectRatio": "2:3",
+                                  "gravity": "top"
+                                },
+                                {
+                                  "type": "box",
+                                  "layout": "vertical",
+                                  "contents": [
+                                    {
+                                      "type": "box",
+                                      "layout": "vertical",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "text": "ดูโปรแกรมเดินทางอีกครั้ง",
+                                          "size": "lg",
+                                          "color": "#ffffff",
+                                          "weight": "bold",
+                                          "align": "center"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "box",
+                                      "layout": "vertical",
+                                      "contents": [
+                                        {
+                                          "type": "filler"
+                                        },
+                                        {
+                                          "type": "box",
+                                          "layout": "baseline",
+                                          "contents": [
+                                            {
+                                              "type": "filler"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "text": "คลิก",
+                                              "color": "#ffffff",
+                                              "flex": 0,
+                                              "offsetTop": "-2px"
+                                            },
+                                            {
+                                              "type": "filler"
+                                            }
+                                          ],
+                                          "spacing": "sm"
+                                        },
+                                        {
+                                          "type": "filler"
+                                        }
+                                      ],
+                                      "borderWidth": "1px",
+                                      "cornerRadius": "4px",
+                                      "spacing": "sm",
+                                      "borderColor": "#ffffff",
+                                      "margin": "xxl",
+                                      "height": "40px",
+                                      "action": {
+                                        "type": "uri",
+                                        "label": "action",
+                                        "uri": "https://line.me/R/app/"+ myLiff +"?liff.state=%2Fbooking%2F"+program_code+"%2F"
+                                      }
+                                    }
+                                  ],
+                                  "position": "absolute",
+                                  "offsetBottom": "0px",
+                                  "offsetStart": "0px",
+                                  "offsetEnd": "0px",
+                                  "backgroundColor": "#03303Acc",
+                                  "paddingAll": "20px",
+                                  "paddingTop": "18px"
+                                },
+                                {
+                                  "type": "box",
+                                  "layout": "vertical",
+                                  "contents": [
+                                    {
+                                      "type": "text",
+                                      "text": "โทร 086-8616550 สอบถามได้ค่ะ",
+                                      "color": "#ffffff",
+                                      "align": "center",
+                                      "size": "xs",
+                                      "offsetTop": "3px"
+                                    }
+                                  ],
+                                  "position": "absolute",
+                                  "cornerRadius": "20px",
+                                  "offsetTop": "18px",
+                                  "backgroundColor": "#ff334b",
+                                  "offsetStart": "18px",
+                                  "height": "25px",
+                                  "width": "70%"
+                                }
+                              ],
+                              "paddingAll": "0px"
+                            }
+                          }                          
+                        ]
+                      } // end of bubble1
+          await liff.sendMessages([
+          {
+            "type": "flex",
+            "altText": "ใบมัดจำทัวร์",
+            "contents": bubble1
+          }
+
+        ])//.then(liff.closeWindow()) // ส่ง flex message แล้วเสร็จให้ปิด liff ด้วย  
+          .then(() => {
+            //alert('ขอบคุณค่ะ นางฟ้าส่งรายละเอียดมัดจำให้ทราบในไลน์นะคะ');
+            //console.log(JSON.stringify(bubble1));
+            //setInvoiceToDb(invoiceNo);
+            liff.closeWindow();
+            insertToInvSheet();
+          })
+          .catch((err) => {
+            alert('มีข้อผิดพลาดในการส่งข้อมูล กรุณาลองใหม่อีกครั้งนะคะ หรือ โทร 086-8616550 โดยตรงได้เลยนะคะ (หรือลองเพิ่มเพื่อนไลน์ @nangfatravel และจองในไลน์อีกครั้งนะคะ) - error: ', err);
+            liff.closeWindow();
+          });      
+      }
+    } // จบ function sendMsg();
+
+    // ส่งต่อโปรแกรมให้เพื่อน
+    async function shareMsg() {
+      const result = await liff.shareTargetPicker([  
+        {
+          type: "text",
+          text: "   \uDBC0\uDC40 ขออนุญาตแนะนำโปรแกรมทัวร์ จากนางฟ้าทราเวลค่ะ \n   สอบถาม โทร 086-8616550 หรือเข้าดูโปรแกรมอื่นๆทาง ไลน์ @nangfatravel \n  \uDBC0\uDC84โดยเพิ่มเป็นเพื่อน และกด Allow ตรวจสอบราคาทัวร์ทางเมนูของไลน์ได้เลยนะคะ" 
+        },
+        {
+          "type": "flex",
+          "altText": program_name + " " + program_period,
+          "contents": {
+                            "type": "bubble",
+                            "body": {
+                              "type": "box",
+                              "layout": "vertical",
+                              "contents": [
+                                {
+                                  "type": "image",
+                                  "url": coverUrl,
+                                  "size": "full",
+                                  "aspectMode": "cover",
+                                  "aspectRatio": "2:3",
+                                  "gravity": "top"
+                                },
+                                {
+                                  "type": "box",
+                                  "layout": "vertical",
+                                  "contents": [
+                                    {
+                                      "type": "box",
+                                      "layout": "vertical",
+                                      "contents": [
+                                        {
+                                          "type": "text",
+                                          "text": program_name + " " + program_period,
+                                          "size": "lg",
+                                          "color": "#ffffff",
+                                          "weight": "bold",
+                                          "align": "center"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "type": "box",
+                                      "layout": "vertical",
+                                      "contents": [
+                                        {
+                                          "type": "filler"
+                                        },
+                                        {
+                                          "type": "box",
+                                          "layout": "baseline",
+                                          "contents": [
+                                            {
+                                              "type": "filler"
+                                            },
+                                            {
+                                              "type": "text",
+                                              "text": "สถานที่เที่ยว | การเดินทาง (คลิก)",
+                                              "color": "#ffffff",
+                                              "flex": 0,
+                                              "offsetTop": "-2px"
+                                            },
+                                            {
+                                              "type": "filler"
+                                            }
+                                          ],
+                                          "spacing": "sm"
+                                        },
+                                        {
+                                          "type": "filler"
+                                        }
+                                      ],
+                                      "borderWidth": "1px",
+                                      "cornerRadius": "4px",
+                                      "spacing": "sm",
+                                      "borderColor": "#ffffff",
+                                      "margin": "xxl",
+                                      "height": "40px",
+                                      "action": {
+                                        "type": "uri",
+                                        "label": "action",
+                                        "uri": "https://line.me/R/app/"+ myLiff +"?liff.state=%2Fbooking%2F"+program_code+"%2F"
+                                      }
+                                    }
+                                  ],
+                                  "position": "absolute",
+                                  "offsetBottom": "0px",
+                                  "offsetStart": "0px",
+                                  "offsetEnd": "0px",
+                                  "backgroundColor": "#03303Acc",
+                                  "paddingAll": "20px",
+                                  "paddingTop": "18px"
+                                },
+                                {
+                                  "type": "box",
+                                  "layout": "vertical",
+                                  "contents": [
+                                    {
+                                      "type": "text",
+                                      "text": "โทร 086-8616550 ยินดีค่ะ",
+                                      "color": "#ffffff",
+                                      "align": "center",
+                                      "size": "xs",
+                                      "offsetTop": "3px"
+                                    }
+                                  ],
+                                  "position": "absolute",
+                                  "cornerRadius": "20px",
+                                  "offsetTop": "18px",
+                                  "backgroundColor": "#ff334b",
+                                  "offsetStart": "18px",
+                                  "height": "25px",
+                                  "width": "70%"
+                                }
+                              ],
+                              "paddingAll": "0px"
+                            }
+                          }
+        }
+      ])
+      if (result) {
+        alert(`[${result.status}] รายละเอียดโปรแกรม ถูกส่งเรียบร้อยค่ะ`)
+      } else {
+        const [majorVer, minorVer, patchVer] = (liff.getLineVersion() || "").split('.');
+
+        if (minorVer === undefined) {
+          alert('ยกเลิกการส่งเรียบร้อยแล้วค่ะ')
+          return
+        }
+
+        if (parseInt(majorVer) >= 10 && parseInt(minorVer) >= 10 && parseInt(patchVer) > 0) {
+          alert('ขออภัย ข้อความยังส่งไม่ได้ในขณะนี้ค่ะ (error จาก Line Application!)')
+        }
+      }
+    }
+
+    // เก็บข้อมูลไว้ส่งต่อใน sheet
+    async function getUserProfile() {
+      const profile = await liff.getProfile();
+      userPicUrl = profile.pictureUrl;
+      userId = profile.userId;
+      userStatus = profile.statusMessage;
+      userDisplayName = profile.displayName;
+      userEmail = liff.getDecodedIDToken().email;
+      userOs = liff.getOS();
+    }
+
+
+     // liff.ready รึยัง?
+     async function main() {
+          await liff.init({ liffId: myLiff })
+          liff.ready.then(() => {
+            if (liff.isLoggedIn()) {
+              getUserProfile();
+            } else {
+              liff.login({ redirectUri: callbackUrl })
+            }
+          })
+        }
+       main();   
+    </script>
+
+    <script>
+      // เช็คถ้ามี parameter จึงจะเปิดการจอง
+      if (pick == null) {
+          // ถ้าไม่ส่งอะไรมา ให้ปิดช่องการจอง (แต่เปิดปุ่มเช็คราคาไว้ก่อน เผื่อไว้แสดงใน external browser)
+          document.getElementById("booking-container").style.display = "none";
+          if (liff.isInClient()) { // แต่ถ้าเปิดโดย in Line client ก็ไม่ต้องแสดงปุ่มเพิ่มเพื่อน  (ใช้แสดงหน้ารายละเอียดโปรแกรม)
+            document.getElementById("checkprice-container").style.display = "none";
+          }
+      } else {
+          // แต่ถ้าส่ง param pick มา ให้เปิดจองได้  และปิดปุ่มเช็คราคา
+          document.getElementById("checkprice-container").style.display = "none";
+      }
+    </script>
+
+  <script>
+    // call to Google Script
+  function insertToInvSheet() {
+    // url preparation
+    var script_url = logTo.invoice_url;
+    script_url = script_url+"?callback=ctrlq"
+                            +"&invoiceNo="+invoiceNo
+                            +"&program_code="+program_code
+                            +"&program_name="+program_name
+                            +"&program_period="+program_period
+                            +"&pick="+pick
+                            +"&pax="+pax
+                            +"&place="+place
+                            +"&price="+cost
+                            +"&deposit="+deposit
+                            +"&deposit_date="+getDateTH(deposit_date)
+                            +"&remain="+remain
+                            +"&staff="+staff
+                            +"&staff_desc="+staff_desc
+                            +"&staff_pic="+staff_pic
+                            +"&contact_date="+getDateTH(contact_date)
+                            +"&contact_name="+contact_name
+                            +"&contact_tel="+contact_tel
+                            +"&userPicUrl="+userPicUrl
+                            +"&userId="+userId
+                            +"&userDisplayName="+userDisplayName
+                            +"&userStatus="+userStatus
+                            +"&userEmail="+userEmail
+                            +"&userOs="+userOs
+                            +"&action=insert"; 
+
+    // send script url
+    console.log(script_url);
+    sendHttpGet(script_url);
+  }
+  </script>
+
+</body>
+</html>

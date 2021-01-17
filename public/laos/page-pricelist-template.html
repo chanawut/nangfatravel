@@ -1,0 +1,454 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>AppKit Mobile</title>
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+    <link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+    <link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+
+    <!-- <link href="http://getbootstrap.com/2.3.2/assets/css/bootstrap.css" rel="stylesheet"> -->
+    <link href="http://jojosati.github.io/bootstrap-datepicker-thai/css/datepicker.css" rel="stylesheet">
+</head>
+
+<body class="theme-light">
+
+    <div id="preloader">
+        <div class="spinner-border color-highlight" role="status"></div>
+    </div>
+
+    <div id="page">
+
+        <div class="header header-fixed header-logo-center header-auto-show">
+            <a href="index.html" class="header-title">กดจอง เลือกวันเดินทาง</a>
+            <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-chevron-left"></i></a>
+            <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+            <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-dark"><i
+                    class="fas fa-sun"></i></a>
+            <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-light"><i
+                    class="fas fa-moon"></i></a>
+        </div>
+
+        <div id="footer-bar" class="footer-bar-6">
+            <a href="index-components.html"><i class="fa fa-layer-group"></i><span>Features</span></a>
+            <a href="index-pages.html" class="active-nav"><i class="fa fa-file"></i><span>Pages</span></a>
+            <a href="index.html" class="circle-nav"><i class="fa fa-home"></i><span>Welcome</span></a>
+            <a href="index-projects.html"><i class="fa fa-camera"></i><span>Projects</span></a>
+            <a href="#" data-menu="menu-main"><i class="fa fa-bars"></i><span>Menu</span></a>
+        </div>
+
+        <div class="page-title page-title-fixed">
+            <h1 class="font-22">จองแผนการเดินทาง</h1>
+            <a href="#" class="page-title-icon shadow-xl bg-theme color-theme" data-menu="menu-share"><i
+                    class="fa fa-share-alt"></i></a>
+            <a href="#" class="page-title-icon shadow-xl bg-theme color-theme show-on-theme-light" data-toggle-theme><i
+                    class="fa fa-moon"></i></a>
+            <a href="#" class="page-title-icon shadow-xl bg-theme color-theme show-on-theme-dark" data-toggle-theme><i
+                    class="fa fa-lightbulb color-yellow-dark"></i></a>
+            <a href="#" class="page-title-icon shadow-xl bg-theme color-theme" data-menu="menu-main"><i
+                    class="fa fa-bars"></i></a>
+        </div>
+        <div class="page-title-clear"></div>
+
+        <div class="page-content">
+
+
+            <div class="card card-style  bg-1" data-card-height="200">
+                <div class="card-top ml-2 mt-2">
+                    <label class="ml-0 font-13 font-500 shadow-xl rounded-xl border-red-dark color-theme bg-theme">
+                                &nbsp;&nbsp;&nbsp;<i class="fas fa-street-view"></i> &nbsp;รับส่งที่ 
+                                หนองคาย หรือ สนามบินอุดร
+                                &nbsp;&nbsp;&nbsp;
+                            </label>
+                </div>
+                <div class="card-center text-center">
+                    <h4 class="color-white font-25 font-600 ml-3 mr-3">
+                        เวียงจันทน์ 2 วัน 1 คืน
+                        <span class="ml-2 font-15 badge bg-white color-highlight">
+                            VT202
+                        </span>
+                    </h4>
+                </div>
+                <div class="card-bottom text-right">
+                    <label class="ml-0 mr-3 font-13 font-500 shadow-xl rounded-xl border-red-dark color-theme bg-theme">
+                        &nbsp;&nbsp;&nbsp;<i class="fas fa-tag"></i> &nbsp;กรุ๊ปส่วนตัว 
+                        8 ท่าน
+                        &nbsp;&nbsp;&nbsp;
+                    </label>
+                    <p class="color-white mb-1 mr-3 font-13">
+                     เดินทางใช้: พาสปอร์ต หรือ บัตรประชาชน/สูติบัตรเด็ก
+                    </p>
+                </div>
+                <div class="card-overlay bg-gradient"></div>
+            </div>
+
+
+            <!-- Basic Plan -->    
+            <div class="card card-style check-card mb-2">
+                <div class="content">
+                    <div class="d-flex">
+                        <div class="ml-2 mr-1" id="basic">
+                            <h4 class="ml-n2 mt-n2 mb-3 font-400"><i class="icon-check-1 fa fa-circle font-12"></i> &nbsp;แผนปกติ</h4>
+                            <label class="ml-0 mb-1 font-14 font-300 shadow-xl rounded-s bg-highlight">
+                                &nbsp;&nbsp;<i class="fas fa-bus "></i> &nbsp;รถ+น้ำมัน+คนขับนำเที่ยว&nbsp;&nbsp;
+                            </label>
+                            <label class="ml-0 mb-1 font-14 font-300 shadow-xl rounded-s bg-highlight">
+                                &nbsp;&nbsp;<i class="fas fa-door-open"></i> &nbsp;ค่าด่าน&nbsp;<sup
+                                    class="opacity-80 color-white">[1]</sup>&nbsp;&nbsp;
+                            </label>
+                            <label class="ml-0 mb-1 font-14 font-300 shadow-xl rounded-s bg-highlight">
+                                &nbsp;&nbsp;<i class="fas fa-user-shield"></i> &nbsp;ประกัน&nbsp;&nbsp;
+                            </label>
+                            <label class="ml-0 mb-1 font-14 font-300 shadow-xl rounded-s bg-highlight">
+                                &nbsp;&nbsp;<i class="fas fa-camera-retro"></i>
+                                &nbsp;ค่าเข้าชมสถานที่ท่องเที่ยว&nbsp;&nbsp;
+                            </label>
+                        </div>
+                        <div class="ml-auto">
+                            <h4 class="opacity-50 font-13 font-500 text-right mt-n2 mb-1 color-red-dark">จาก &nbsp; <span
+                                style="text-decoration: line-through;">35,699 บาท</span></h4>
+                            <button href="#" onclick="setSKU('VT202');return false;" data-menu="select-date"
+                                class="btn btn-border font-500 shadow-xl rounded-xs border-red-dark color-red-dark bg-theme scale-box">
+                                <h3 class="mb-1 font-24 font-700">25,455</h3>
+                                <p class="mb-1 opacity-80 font-11 text-right">บาท/ท่าน</p>
+                                <label
+                                    class="btn btn-3d btn-full mb-0 rounded-xs text-uppercase font-20 font-400 shadow-s border-red-dark bg-red-light">
+                                    จอง<p class="font-9 font-400 color-white">แผนปกติ</p>
+                                </label>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="d-flex mt-2">
+                        <div class="ml-3 mr-1" id="discount">
+                            <p class="mb-1 color-red-dark"><i class="fas fa-tags"></i> พิเศษ! จองตอนนี้
+                            </p>
+                            <label
+                                class="ml-0 font-12 font-500 shadow-xl rounded-xl border-red-dark color-red-dark bg-theme">
+                                &nbsp;&nbsp;&nbsp;<i class="fas fa-tag"></i> &nbsp;ส่วนลดที่จอดรถ 300
+                                บาท&nbsp;&nbsp;&nbsp;
+                            </label>
+                            <label
+                                class="ml-0 font-12 font-500 shadow-xl rounded-xl border-red-dark color-red-dark bg-theme">
+                                &nbsp;&nbsp;&nbsp;<i class="fas fa-tag"></i> &nbsp;แอลกอฮอล์เจล&nbsp;&nbsp;&nbsp;
+                            </label>
+                        </div>
+                    </div>
+                    <p class="text-right color-theme font-10 mb-n3 mt-2 opacity-70"><sup>[1]</sup> ลาวเก็บค่าวีซ่าเพิ่มในบางสัญชาตินะคะ
+                        (ส่วนคนไทยฟรีค่ะ) </p>
+                </div>
+            </div>
+
+            <!-- + Hotel -->
+            <div class="card card-style check-card mb-2">
+                <div class="content">
+                    <div class="d-flex">
+                        <div class="ml-2 mr-1">
+                            <h4 class="ml-n2 mt-n2 mb-3 font-400"><i class="icon-check-1 fa fa-circle font-12"></i> &nbsp;แผนปกติ + ที่พัก</h4>
+                            <label class="ml-0 mb-1 font-14 font-300 shadow-xl rounded-s bg-highlight">
+                                &nbsp;&nbsp;
+                                <i class="fas fa-bus "></i> &nbsp;+&nbsp;
+                                <i class="fas fa-door-open"></i> &nbsp;+&nbsp;
+                                <i class="fas fa-user-shield"></i> &nbsp;+&nbsp;
+                                <i class="fas fa-camera-retro"></i>
+                                &nbsp;&nbsp;
+                            </label>
+                            <label class="ml-0 mb-1 font-14 font-400 shadow-xl rounded-s color-black bg-yellow-dark">
+                                &nbsp;&nbsp;
+                                <i class="fas fa-bed"></i> &nbsp;&nbsp;รวมที่พัก 1 คืน &nbsp;<sup
+                                class="opacity-70 color-black opacity-70">[2]</sup>
+                                &nbsp;
+                            </label>
+                        </div>
+                        <div class="ml-auto">
+                            <button href="#" onclick="setSKU('VT202');return false;" data-menu="select-date"
+                                class="btn btn-border font-500 shadow-xl rounded-xs border-red-dark color-red-dark bg-theme scale-box">
+                                <h3 class="mb-1 font-24 font-700">25,455</h3>
+                                <p class="mb-1 opacity-80 font-11 text-right">บาท/ท่าน</p>
+                                <label
+                                    class="btn btn-3d btn-full mb-0 rounded-xs text-uppercase font-20 font-400 shadow-s border-red-dark bg-red-light">
+                                    จอง<p class="font-9 font-400 color-white">รวมที่พัก</p>
+                                </label>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="text-right color-theme font-10 mb-n3 mt-2 opacity-70"><sup>[2]</sup> ที่พัก 3 ดาว นอน 2 ท่าน/ห้อง พักเดี่ยวเพิ่ม 1,000 บาท </p>
+                </div>
+            </div>
+
+            <!-- + Hotel + Meals -->
+            <div class="card card-style check-card mb-2">
+                <div class="content">
+                    <div class="d-flex">
+                        <div class="ml-2 mr-1">
+                            <h4 class="ml-n2 mt-n2 mb-3 font-400"><i class="icon-check-1 fa fa-circle font-12"></i> &nbsp;แผนปกติ + ที่พัก + อาหาร</h4>
+                            <label class="ml-0 mb-1 font-14 font-300 shadow-xl rounded-s bg-highlight">
+                                &nbsp;&nbsp;
+                                <i class="fas fa-bus "></i> &nbsp;+&nbsp;
+                                <i class="fas fa-door-open"></i> &nbsp;+&nbsp;
+                                <i class="fas fa-user-shield"></i> &nbsp;+&nbsp;
+                                <i class="fas fa-camera-retro"></i>
+                                &nbsp;&nbsp;
+                            </label>
+                            <label class="ml-0 mb-1 font-14 font-400 shadow-xl rounded-s color-black bg-yellow-dark">
+                                &nbsp;&nbsp;
+                                <i class="fas fa-bed"></i> &nbsp;&nbsp;รวมที่พัก 1 คืน &nbsp;<sup
+                                class="opacity-70 color-black opacity-70">[2]</sup>
+                                &nbsp;
+                            </label>
+                            <label class="ml-0 mb-1 font-14 font-400 shadow-xl rounded-s color-black bg-yellow-dark">
+                                &nbsp;&nbsp;
+                                <i class="fas fa-utensils"></i> &nbsp;&nbsp;รวมอาหาร 4 มื้อ &nbsp;
+                                &nbsp;
+                            </label>
+                        </div>
+                        <div class="ml-auto">
+                            <button href="#" onclick="setSKU('VT202');return false;" data-menu="select-date"
+                                class="btn btn-border font-500 shadow-xl rounded-xs border-red-dark color-red-dark bg-theme scale-box">
+                                <h3 class="mb-1 font-24 font-700">25,455</h3>
+                                <p class="mb-1 opacity-80 font-11 text-right">บาท/ท่าน</p>
+                                <label
+                                    class="btn btn-3d btn-full mb-0 rounded-xs text-uppercase font-20 font-400 shadow-s border-red-dark bg-red-light">
+                                    จอง<p class="font-9 font-400 color-white">รวมที่พัก อาหาร</p>
+                                </label>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="text-right color-theme font-10 mb-n3 mt-2 opacity-70"><sup>[2]</sup> ที่พัก 3 ดาว นอน 2 ท่าน/ห้อง พักเดี่ยวเพิ่ม 1,000 บาท </p>
+                </div>
+            </div>
+
+            <!-- + Hotel + Meals + Local Guide -->
+            <div class="card card-style check-card mb-2">
+                <div class="content">
+                    <div class="d-flex">
+                        <div class="ml-2 mr-1">
+                            <h4 class="ml-n2 mt-n2 mb-3 mr-3 font-400"><i class="icon-check-1 fa fa-circle font-12"></i> &nbsp;แผนปกติ + ที่พัก<br><span class="ml-2"> + อาหาร + ไกด์</span></h4>
+                            <label class="ml-0 mb-1 font-14 font-300 shadow-xl rounded-s bg-highlight">
+                                &nbsp;&nbsp;
+                                <i class="fas fa-bus "></i> &nbsp;+&nbsp;
+                                <i class="fas fa-door-open"></i> &nbsp;+&nbsp;
+                                <i class="fas fa-user-shield"></i> &nbsp;+&nbsp;
+                                <i class="fas fa-camera-retro"></i>
+                                &nbsp;&nbsp;
+                            </label>
+                            <label class="ml-0 mb-1 font-14 font-400 shadow-xl rounded-s color-black bg-yellow-dark">
+                                &nbsp;&nbsp;
+                                <i class="fas fa-bed"></i> &nbsp;&nbsp;รวมที่พัก 1 คืน &nbsp;<sup
+                                class="opacity-70 color-black opacity-70">[2]</sup>
+                                &nbsp;
+                            </label>
+                            <label class="ml-0 mb-1 font-14 font-400 shadow-xl rounded-s color-black bg-yellow-dark">
+                                &nbsp;&nbsp;
+                                <i class="fas fa-utensils"></i> &nbsp;&nbsp;รวมอาหาร 4 มื้อ &nbsp;
+                                &nbsp;
+                            </label>
+                            <label class="ml-0 mb-1 font-14 font-400 shadow-xl rounded-s color-black bg-yellow-dark">
+                                &nbsp;&nbsp;
+                                <i class="fas fa-microphone-alt"></i> &nbsp;&nbsp;รวมไกด์บรรยายไทย &nbsp;
+                                &nbsp;
+                            </label>
+                        </div>
+                        <div class="ml-auto">
+                            <button href="#" onclick="setSKU('VT202');return false;" data-menu="select-date"
+                                class="btn btn-border font-500 shadow-xl rounded-xs border-red-dark color-red-dark bg-theme scale-box">
+                                <h3 class="mb-1 font-24 font-700">25,455</h3>
+                                <p class="mb-1 opacity-80 font-11 text-right">บาท/ท่าน</p>
+                                <label
+                                    class="btn btn-3d btn-full mb-0 rounded-xs text-uppercase font-20 font-400 shadow-s border-red-dark bg-red-light">
+                                    จอง<p class="font-9 font-400 color-white">รวมที่พัก อาหาร ไกด์</p>
+                                </label>
+                            </button>
+                        </div>
+                    </div>
+                    <p class="text-right color-theme font-10 mb-n3 mt-2 opacity-70"><sup>[2]</sup> ที่พัก 3 ดาว นอน 2 ท่าน/ห้อง พักเดี่ยวเพิ่ม 1,000 บาท </p>
+                </div>
+            </div>
+
+
+            <div data-menu-load="menu-footer.html"></div>
+        </div>
+        <!-- Page content ends here-->
+
+        <!------------------>
+        <!------------------>
+        <!--modal : select-date-->
+        <!------------------>
+        <!------------------>
+
+        <div id="select-date" class="menu menu-box-modal rounded-m bg-theme" data-menu-width="350"
+            data-menu-height="560">
+            <div class="menu-title">
+                <a href="#" class="close-menu mt-n4"><i class="fa fa-times-circle"></i></a>
+                <h3 class="ml-4 mr-8 mt-4 font-600 color-blue-dark">กรุณาเลือกจำนวนผู้เดินทาง</h2>
+            </div>
+            <div class="content mt-0">
+                <!-- <p class="ml-2 color-highlight"> &nbsp;( อายุตั้งแต่สามขวบ นับเป็นผู้เดินทาง 1 ท่าน )</p>
+                <div class="divider mt-n2"></div>
+                <div class="row mb-0 ml-2">
+                    <div class="form-check interest-check">
+                        <input class="form-check-input" type="radio" value="35" id="check35" name="_radioPaxForProgram">
+                        <label class="form-check-label shadow-xl rounded-xl" for="check35">35 ท่าน ขึ้นไป</label>
+                        <i class="fa fa-check-circle color-white font-18"></i>
+                        <i class="fas fa-bus-alt font-21 color-gray-dark"></i>
+                    </div>
+                    <div class="form-check interest-check">
+                        <input class="form-check-input" type="radio" value="26" id="check26" name="_radioPaxForProgram">
+                        <label class="form-check-label shadow-xl rounded-xl" for="check26">26-34 ท่าน</label>
+                        <i class="fa fa-check-circle color-white font-18"></i>
+                        <i class="fas fa-bus-alt font-18 color-gray-dark"></i>
+                    </div>
+                    <div class="form-check interest-check">
+                        <input class="form-check-input" type="radio" value="13" id="check13" name="_radioPaxForProgram">
+                        <label class="form-check-label shadow-xl rounded-xl" for="check13">13-25 ท่าน</label>
+                        <i class="fa fa-check-circle color-white font-18"></i>
+                        <i class="fas fa-bus font-18 color-gray-dark"></i>
+                    </div>
+                    <div class="form-check interest-check">
+                        <input class="form-check-input" type="radio" value="12" id="check12" name="_radioPaxForProgram">
+                        <label class="form-check-label shadow-xl rounded-xl" for="check12">12 ท่าน</label>
+                        <i class="fa fa-check-circle color-white font-18"></i>
+                        <i class="fas fa-shuttle-van font-20 color-gray-dark"></i>
+                    </div>
+                    <div class="form-check interest-check">
+                        <input class="form-check-input" type="radio" value="11" id="check11" name="_radioPaxForProgram">
+                        <label class="form-check-label shadow-xl rounded-xl" for="check11">11 ท่าน</label>
+                        <i class="fa fa-check-circle color-white font-18"></i>
+                        <i class="fas fa-shuttle-van font-20 color-gray-dark"></i>
+                    </div>
+                    <div class="form-check interest-check">
+                        <input class="form-check-input" type="radio" value="10" id="check10" name="_radioPaxForProgram"
+                            checked>
+                        <label class="form-check-label shadow-xl rounded-xl" for="check10">10 ท่าน</label>
+                        <i class="fa fa-check-circle color-white font-18"></i>
+                        <i class="fas fa-shuttle-van font-17 color-gray-dark"></i>
+                    </div>
+                    <div class="form-check interest-check">
+                        <input class="form-check-input" type="radio" value="9" id="check9" name="_radioPaxForProgram">
+                        <label class="form-check-label shadow-xl rounded-xl" for="check9">9 ท่าน</label>
+                        <i class="fa fa-check-circle color-white font-18"></i>
+                        <i class="fas fa-shuttle-van font-17 color-gray-dark"></i>
+                    </div>
+                    <div class="form-check interest-check">
+                        <input class="form-check-input" type="radio" value="8" id="check8" name="_radioPaxForProgram">
+                        <label class="form-check-label shadow-xl rounded-xl" for="check8">8 ท่าน</label>
+                        <i class="fa fa-check-circle color-white font-18"></i>
+                        <i class="fas fa-shuttle-van font-17 color-gray-dark"></i>
+                    </div>
+                    <div class="form-check interest-check">
+                        <input class="form-check-input" type="radio" value="7" id="check7" name="_radioPaxForProgram">
+                        <label class="form-check-label shadow-xl rounded-xl" for="check7">7 ท่าน</label>
+                        <i class="fa fa-check-circle color-white font-18"></i>
+                        <i class="fas fa-shuttle-van font-17 color-gray-dark"></i>
+                    </div>
+                    <div class="form-check interest-check">
+                        <input class="form-check-input" type="radio" value="6" id="check6" name="_radioPaxForProgram">
+                        <label class="form-check-label shadow-xl rounded-xl" for="check6">6 ท่าน</label>
+                        <i class="fa fa-check-circle color-white font-18"></i>
+                        <i class="fas fa-shuttle-van font-17 color-gray-dark"></i>
+                    </div>
+                    <div class="form-check interest-check">
+                        <input class="form-check-input" type="radio" value="5" id="check5" name="_radioPaxForProgram">
+                        <label class="form-check-label shadow-xl rounded-xl" for="check5">5 ท่าน</label>
+                        <i class="fa fa-check-circle color-white font-18"></i>
+                        <i class="fas fa-shuttle-van font-17 color-gray-dark"></i>
+                    </div>
+                    <div class="form-check interest-check">
+                        <input class="form-check-input" type="radio" value="4" id="check4" name="_radioPaxForProgram">
+                        <label class="form-check-label shadow-xl rounded-xl" for="check4">4 ท่าน</label>
+                        <i class="fa fa-check-circle color-white font-18"></i>
+                        <i class="fas fa-shuttle-van font-17 color-gray-dark"></i>
+                    </div>
+                    <div class="form-check interest-check">
+                        <input class="form-check-input" type="radio" value="3" id="check3" name="_radioPaxForProgram">
+                        <label class="form-check-label shadow-xl rounded-xl" for="check3">3 ท่าน</label>
+                        <i class="fa fa-check-circle color-white font-18"></i>
+                        <i class="fas fa-shuttle-van font-17 color-gray-dark"></i>
+                    </div>
+                    <div class="form-check interest-check">
+                        <input class="form-check-input" type="radio" value="2" id="check2" name="_radioPaxForProgram">
+                        <label class="form-check-label shadow-xl rounded-xl" for="check2">2 ท่าน</label>
+                        <i class="fa fa-check-circle color-white font-18"></i>
+                        <i class="fas fa-shuttle-van font-17 color-gray-dark"></i>
+                    </div>
+                    <div class="form-check interest-check">
+                        <input class="form-check-input" type="radio" value="1" id="check1" name="_radioPaxForProgram">
+                        <label class="form-check-label shadow-xl rounded-xl" for="check1">1 ท่าน</label>
+                        <i class="fa fa-check-circle color-white font-18"></i>
+                        <i class="fas fa-shuttle-van font-17 color-gray-dark"></i>
+                    </div>
+                </div> -->
+                
+                <a href="#" onclick="priceByProgram_Pax();return false;"
+                    class="btn btn-full gradient-blue font-20 btn-s font-400 mt-1 rounded-xs">ตกลง</a>
+            </div>
+        </div>
+
+
+        <!-- Main Menu-->
+        <div id="menu-main" class="menu menu-box-left rounded-0" data-menu-load="menu-main.html" data-menu-width="280"
+            data-menu-active="nav-pages"></div>
+
+        <!-- Share Menu-->
+        <div id="menu-share" class="menu menu-box-bottom rounded-m" data-menu-load="menu-share.html"
+            data-menu-height="370"></div>
+
+        <!-- Colors Menu-->
+        <div id="menu-colors" class="menu menu-box-bottom rounded-m" data-menu-load="menu-colors.html"
+            data-menu-height="480"></div>
+    </div>
+    <script>
+        var _programCode = "";
+        // var _cityCode = "";
+        // var _day = 0;
+
+        // after clicking on image sliders (search by city with day, pax, [priceRange])
+        // function setCityCode(cc, d) {
+        //     _cityCode = cc;
+        //     _day = d;
+        // }
+        // function priceByCity_Pax_PriceRange(pc) {
+        //     let radios_pax = document.getElementsByName("_radioPaxForCity");
+        //     let selected_pax = Array.from(radios_pax).find(radio => radio.checked);
+
+        //     let radios_price = document.getElementsByName("_radioPaxForPriceRange");
+        //     let selected_price = Array.from(radios_price).find(radio => radio.checked);
+
+        //     var priceUri = "page-subscriptions-2.html?city=" + _cityCode + "&day=" + _day + "&pax=" + selected_pax.value + "&pricerange=" + selected_price.value;
+        //     window.location.href = priceUri;
+        // }
+
+        // after clicking on 'ราคา' button (search by program, pax)
+        function setSKU(pc) {
+            _programCode = pc;
+        }
+        function priceByProgram_Pax(pc) {
+            // let radios = document.getElementsByName("_radioPaxForProgram");
+            // let selected = Array.from(radios).find(radio => radio.checked);
+            // var priceUri = "page-subscriptions-2.html?program=" + _programCode + "&pax=" + selected.value;
+            var priceUri = "page-subscriptions-2.html";
+            window.location.href = priceUri;
+        }
+
+    </script>
+
+    <!-- test script -->
+    <script>
+        var priceList = [{ "id": 86, "name": "เวียงจันทน์ นอน 1 คืน", "description": "สักการะพระธาตุสีทอง ขอพรแม่สีเมือง ถนนอาหารและบรรยากาศค่ำคืนริมแม่น้ำโขง", "sku": "VT201-NN-T02H0G0M00F0-P08-01400", "tourcode": "VT201", "tripcode": "NN", "saleplancode": "T02H0G0M00F0", "pcode": "P08", "pppcode": "01400", "pax": 8, "price": 1400, "city": "VT", "visit": "เวียงจันทน์", "day": 2, "program": "01", "start": "หนองคาย", "end": "หนองคาย", "ticket": 2, "hotel": 0, "guide": 0, "meal": 0, "flight": 0, "highlight": "วัดเจ้าแม่สีเมือง ประตูชัย พระธาตุหลวง หอพระแก้ว ตลาดกลางคืนริมโขง walking street ดิวตี้ฟรี", "included": "รถนำเที่ยวรวมน้ำมัน พร้อมคนขับ , พิธีการผ่านแดน ค่าด่านไทยลาวพร้อมรับส่งข้ามสะพานทั้งไปและกลับ , ค่าเข้าชมสถานที่ท่องเที่ยวที่ระบุ", "excluded": "ที่พัก , อาหาร , ไกด์บรรยาย , วีซ่าเข้าลาว(กรณีไม่ใช่สัญชาติไทย) ,  Vat 7% และหัก ณ ที่จ่าย 3%(กรณีออกใบกำกับ/ใบสำคัญรับเงิน)", "required": "บัตรประชาชน หรือพาสปอร์ต , เด็กใช้สูติบัตรหรือทะเบียนบ้าน(กรณียังไม่มีบัตรประชาชน)", "promotion": "ส่วนลด 300 บาท/กรุ๊ป", "discount": 300, "link": "VT201.html", "status": "active", "maxprice": 1900 }, { "id": 98, "name": "เวียงจันทน์ นอน 1 คืน", "description": "สักการะพระธาตุสีทอง ขอพรแม่สีเมือง ถนนอาหารและบรรยากาศค่ำคืนริมแม่น้ำโขง", "sku": "VT201-NN-T02H1G0M00F0-P08-01900", "tourcode": "VT201", "tripcode": "NN", "saleplancode": "T02H1G0M00F0", "pcode": "P08", "pppcode": "01900", "pax": 8, "price": 1900, "city": "VT", "visit": "เวียงจันทน์", "day": 2, "program": "01", "start": "หนองคาย", "end": "หนองคาย", "ticket": 2, "hotel": 1, "guide": 0, "meal": 0, "flight": 0, "highlight": "วัดเจ้าแม่สีเมือง ประตูชัย พระธาตุหลวง หอพระแก้ว ตลาดกลางคืนริมโขง walking street ดิวตี้ฟรี", "included": "รถนำเที่ยวรวมน้ำมัน พร้อมคนขับ , พิธีการผ่านแดน ค่าด่านไทยลาวพร้อมรับส่งข้ามสะพานทั้งไปและกลับ , ค่าเข้าชมสถานที่ท่องเที่ยวที่ระบุ , ที่พักเวียงจันทน์ 1 คืน/ห้อง/สองท่าน (พักเดี่ยวเพิ่ม 1,000 บาท)", "excluded": "อาหาร , ไกด์บรรยาย , วีซ่าเข้าลาว(กรณีไม่ใช่สัญชาติไทย) ,  Vat 7% และหัก ณ ที่จ่าย 3%(กรณีออกใบกำกับ/ใบสำคัญรับเงิน)", "required": "บัตรประชาชน หรือพาสปอร์ต , เด็กใช้สูติบัตรหรือทะเบียนบ้าน(กรณียังไม่มีบัตรประชาชน)", "hotelname": "รร.แฟมิลี บูติค , รร.ลักชัวรี , รร.ไชยสมบูรณ์ หรือเทียบเท่า", "promotion": "ส่วนลด 300 บาท/กรุ๊ป", "discount": 300, "link": "VT201.html", "status": "active", "maxprice": 2400 }, { "id": 110, "name": "เวียงจันทน์ นอน 1 คืน", "description": "สักการะพระธาตุสีทอง ขอพรแม่สีเมือง ถนนอาหารและบรรยากาศค่ำคืนริมแม่น้ำโขง", "sku": "VT201-NN-T02H1G0M03F0-P08-02500", "tourcode": "VT201", "tripcode": "NN", "saleplancode": "T02H1G0M03F0", "pcode": "P08", "pppcode": "02500", "pax": 8, "price": 2500, "city": "VT", "visit": "เวียงจันทน์", "day": 2, "program": "01", "start": "หนองคาย", "end": "หนองคาย", "ticket": 2, "hotel": 1, "guide": 0, "meal": 3, "flight": 0, "highlight": "วัดเจ้าแม่สีเมือง ประตูชัย พระธาตุหลวง หอพระแก้ว ตลาดกลางคืนริมโขง walking street ดิวตี้ฟรี", "included": "รถรวมน้ำมันพร้อมคนขับ , เอกสารผ่านแดน ค่าด่านไทยลาวไปกลับ, ค่าเข้าชมสถานที่ท่องเที่ยวที่ระบุ , ที่พักเวียงจันทน์ 1 คืน/ห้อง/สองท่าน (พักเดี่ยวเพิ่ม 1,000 บาท)  , อาหารเที่ยงวันแรก 1 มื้อ อาหารเย็นวันแรก 1 มื้อ และ อาหารเช้าวันที่สองที่โรงแรม 1 มื้อ (รวม 3 มื้อ)", "excluded": "ไกด์บรรยาย , วีซ่าเข้าลาว(กรณีไม่ใช่สัญชาติไทย)  , Vat 7% และหัก ณ ที่จ่าย 3%(กรณีออกใบกำกับ/ใบสำคัญรับเงิน)", "required": "บัตรประชาชน หรือพาสปอร์ต , เด็กใช้สูติบัตรหรือทะเบียนบ้าน(กรณียังไม่มีบัตรประชาชน)", "hotelname": "รร.แฟมิลี บูติค , รร.ลักชัวรี , รร.ไชยสมบูรณ์ หรือเทียบเท่า", "promotion": "ส่วนลด 300 บาท/กรุ๊ป", "discount": 300, "link": "VT201.html", "status": "active", "maxprice": 3000 }, { "id": 122, "name": "เวียงจันทน์ นอน 1 คืน", "description": "สักการะพระธาตุสีทอง ขอพรแม่สีเมือง ถนนอาหารและบรรยากาศค่ำคืนริมแม่น้ำโขง", "sku": "VT201-NN-T02H1G2M03F0-P08-03500", "tourcode": "VT201", "tripcode": "NN", "saleplancode": "T02H1G2M03F0", "pcode": "P08", "pppcode": "03500", "pax": 8, "price": 3500, "city": "VT", "visit": "เวียงจันทน์", "day": 2, "program": "01", "start": "หนองคาย", "end": "หนองคาย", "ticket": 2, "hotel": 1, "guide": 2, "meal": 3, "flight": 0, "highlight": "วัดเจ้าแม่สีเมือง ประตูชัย พระธาตุหลวง หอพระแก้ว ตลาดกลางคืนริมโขง walking street ดิวตี้ฟรี", "included": "รถรวมน้ำมันพร้อมคนขับ , เอกสารผ่านแดน ค่าด่านไทยลาวไปกลับ, ค่าเข้าชมสถานที่ท่องเที่ยวที่ระบุ , ที่พักเวียงจันทน์ 1 คืน/ห้อง/สองท่าน (พักเดี่ยวเพิ่ม 1,000 บาท)  , อาหารเที่ยงวันแรก 1 มื้อ อาหารเย็นวันแรก 1 มื้อ และ อาหารเช้าวันที่สองที่โรงแรม 1 มื้อ (รวม 3 มื้อ) , พร้อมไกด์ท้องถิ่นบรรยาย", "excluded": "วีซ่าเข้าลาว(กรณีไม่ใช่สัญชาติไทย)  , Vat 7% และหัก ณ ที่จ่าย 3%(กรณีออกใบกำกับ/ใบสำคัญรับเงิน)", "required": "บัตรประชาชน หรือพาสปอร์ต , เด็กใช้สูติบัตรหรือทะเบียนบ้าน(กรณียังไม่มีบัตรประชาชน)", "hotelname": "รร.แฟมิลี บูติค , รร.ลักชัวรี , รร.ไชยสมบูรณ์ หรือเทียบเท่า", "promotion": "ส่วนลด 800 บาท/กรุ๊ป", "discount": 800, "link": "VT201.html", "status": "active", "maxprice": 4000 }, { "id": 137, "name": "เวียงจันทน์ นอน 1 คืน", "description": "สักการะพระธาตุสีทอง ขอพรแม่สีเมือง ถนนอาหารและบรรยากาศค่ำคืนริมแม่น้ำโขง", "sku": "VT201-UU-T02H0G0M00F0-P08-01800", "tourcode": "VT201", "tripcode": "UU", "saleplancode": "T02H0G0M00F0", "pcode": "P08", "pppcode": "01800", "pax": 8, "price": 1800, "city": "VT", "visit": "เวียงจันทน์", "day": 2, "program": "01", "start": "อุดร", "end": "อุดร", "ticket": 2, "hotel": 0, "guide": 0, "meal": 0, "flight": 0, "highlight": "วัดเจ้าแม่สีเมือง ประตูชัย พระธาตุหลวง หอพระแก้ว ตลาดกลางคืนริมโขง walking street ดิวตี้ฟรี", "included": "รถนำเที่ยวรวมน้ำมัน พร้อมคนขับ , พิธีการผ่านแดน ค่าด่านไทยลาวพร้อมรับส่งข้ามสะพานทั้งไปและกลับ , ค่าเข้าชมสถานที่ท่องเที่ยวที่ระบุ", "excluded": "ที่พัก , อาหาร , ไกด์บรรยาย , วีซ่าเข้าลาว(กรณีไม่ใช่สัญชาติไทย) ,  Vat 7% และหัก ณ ที่จ่าย 3%(กรณีออกใบกำกับ/ใบสำคัญรับเงิน)", "required": "บัตรประชาชน หรือพาสปอร์ต , เด็กใช้สูติบัตรหรือทะเบียนบ้าน(กรณียังไม่มีบัตรประชาชน)", "promotion": "ส่วนลด 200 บาท/กรุ๊ป", "discount": 200, "link": "VT201.html", "status": "active", "maxprice": 2300 }, { "id": 149, "name": "เวียงจันทน์ นอน 1 คืน", "description": "สักการะพระธาตุสีทอง ขอพรแม่สีเมือง ถนนอาหารและบรรยากาศค่ำคืนริมแม่น้ำโขง", "sku": "VT201-UU-T02H1G0M00F0-P08-02300", "tourcode": "VT201", "tripcode": "UU", "saleplancode": "T02H1G0M00F0", "pcode": "P08", "pppcode": "02300", "pax": 8, "price": 2300, "city": "VT", "visit": "เวียงจันทน์", "day": 2, "program": "01", "start": "อุดร", "end": "อุดร", "ticket": 2, "hotel": 1, "guide": 0, "meal": 0, "flight": 0, "highlight": "วัดเจ้าแม่สีเมือง ประตูชัย พระธาตุหลวง หอพระแก้ว ตลาดกลางคืนริมโขง walking street ดิวตี้ฟรี", "included": "รถนำเที่ยวรวมน้ำมัน พร้อมคนขับ , พิธีการผ่านแดน ค่าด่านไทยลาวพร้อมรับส่งข้ามสะพานทั้งไปและกลับ , ค่าเข้าชมสถานที่ท่องเที่ยวที่ระบุ , ที่พักเวียงจันทน์ 1 คืน/ห้อง/สองท่าน (พักเดี่ยวเพิ่ม 1,000 บาท)", "excluded": "อาหาร , ไกด์บรรยาย , วีซ่าเข้าลาว(กรณีไม่ใช่สัญชาติไทย) ,  Vat 7% และหัก ณ ที่จ่าย 3%(กรณีออกใบกำกับ/ใบสำคัญรับเงิน)", "required": "บัตรประชาชน หรือพาสปอร์ต , เด็กใช้สูติบัตรหรือทะเบียนบ้าน(กรณียังไม่มีบัตรประชาชน)", "hotelname": "รร.แฟมิลี บูติค , รร.ลักชัวรี , รร.ไชยสมบูรณ์ หรือเทียบเท่า", "promotion": "ส่วนลด 300 บาท/กรุ๊ป", "discount": 300, "link": "VT201.html", "status": "active", "maxprice": 2800 }, { "id": 161, "name": "เวียงจันทน์ นอน 1 คืน", "description": "สักการะพระธาตุสีทอง ขอพรแม่สีเมือง ถนนอาหารและบรรยากาศค่ำคืนริมแม่น้ำโขง", "sku": "VT201-UU-T02H1G0M03F0-P08-02900", "tourcode": "VT201", "tripcode": "UU", "saleplancode": "T02H1G0M03F0", "pcode": "P08", "pppcode": "02900", "pax": 8, "price": 2900, "city": "VT", "visit": "เวียงจันทน์", "day": 2, "program": "01", "start": "อุดร", "end": "อุดร", "ticket": 2, "hotel": 1, "guide": 0, "meal": 3, "flight": 0, "highlight": "วัดเจ้าแม่สีเมือง ประตูชัย พระธาตุหลวง หอพระแก้ว ตลาดกลางคืนริมโขง walking street ดิวตี้ฟรี", "included": "รถรวมน้ำมันพร้อมคนขับ , เอกสารผ่านแดน ค่าด่านไทยลาวไปกลับ, ค่าเข้าชมสถานที่ท่องเที่ยวที่ระบุ , ที่พักเวียงจันทน์ 1 คืน/ห้อง/สองท่าน (พักเดี่ยวเพิ่ม 1,000 บาท)  , อาหารเที่ยงวันแรก 1 มื้อ อาหารเย็นวันแรก 1 มื้อ และ อาหารเช้าวันที่สองที่โรงแรม 1 มื้อ (รวม 3 มื้อ)", "excluded": "ไกด์บรรยาย , วีซ่าเข้าลาว(กรณีไม่ใช่สัญชาติไทย)  , Vat 7% และหัก ณ ที่จ่าย 3%(กรณีออกใบกำกับ/ใบสำคัญรับเงิน)", "required": "บัตรประชาชน หรือพาสปอร์ต , เด็กใช้สูติบัตรหรือทะเบียนบ้าน(กรณียังไม่มีบัตรประชาชน)", "hotelname": "รร.แฟมิลี บูติค , รร.ลักชัวรี , รร.ไชยสมบูรณ์ หรือเทียบเท่า", "promotion": "ส่วนลด 300 บาท/กรุ๊ป", "discount": 300, "link": "VT201.html", "status": "active", "maxprice": 3400 }, { "id": 173, "name": "เวียงจันทน์ นอน 1 คืน", "description": "สักการะพระธาตุสีทอง ขอพรแม่สีเมือง ถนนอาหารและบรรยากาศค่ำคืนริมแม่น้ำโขง", "sku": "VT201-UU-T02H1G2M03F0-P08-03800", "tourcode": "VT201", "tripcode": "UU", "saleplancode": "T02H1G2M03F0", "pcode": "P08", "pppcode": "03800", "pax": 8, "price": 3800, "city": "VT", "visit": "เวียงจันทน์", "day": 2, "program": "01", "start": "อุดร", "end": "อุดร", "ticket": 2, "hotel": 1, "guide": 2, "meal": 3, "flight": 0, "highlight": "วัดเจ้าแม่สีเมือง ประตูชัย พระธาตุหลวง หอพระแก้ว ตลาดกลางคืนริมโขง walking street ดิวตี้ฟรี", "included": "รถรวมน้ำมันพร้อมคนขับ , เอกสารผ่านแดน ค่าด่านไทยลาวไปกลับ, ค่าเข้าชมสถานที่ท่องเที่ยวที่ระบุ , ที่พักเวียงจันทน์ 1 คืน/ห้อง/สองท่าน (พักเดี่ยวเพิ่ม 1,000 บาท)  , อาหารเที่ยงวันแรก 1 มื้อ อาหารเย็นวันแรก 1 มื้อ และ อาหารเช้าวันที่สองที่โรงแรม 1 มื้อ (รวม 3 มื้อ) , พร้อมไกด์ท้องถิ่นบรรยาย", "excluded": "วีซ่าเข้าลาว(กรณีไม่ใช่สัญชาติไทย)  , Vat 7% และหัก ณ ที่จ่าย 3%(กรณีออกใบกำกับ/ใบสำคัญรับเงิน)", "required": "บัตรประชาชน หรือพาสปอร์ต , เด็กใช้สูติบัตรหรือทะเบียนบ้าน(กรณียังไม่มีบัตรประชาชน)", "hotelname": "รร.แฟมิลี บูติค , รร.ลักชัวรี , รร.ไชยสมบูรณ์ หรือเทียบเท่า", "promotion": "ส่วนลด 500 บาท/กรุ๊ป", "discount": 500, "link": "VT201.html", "status": "active", "maxprice": 4300 }]
+        //console.log(priceList)
+        for (const { sku: sku, name: name, day: day, pax: pax, price: priceperpax, included: included, start: start, end: end } of priceList) {
+            console.log('sku: ' + sku + ', โปรแกรม: ' + name + ', day:' + day + ', pax: ' + pax + ' , price: ' + priceperpax + ' , รวม: ' + included + ' , โปรแกรมเริ่มที่: ' + start + ' , ส่งกลับที่: ' + end);
+        }
+    </script>   
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+</body>

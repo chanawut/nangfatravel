@@ -1,0 +1,407 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>AppKit Mobile</title>
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+    <link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+    <link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+</head>
+
+<body class="theme-light">
+
+    <div id="preloader">
+        <div class="spinner-border color-highlight" role="status"></div>
+    </div>
+
+    <div id="page">
+
+        <div class="header header-fixed header-logo-center header-auto-show">
+            <a href="index.html" class="header-title">Tabs</a>
+            <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-chevron-left"></i></a>
+            <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+            <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-dark"><i
+                    class="fas fa-sun"></i></a>
+            <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-light"><i
+                    class="fas fa-moon"></i></a>
+        </div>
+
+        <div id="footer-bar" class="footer-bar-6">
+            <a href="index-components.html" class="active-nav"><i
+                    class="fa fa-layer-group"></i><span>Features</span></a>
+            <a href="index-pages.html"><i class="fa fa-file"></i><span>Pages</span></a>
+            <a href="index.html" class="circle-nav"><i class="fa fa-home"></i><span>Welcome</span></a>
+            <a href="index-projects.html"><i class="fa fa-camera"></i><span>Projects</span></a>
+            <a href="#" data-menu="menu-main"><i class="fa fa-bars"></i><span>Menu</span></a>
+        </div>
+
+        <div class="page-title page-title-fixed">
+            <h1>Tabs</h1>
+            <a href="#" class="page-title-icon shadow-xl bg-theme color-theme" data-menu="menu-share"><i
+                    class="fa fa-share-alt"></i></a>
+            <a href="#" class="page-title-icon shadow-xl bg-theme color-theme show-on-theme-light" data-toggle-theme><i
+                    class="fa fa-moon"></i></a>
+            <a href="#" class="page-title-icon shadow-xl bg-theme color-theme show-on-theme-dark" data-toggle-theme><i
+                    class="fa fa-lightbulb color-yellow-dark"></i></a>
+            <a href="#" class="page-title-icon shadow-xl bg-theme color-theme" data-menu="menu-main"><i
+                    class="fa fa-bars"></i></a>
+        </div>
+        <div class="page-title-clear"></div>
+
+        <div class="page-content">
+
+
+            <div class="card card-style">
+                <p class="content">
+                    Tabs are great for separating content. Ours can have text, icons and are super easy to use and come
+                    in 3 sizes. You can use as many tabs as you want.
+                </p>
+            </div>
+
+            <div class="card card-style">
+                <div class="content">
+                    <div class="tab-controls tab-animated tabs-medium tabs-no-border shadow-xl"
+                        data-tab-active="color-red-dark border-tab border-red-dark">
+                        <a href="#" data-tab-active data-tab="tab-1ab">All</a>
+                        <a href="#" class="float-right" data-tab="tab-2ab">Tab A</a>
+                        <a href="#" class="float-right" data-tab="tab-3ab">Tab B</a>
+                        <a href="#" class="float-right" data-tab="tab-4ab">Tab C</a>
+                        <a href="#" class="float-right" data-tab="tab-2ab">Tab A</a>
+                        <a href="#" class="float-right" data-tab="tab-3ab">Tab B</a>
+                        <a href="#" class="float-right" data-tab="tab-4ab">Tab C</a>
+                        <a href="#" class="float-right" data-tab="tab-2ab">Tab A</a>
+                        <a href="#" class="float-right" data-tab="tab-3ab">Tab B</a>
+                        <a href="#" class="float-right" data-tab="tab-4ab">Tab C</a>
+                        <a href="#" class="float-right" data-tab="tab-2ab">Tab A</a>
+                        <a href="#" class="float-right" data-tab="tab-3ab">Tab B</a>
+                        <a href="#" class="float-right" data-tab="tab-4ab">Tab C</a>
+                        <a href="#" class="float-right" data-tab="tab-2ab">Tab A</a>
+                        <a href="#" class="float-right" data-tab="tab-3ab">Tab B</a>
+                        <a href="#" class="float-right" data-tab="tab-4ab">Tab C</a>
+
+
+                    </div>
+                    <div class="clearfix mb-3"></div>
+                    <div class="tab-content" id="tab-1ab">
+                        <p class="bottom-0">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.
+                        </p>
+                    </div>
+                    <div class="tab-content" id="tab-2ab">
+                        <div class="accordion mt-2" id="accordion-1">
+                            <div class="mb-0">
+                                <button class="btn pl-0 pr-0 accordion-btn color-theme" data-toggle="collapse"
+                                    data-target="#collapse1" aria-expanded="false">
+                                    <i class="fa fa-heart color-red-dark mr-2"></i>
+                                    Accordion Title 1
+                                    <i class="fa fa-plus font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse1" class="collapse" data-parent="#accordion-1">
+                                    <div class="pt-1 pb-2">
+                                        This is the accordion content. You can add any content you want to it. Really,
+                                        anything! Add images, text, lists, captions or any element you want.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-0">
+                                <button class="btn pl-0 pr-0 accordion-btn color-theme" data-toggle="collapse"
+                                    data-target="#collapse2" aria-expanded="false">
+                                    <i class="fa fa-star color-yellow-dark mr-2"></i>
+                                    Accordion Title 2
+                                    <i class="fa fa-chevron-down font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse2" class="collapse" data-parent="#accordion-1">
+                                    <div class="pt-1 pb-2">
+                                        This is the accordion content. You can add any content you want to it. Really,
+                                        anything! Add images, text, lists, captions or any element you want.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-0">
+                                <button class="btn pl-0 pr-0 accordion-btn color-theme" data-toggle="collapse"
+                                    data-target="#collapse3" aria-expanded="false">
+                                    <i class="fa fa-cloud color-blue-dark mr-2"></i>
+                                    Accordion Title 3
+                                    <i class="fa fa-arrow-down font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse3" class="collapse" data-parent="#accordion-1">
+                                    <div class="pt-1 pb-2">
+                                        This is the accordion content. You can add any content you want to it. Really,
+                                        anything! Add images, text, lists, captions or any element you want.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="tab-3ab">
+                        <img class="img-fluid rounded-sm mt-2" src="images/pictures/13w.jpg" alt="img">
+                    </div>
+                    <div class="tab-content" id="tab-4ab">
+                        <p class="bottom-0">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card card-style bg-theme pb-0">
+                <div class="content">
+                    <div class="tab-controls tabs-round tab-animated tabs-small tabs-rounded shadow-xl"
+                        data-tab-items="4" data-tab-active="bg-red-dark color-white">
+                        <a href="#" data-tab-active data-tab="tab-1">Tab 1</a>
+                        <a href="#" data-tab="tab-2">Tab 2</a>
+                        <a href="#" data-tab="tab-3">Tab 3</a>
+                        <a href="#" data-tab="tab-4">Tab 4</a>
+                    </div>
+                    <div class="clearfix mb-3"></div>
+                    <div class="tab-content" id="tab-1">
+                        <p class="bottom-0">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.
+                        </p>
+                    </div>
+                    <div class="tab-content" id="tab-2">
+                        <div class="accordion mt-2" id="accordion-1">
+                            <div class="mb-0">
+                                <button class="btn pl-0 pr-0 accordion-btn color-theme" data-toggle="collapse"
+                                    data-target="#collapse1" aria-expanded="false">
+                                    <i class="fa fa-heart color-red-dark mr-2"></i>
+                                    Accordion Title 1
+                                    <i class="fa fa-plus font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse1" class="collapse" data-parent="#accordion-1">
+                                    <div class="pt-1 pb-2">
+                                        This is the accordion content. You can add any content you want to it. Really,
+                                        anything! Add images, text, lists, captions or any element you want.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-0">
+                                <button class="btn pl-0 pr-0 accordion-btn color-theme" data-toggle="collapse"
+                                    data-target="#collapse2" aria-expanded="false">
+                                    <i class="fa fa-star color-yellow-dark mr-2"></i>
+                                    Accordion Title 2
+                                    <i class="fa fa-chevron-down font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse2" class="collapse" data-parent="#accordion-1">
+                                    <div class="pt-1 pb-2">
+                                        This is the accordion content. You can add any content you want to it. Really,
+                                        anything! Add images, text, lists, captions or any element you want.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-0">
+                                <button class="btn pl-0 pr-0 accordion-btn color-theme" data-toggle="collapse"
+                                    data-target="#collapse3" aria-expanded="false">
+                                    <i class="fa fa-cloud color-blue-dark mr-2"></i>
+                                    Accordion Title 3
+                                    <i class="fa fa-arrow-down font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse3" class="collapse" data-parent="#accordion-1">
+                                    <div class="pt-1 pb-2">
+                                        This is the accordion content. You can add any content you want to it. Really,
+                                        anything! Add images, text, lists, captions or any element you want.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="tab-3">
+                        <img class="img-fluid rounded-sm mt-2" src="images/pictures/13w.jpg" alt="img">
+                    </div>
+                    <div class="tab-content" id="tab-4">
+                        <p class="bottom-0">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card card-style bg-theme pb-0">
+                <div class="content">
+                    <div class="tab-controls tabs-round tab-animated tabs-medium tabs-rounded shadow-xl"
+                        data-tab-items="3" data-tab-active="bg-blue-dark color-white">
+                        <a href="#" data-tab-active data-tab="tab-5">Tab 5</a>
+                        <a href="#" data-tab="tab-6">Tab 5</a>
+                        <a href="#" data-tab="tab-7">Tab 7</a>
+                    </div>
+                    <div class="clearfix mb-3"></div>
+                    <div class="tab-content" id="tab-5">
+                        <p>
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.
+                        </p>
+                    </div>
+                    <div class="tab-content " id="tab-6">
+                        <div class="accordion mt-2" id="accordion-2">
+                            <div class="mb-0">
+                                <button class="btn pl-0 pr-0 accordion-btn color-theme" data-toggle="collapse"
+                                    data-target="#collapse4" aria-expanded="false">
+                                    <i class="fa fa-heart color-red-dark mr-2"></i>
+                                    Accordion Title 1
+                                    <i class="fa fa-plus font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse1" class="collapse" data-parent="#accordion-2">
+                                    <div class="pt-1 pb-2">
+                                        This is the accordion content. You can add any content you want to it. Really,
+                                        anything! Add images, text, lists, captions or any element you want.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-0">
+                                <button class="btn pl-0 pr-0 accordion-btn color-theme" data-toggle="collapse"
+                                    data-target="#collapse5" aria-expanded="false">
+                                    <i class="fa fa-star color-yellow-dark mr-2"></i>
+                                    Accordion Title 2
+                                    <i class="fa fa-chevron-down font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse2" class="collapse" data-parent="#accordion-2">
+                                    <div class="pt-1 pb-2">
+                                        This is the accordion content. You can add any content you want to it. Really,
+                                        anything! Add images, text, lists, captions or any element you want.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-0">
+                                <button class="btn pl-0 pr-0 accordion-btn color-theme" data-toggle="collapse"
+                                    data-target="#collapse6" aria-expanded="false">
+                                    <i class="fa fa-cloud color-blue-dark mr-2"></i>
+                                    Accordion Title 3
+                                    <i class="fa fa-arrow-down font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse3" class="collapse" data-parent="#accordion-2">
+                                    <div class="pt-1 pb-2">
+                                        This is the accordion content. You can add any content you want to it. Really,
+                                        anything! Add images, text, lists, captions or any element you want.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="tab-7">
+                        <img class="img-fluid rounded-sm mt-2" src="images/pictures/28w.jpg" alt="img">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card card-style bg-theme pb-0">
+                <div class="content">
+                    <div class="tab-controls tabs-round tab-animated tabs-medium tabs-rounded shadow-xl"
+                        data-tab-items="2" data-tab-active="bg-green-dark color-white">
+                        <a href="#" data-tab-active data-tab="tab-8"><i class="fa fa-heart"></i></a>
+                        <a href="#" data-tab="tab-9"><i class="fa fa-star"></i></a>
+                    </div>
+                    <div class="clearfix mb-3"></div>
+                    <div class="tab-content" id="tab-8">
+                        <p class="bottom-0">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.
+                        </p>
+                    </div>
+                    <div class="tab-content" id="tab-6">
+                        <div class="accordion" id="accordion-2">
+                            <div class="mb-0">
+                                <button class="btn pl-0 pr-0 accordion-btn" data-toggle="collapse"
+                                    data-target="#collapse4" aria-expanded="false">
+                                    <i class="fa fa-heart color-red2-dark mr-2"></i>
+                                    Accordion Title 1
+                                    <i class="fa fa-plus font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse1" class="collapse" data-parent="#accordion-2">
+                                    <div class="pt-1 pb-2">
+                                        This is the accordion content. You can add any content you want to it. Really,
+                                        anything! Add images, text, lists, captions or any element you want.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-0">
+                                <button class="btn pl-0 pr-0 accordion-btn" data-toggle="collapse"
+                                    data-target="#collapse5" aria-expanded="false">
+                                    <i class="fa fa-star color-yellow1-dark mr-2"></i>
+                                    Accordion Title 2
+                                    <i class="fa fa-chevron-down font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse2" class="collapse" data-parent="#accordion-2">
+                                    <div class="pt-1 pb-2">
+                                        This is the accordion content. You can add any content you want to it. Really,
+                                        anything! Add images, text, lists, captions or any element you want.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-2">
+                                <button class="btn pl-0 pr-0 accordion-btn" data-toggle="collapse"
+                                    data-target="#collapse6" aria-expanded="false">
+                                    <i class="fa fa-cloud color-blue2-dark mr-2"></i>
+                                    Accordion Title 3
+                                    <i class="fa fa-arrow-down font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse3" class="collapse" data-parent="#accordion-2">
+                                    <div class="pt-1 pb-2">
+                                        This is the accordion content. You can add any content you want to it. Really,
+                                        anything! Add images, text, lists, captions or any element you want.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="tab-9">
+                        <img class="img-fluid mb-0 mt-2 rounded-sm" src="images/pictures/28w.jpg" alt="img">
+                    </div>
+                </div>
+            </div>
+
+            <div data-menu-load="menu-footer.html"></div>
+        </div>
+        <!-- Page content ends here-->
+
+        <!-- Main Menu-->
+        <div id="menu-main" class="menu menu-box-left rounded-0" data-menu-load="menu-main.html" data-menu-width="280"
+            data-menu-active="nav-components"></div>
+
+        <!-- Share Menu-->
+        <div id="menu-share" class="menu menu-box-bottom rounded-m" data-menu-load="menu-share.html"
+            data-menu-height="370"></div>
+
+        <!-- Colors Menu-->
+        <div id="menu-colors" class="menu menu-box-bottom rounded-m" data-menu-load="menu-colors.html"
+            data-menu-height="480"></div>
+
+
+    </div>
+    <script>
+        var priceList = [{ "id": 86, "name": "เวียงจันทน์ นอน 1 คืน", "description": "สักการะพระธาตุสีทอง ขอพรแม่สีเมือง ถนนอาหารและบรรยากาศค่ำคืนริมแม่น้ำโขง", "sku": "VT201-NN-T02H0G0M00F0-P08-01400", "tourcode": "VT201", "tripcode": "NN", "saleplancode": "T02H0G0M00F0", "pcode": "P08", "pppcode": "01400", "pax": 8, "price": 1400, "city": "VT", "visit": "เวียงจันทน์", "day": 2, "program": "01", "start": "หนองคาย", "end": "หนองคาย", "ticket": 2, "hotel": 0, "guide": 0, "meal": 0, "flight": 0, "highlight": "วัดเจ้าแม่สีเมือง ประตูชัย พระธาตุหลวง หอพระแก้ว ตลาดกลางคืนริมโขง walking street ดิวตี้ฟรี", "included": "รถนำเที่ยวรวมน้ำมัน พร้อมคนขับ , พิธีการผ่านแดน ค่าด่านไทยลาวพร้อมรับส่งข้ามสะพานทั้งไปและกลับ , ค่าเข้าชมสถานที่ท่องเที่ยวที่ระบุ", "excluded": "ที่พัก , อาหาร , ไกด์บรรยาย , วีซ่าเข้าลาว(กรณีไม่ใช่สัญชาติไทย) ,  Vat 7% และหัก ณ ที่จ่าย 3%(กรณีออกใบกำกับ/ใบสำคัญรับเงิน)", "required": "บัตรประชาชน หรือพาสปอร์ต , เด็กใช้สูติบัตรหรือทะเบียนบ้าน(กรณียังไม่มีบัตรประชาชน)", "promotion": "ส่วนลด 300 บาท/กรุ๊ป", "discount": 300, "link": "VT201.html", "status": "active", "maxprice": 1900 }, { "id": 98, "name": "เวียงจันทน์ นอน 1 คืน", "description": "สักการะพระธาตุสีทอง ขอพรแม่สีเมือง ถนนอาหารและบรรยากาศค่ำคืนริมแม่น้ำโขง", "sku": "VT201-NN-T02H1G0M00F0-P08-01900", "tourcode": "VT201", "tripcode": "NN", "saleplancode": "T02H1G0M00F0", "pcode": "P08", "pppcode": "01900", "pax": 8, "price": 1900, "city": "VT", "visit": "เวียงจันทน์", "day": 2, "program": "01", "start": "หนองคาย", "end": "หนองคาย", "ticket": 2, "hotel": 1, "guide": 0, "meal": 0, "flight": 0, "highlight": "วัดเจ้าแม่สีเมือง ประตูชัย พระธาตุหลวง หอพระแก้ว ตลาดกลางคืนริมโขง walking street ดิวตี้ฟรี", "included": "รถนำเที่ยวรวมน้ำมัน พร้อมคนขับ , พิธีการผ่านแดน ค่าด่านไทยลาวพร้อมรับส่งข้ามสะพานทั้งไปและกลับ , ค่าเข้าชมสถานที่ท่องเที่ยวที่ระบุ , ที่พักเวียงจันทน์ 1 คืน/ห้อง/สองท่าน (พักเดี่ยวเพิ่ม 1,000 บาท)", "excluded": "อาหาร , ไกด์บรรยาย , วีซ่าเข้าลาว(กรณีไม่ใช่สัญชาติไทย) ,  Vat 7% และหัก ณ ที่จ่าย 3%(กรณีออกใบกำกับ/ใบสำคัญรับเงิน)", "required": "บัตรประชาชน หรือพาสปอร์ต , เด็กใช้สูติบัตรหรือทะเบียนบ้าน(กรณียังไม่มีบัตรประชาชน)", "hotelname": "รร.แฟมิลี บูติค , รร.ลักชัวรี , รร.ไชยสมบูรณ์ หรือเทียบเท่า", "promotion": "ส่วนลด 300 บาท/กรุ๊ป", "discount": 300, "link": "VT201.html", "status": "active", "maxprice": 2400 }, { "id": 110, "name": "เวียงจันทน์ นอน 1 คืน", "description": "สักการะพระธาตุสีทอง ขอพรแม่สีเมือง ถนนอาหารและบรรยากาศค่ำคืนริมแม่น้ำโขง", "sku": "VT201-NN-T02H1G0M03F0-P08-02500", "tourcode": "VT201", "tripcode": "NN", "saleplancode": "T02H1G0M03F0", "pcode": "P08", "pppcode": "02500", "pax": 8, "price": 2500, "city": "VT", "visit": "เวียงจันทน์", "day": 2, "program": "01", "start": "หนองคาย", "end": "หนองคาย", "ticket": 2, "hotel": 1, "guide": 0, "meal": 3, "flight": 0, "highlight": "วัดเจ้าแม่สีเมือง ประตูชัย พระธาตุหลวง หอพระแก้ว ตลาดกลางคืนริมโขง walking street ดิวตี้ฟรี", "included": "รถรวมน้ำมันพร้อมคนขับ , เอกสารผ่านแดน ค่าด่านไทยลาวไปกลับ, ค่าเข้าชมสถานที่ท่องเที่ยวที่ระบุ , ที่พักเวียงจันทน์ 1 คืน/ห้อง/สองท่าน (พักเดี่ยวเพิ่ม 1,000 บาท)  , อาหารเที่ยงวันแรก 1 มื้อ อาหารเย็นวันแรก 1 มื้อ และ อาหารเช้าวันที่สองที่โรงแรม 1 มื้อ (รวม 3 มื้อ)", "excluded": "ไกด์บรรยาย , วีซ่าเข้าลาว(กรณีไม่ใช่สัญชาติไทย)  , Vat 7% และหัก ณ ที่จ่าย 3%(กรณีออกใบกำกับ/ใบสำคัญรับเงิน)", "required": "บัตรประชาชน หรือพาสปอร์ต , เด็กใช้สูติบัตรหรือทะเบียนบ้าน(กรณียังไม่มีบัตรประชาชน)", "hotelname": "รร.แฟมิลี บูติค , รร.ลักชัวรี , รร.ไชยสมบูรณ์ หรือเทียบเท่า", "promotion": "ส่วนลด 300 บาท/กรุ๊ป", "discount": 300, "link": "VT201.html", "status": "active", "maxprice": 3000 }, { "id": 122, "name": "เวียงจันทน์ นอน 1 คืน", "description": "สักการะพระธาตุสีทอง ขอพรแม่สีเมือง ถนนอาหารและบรรยากาศค่ำคืนริมแม่น้ำโขง", "sku": "VT201-NN-T02H1G2M03F0-P08-03500", "tourcode": "VT201", "tripcode": "NN", "saleplancode": "T02H1G2M03F0", "pcode": "P08", "pppcode": "03500", "pax": 8, "price": 3500, "city": "VT", "visit": "เวียงจันทน์", "day": 2, "program": "01", "start": "หนองคาย", "end": "หนองคาย", "ticket": 2, "hotel": 1, "guide": 2, "meal": 3, "flight": 0, "highlight": "วัดเจ้าแม่สีเมือง ประตูชัย พระธาตุหลวง หอพระแก้ว ตลาดกลางคืนริมโขง walking street ดิวตี้ฟรี", "included": "รถรวมน้ำมันพร้อมคนขับ , เอกสารผ่านแดน ค่าด่านไทยลาวไปกลับ, ค่าเข้าชมสถานที่ท่องเที่ยวที่ระบุ , ที่พักเวียงจันทน์ 1 คืน/ห้อง/สองท่าน (พักเดี่ยวเพิ่ม 1,000 บาท)  , อาหารเที่ยงวันแรก 1 มื้อ อาหารเย็นวันแรก 1 มื้อ และ อาหารเช้าวันที่สองที่โรงแรม 1 มื้อ (รวม 3 มื้อ) , พร้อมไกด์ท้องถิ่นบรรยาย", "excluded": "วีซ่าเข้าลาว(กรณีไม่ใช่สัญชาติไทย)  , Vat 7% และหัก ณ ที่จ่าย 3%(กรณีออกใบกำกับ/ใบสำคัญรับเงิน)", "required": "บัตรประชาชน หรือพาสปอร์ต , เด็กใช้สูติบัตรหรือทะเบียนบ้าน(กรณียังไม่มีบัตรประชาชน)", "hotelname": "รร.แฟมิลี บูติค , รร.ลักชัวรี , รร.ไชยสมบูรณ์ หรือเทียบเท่า", "promotion": "ส่วนลด 800 บาท/กรุ๊ป", "discount": 800, "link": "VT201.html", "status": "active", "maxprice": 4000 }, { "id": 137, "name": "เวียงจันทน์ นอน 1 คืน", "description": "สักการะพระธาตุสีทอง ขอพรแม่สีเมือง ถนนอาหารและบรรยากาศค่ำคืนริมแม่น้ำโขง", "sku": "VT201-UU-T02H0G0M00F0-P08-01800", "tourcode": "VT201", "tripcode": "UU", "saleplancode": "T02H0G0M00F0", "pcode": "P08", "pppcode": "01800", "pax": 8, "price": 1800, "city": "VT", "visit": "เวียงจันทน์", "day": 2, "program": "01", "start": "อุดร", "end": "อุดร", "ticket": 2, "hotel": 0, "guide": 0, "meal": 0, "flight": 0, "highlight": "วัดเจ้าแม่สีเมือง ประตูชัย พระธาตุหลวง หอพระแก้ว ตลาดกลางคืนริมโขง walking street ดิวตี้ฟรี", "included": "รถนำเที่ยวรวมน้ำมัน พร้อมคนขับ , พิธีการผ่านแดน ค่าด่านไทยลาวพร้อมรับส่งข้ามสะพานทั้งไปและกลับ , ค่าเข้าชมสถานที่ท่องเที่ยวที่ระบุ", "excluded": "ที่พัก , อาหาร , ไกด์บรรยาย , วีซ่าเข้าลาว(กรณีไม่ใช่สัญชาติไทย) ,  Vat 7% และหัก ณ ที่จ่าย 3%(กรณีออกใบกำกับ/ใบสำคัญรับเงิน)", "required": "บัตรประชาชน หรือพาสปอร์ต , เด็กใช้สูติบัตรหรือทะเบียนบ้าน(กรณียังไม่มีบัตรประชาชน)", "promotion": "ส่วนลด 200 บาท/กรุ๊ป", "discount": 200, "link": "VT201.html", "status": "active", "maxprice": 2300 }, { "id": 149, "name": "เวียงจันทน์ นอน 1 คืน", "description": "สักการะพระธาตุสีทอง ขอพรแม่สีเมือง ถนนอาหารและบรรยากาศค่ำคืนริมแม่น้ำโขง", "sku": "VT201-UU-T02H1G0M00F0-P08-02300", "tourcode": "VT201", "tripcode": "UU", "saleplancode": "T02H1G0M00F0", "pcode": "P08", "pppcode": "02300", "pax": 8, "price": 2300, "city": "VT", "visit": "เวียงจันทน์", "day": 2, "program": "01", "start": "อุดร", "end": "อุดร", "ticket": 2, "hotel": 1, "guide": 0, "meal": 0, "flight": 0, "highlight": "วัดเจ้าแม่สีเมือง ประตูชัย พระธาตุหลวง หอพระแก้ว ตลาดกลางคืนริมโขง walking street ดิวตี้ฟรี", "included": "รถนำเที่ยวรวมน้ำมัน พร้อมคนขับ , พิธีการผ่านแดน ค่าด่านไทยลาวพร้อมรับส่งข้ามสะพานทั้งไปและกลับ , ค่าเข้าชมสถานที่ท่องเที่ยวที่ระบุ , ที่พักเวียงจันทน์ 1 คืน/ห้อง/สองท่าน (พักเดี่ยวเพิ่ม 1,000 บาท)", "excluded": "อาหาร , ไกด์บรรยาย , วีซ่าเข้าลาว(กรณีไม่ใช่สัญชาติไทย) ,  Vat 7% และหัก ณ ที่จ่าย 3%(กรณีออกใบกำกับ/ใบสำคัญรับเงิน)", "required": "บัตรประชาชน หรือพาสปอร์ต , เด็กใช้สูติบัตรหรือทะเบียนบ้าน(กรณียังไม่มีบัตรประชาชน)", "hotelname": "รร.แฟมิลี บูติค , รร.ลักชัวรี , รร.ไชยสมบูรณ์ หรือเทียบเท่า", "promotion": "ส่วนลด 300 บาท/กรุ๊ป", "discount": 300, "link": "VT201.html", "status": "active", "maxprice": 2800 }, { "id": 161, "name": "เวียงจันทน์ นอน 1 คืน", "description": "สักการะพระธาตุสีทอง ขอพรแม่สีเมือง ถนนอาหารและบรรยากาศค่ำคืนริมแม่น้ำโขง", "sku": "VT201-UU-T02H1G0M03F0-P08-02900", "tourcode": "VT201", "tripcode": "UU", "saleplancode": "T02H1G0M03F0", "pcode": "P08", "pppcode": "02900", "pax": 8, "price": 2900, "city": "VT", "visit": "เวียงจันทน์", "day": 2, "program": "01", "start": "อุดร", "end": "อุดร", "ticket": 2, "hotel": 1, "guide": 0, "meal": 3, "flight": 0, "highlight": "วัดเจ้าแม่สีเมือง ประตูชัย พระธาตุหลวง หอพระแก้ว ตลาดกลางคืนริมโขง walking street ดิวตี้ฟรี", "included": "รถรวมน้ำมันพร้อมคนขับ , เอกสารผ่านแดน ค่าด่านไทยลาวไปกลับ, ค่าเข้าชมสถานที่ท่องเที่ยวที่ระบุ , ที่พักเวียงจันทน์ 1 คืน/ห้อง/สองท่าน (พักเดี่ยวเพิ่ม 1,000 บาท)  , อาหารเที่ยงวันแรก 1 มื้อ อาหารเย็นวันแรก 1 มื้อ และ อาหารเช้าวันที่สองที่โรงแรม 1 มื้อ (รวม 3 มื้อ)", "excluded": "ไกด์บรรยาย , วีซ่าเข้าลาว(กรณีไม่ใช่สัญชาติไทย)  , Vat 7% และหัก ณ ที่จ่าย 3%(กรณีออกใบกำกับ/ใบสำคัญรับเงิน)", "required": "บัตรประชาชน หรือพาสปอร์ต , เด็กใช้สูติบัตรหรือทะเบียนบ้าน(กรณียังไม่มีบัตรประชาชน)", "hotelname": "รร.แฟมิลี บูติค , รร.ลักชัวรี , รร.ไชยสมบูรณ์ หรือเทียบเท่า", "promotion": "ส่วนลด 300 บาท/กรุ๊ป", "discount": 300, "link": "VT201.html", "status": "active", "maxprice": 3400 }, { "id": 173, "name": "เวียงจันทน์ นอน 1 คืน", "description": "สักการะพระธาตุสีทอง ขอพรแม่สีเมือง ถนนอาหารและบรรยากาศค่ำคืนริมแม่น้ำโขง", "sku": "VT201-UU-T02H1G2M03F0-P08-03800", "tourcode": "VT201", "tripcode": "UU", "saleplancode": "T02H1G2M03F0", "pcode": "P08", "pppcode": "03800", "pax": 8, "price": 3800, "city": "VT", "visit": "เวียงจันทน์", "day": 2, "program": "01", "start": "อุดร", "end": "อุดร", "ticket": 2, "hotel": 1, "guide": 2, "meal": 3, "flight": 0, "highlight": "วัดเจ้าแม่สีเมือง ประตูชัย พระธาตุหลวง หอพระแก้ว ตลาดกลางคืนริมโขง walking street ดิวตี้ฟรี", "included": "รถรวมน้ำมันพร้อมคนขับ , เอกสารผ่านแดน ค่าด่านไทยลาวไปกลับ, ค่าเข้าชมสถานที่ท่องเที่ยวที่ระบุ , ที่พักเวียงจันทน์ 1 คืน/ห้อง/สองท่าน (พักเดี่ยวเพิ่ม 1,000 บาท)  , อาหารเที่ยงวันแรก 1 มื้อ อาหารเย็นวันแรก 1 มื้อ และ อาหารเช้าวันที่สองที่โรงแรม 1 มื้อ (รวม 3 มื้อ) , พร้อมไกด์ท้องถิ่นบรรยาย", "excluded": "วีซ่าเข้าลาว(กรณีไม่ใช่สัญชาติไทย)  , Vat 7% และหัก ณ ที่จ่าย 3%(กรณีออกใบกำกับ/ใบสำคัญรับเงิน)", "required": "บัตรประชาชน หรือพาสปอร์ต , เด็กใช้สูติบัตรหรือทะเบียนบ้าน(กรณียังไม่มีบัตรประชาชน)", "hotelname": "รร.แฟมิลี บูติค , รร.ลักชัวรี , รร.ไชยสมบูรณ์ หรือเทียบเท่า", "promotion": "ส่วนลด 500 บาท/กรุ๊ป", "discount": 500, "link": "VT201.html", "status": "active", "maxprice": 4300 }]
+        //console.log(priceList)
+        for (const { sku: sku, name: name, day: day, pax: pax, price: priceperpax, included: included, start: start, end: end } of priceList) {
+            console.log('sku: ' + sku + ', โปรแกรม: ' + name + ', day:' + day + ', pax: ' + pax + ' , price: ' + priceperpax + ' , รวม: ' + included + ' , โปรแกรมเริ่มที่: ' + start + ' , ส่งกลับที่: ' + end);
+        }
+    </script>
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+</body>

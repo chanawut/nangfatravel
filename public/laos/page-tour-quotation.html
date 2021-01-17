@@ -1,0 +1,618 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>ค้นหา ราคา ทัวร์ลาว | นางฟ้าทราเวล</title>
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+    <link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+    <link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script type="text/javascript" src="scripts/date-swap-th-en-th.js"></script>
+</head>
+
+<body class="theme-light">
+
+    <div id="preloader">
+        <div class="spinner-border color-highlight" role="status"></div>
+    </div>
+
+    <div id="page">
+
+        <div class="header header-fixed header-logo-center header-auto-show">
+            <a href="index.html" class="header-title">ใบเสนอราคา (มัดจำจอง)</a>
+            <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-chevron-left"></i></a>
+            <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+            <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-dark"><i
+                    class="fas fa-sun"></i></a>
+            <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-light"><i
+                    class="fas fa-moon"></i></a>
+        </div>
+
+        <div id="footer-bar" class="footer-bar-6">
+            <a href="index-components.html"><i class="fa fa-layer-group"></i><span>Features</span></a>
+            <a href="index-pages.html" class="active-nav"><i class="fa fa-file"></i><span>Pages</span></a>
+            <a href="index.html" class="circle-nav"><i class="fa fa-home"></i><span>Welcome</span></a>
+            <a href="index-projects.html"><i class="fa fa-camera"></i><span>Projects</span></a>
+            <a href="#" data-menu="menu-main"><i class="fa fa-bars"></i><span>Menu</span></a>
+        </div>
+
+        <div class="page-title page-title-fixed">
+            <h1>จองทัวร์ลาว</h1>
+            <a href="#" class="page-title-icon shadow-xl bg-theme color-theme" data-menu="menu-share"><i
+                    class="fa fa-share-alt"></i></a>
+            <a href="#" class="page-title-icon shadow-xl bg-theme color-theme show-on-theme-light" data-toggle-theme><i
+                    class="fa fa-moon"></i></a>
+            <a href="#" class="page-title-icon shadow-xl bg-theme color-theme show-on-theme-dark" data-toggle-theme><i
+                    class="fa fa-lightbulb color-yellow-dark"></i></a>
+            <a href="#" class="page-title-icon shadow-xl bg-theme color-theme" data-menu="menu-main"><i
+                    class="fa fa-bars"></i></a>
+        </div>
+        <div class="page-title-clear"></div>
+
+        <script>
+            var _quotationNo, _quotationDate,
+                _customerName, _customerTel1, _customerTel2, _customerEmail, _billingAddress,
+                _promoCode,
+                _tourCode, _tourTitle, _tourLink, _tourImgLink,
+                _startDate, _dayToGo, _startFrom, _pax, _pricePerPax,
+                _promotionDetail, _discount,
+                _total, _tax, _withHolding, _grandTotal,
+                _deposit, _dateDeposit,
+                _balance, _dateBalance,
+                _bankAccountDetails
+
+            // generate 3 digit random numbers between 100 - 999 
+            console.log(`#${Math.floor(Math.random() * (999 - 100 + 1) + 100)}`)
+
+            console.log(new Date(Date.now()).toLocaleDateString('th-TH'))
+            console.log(new Date(Date.now()).toLocaleString('th-TH', { year: 'numeric', day: 'numeric', month: 'short', hour12: false }))
+
+            function updateClipboard(newClip) {
+                navigator.clipboard.writeText(newClip).then(function () {
+                    /* clipboard successfully set */
+                }, function () {
+                    /* clipboard write failed */
+                });
+            }
+
+        </script>
+        <div class="page-content">
+
+
+            <!------------------->
+            <!------------------->
+            <!---Card: สรุปค่าใช้จ่าย--->
+            <!------------------->
+            <!------------------->
+            <div class="card card-style">
+                <div class="content">
+
+                    <div class="d-flex">
+                        <div class="mt-1">
+                            <!-- <p class="color-highlight font-600 mb-0">นางฟ้าทราเวล 086-8616550</p> -->
+                            <h1 class="color-highlight"><i class="far fa-file-alt"></i> &nbsp;สรุปค่าใช้จ่าย </h1>
+                            <h5 class="font-16 font-400 mt-n1 mb-n1">(ใบเสนอราคา/ใบจองทัวร์)</h5>
+                            <p class="font-14 font-400">วันที่: 21/12/2563 เลขที่: #132</p>
+
+                        </div>
+                        <div class="ml-auto">
+                            <img src="images/pictures/34s.jpg" width="56" class="rounded-xl"> <br> <a
+                                href="tel:0868616550" class="font-9"><i class="fas fa-mobile-alt"></i> 086-8616550 </a>
+                        </div>
+                    </div>
+
+                    <!-- toggle -->
+                    <!-- <div class="d-flex mt-3">
+                        <div class="pt-1">
+                            <h5 data-activate="toggle-id-2" class="font-600 font-18 mt-1 color-highlight">ต้องการจองทัวร์นี้ ? </h5>
+                           
+                        </div>
+                        <div class="ml-auto mr-4 pr-1">
+                            <div class="custom-control ios-switch ios-switch-icon">
+                                <input type="checkbox" class="ios-input" id="toggle-id-2" checked>
+                                <label class="custom-control-label" for="toggle-id-2"></label>
+                                <i class="fa fa-check font-11 color-white"></i>
+                                <i class="fa fa-times font-11 color-white"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-switch="toggle-id-2" class="switch-is-checked">
+                        <p class="text-left mt-2 mb-0 pb-0 pt-1 font-12 "><span class="color-highlight font-15 font-600">วิธีที่ 1 จองด้วยโค้ดทางไลน์ <i class="fab fa-line font-20"></i> </span>&nbsp;<br>คลิก <i class="far fa-copy"></i> copy ท้ายโค้ด > เข้าไลน์ @nangfatravel (อัตโนมัติ) > แจ้งโค้ดกับแอดมินได้เลยนะคะ
+                        </p>
+                        <div class="row mb-0 mt-1 ml-0">
+                            <h5 class="col-9 text-center font-11 font-400 px-0 py-0 bg-gray-light color-black rounded-xs copy-this-code-1 mt-1">VT201-UU-T02H1G0M00F0-P10-02150@24-Dec-2020</h5>
+                            <a href="https://line.me/R/ti/p/%40nangfatravel"
+                            class="col-3 copy-code-btn-1 col-3 text-left scale-box"><span class="badge badge-dark gradient-highlight rounded-s font-14 ml-n2 mt-1"><i
+                                class="far fa-copy font-14 scale-box"></i> copy</span></a>
+                        </div>
+
+                        <div class="divider mt-1 mb-3"></div>
+
+                        <p class="text-left mb-0 pb-0 pt-1 font-14">  <span class="color-highlight font-15 font-600">วิธีที่ 2  โทรหาเรา <i class="fas fa-mobile-alt"></i></span> <br>โทรและแจ้งข้อมูลด้านล่างให้เราทราบได้ค่ะ
+                        </p>
+                            <div class="row mb-0 mt-1 ml-0">
+                                <h5 class="col-6 text-center font-14 font-400 px-0 py-0 color-black rounded-xs copy-this-code">
+                                </h5>
+                                <a href="#" class="call-us-btn col-6 text-right scale-box"><span class="badge badge-dark gradient-highlight rounded-s font-14 ml-n2 mt-0 px-2"><i class="fas fa-mobile-alt scale-box"></i> กดโทรออก</span></a>
+                            </div>
+
+                        <div class="divider mt-2 mb-4"></div>
+                    </div> -->
+                    <p class="text-left font-14 font-500 mt-4 mb-n1">
+                        <i class="far fa-calendar-check"></i> &nbsp; เดินทาง 24 มกราคม 2563
+                    </p>
+                    <p class="text-left font-14 font-500 mt-0 mb-n1">
+                        <i class="fas fa-street-view"></i> &nbsp;รับส่งที่ หนองคาย หรือ สนามบินอุดร
+                    </p>
+                    <p class="text-left font-14 font-500 mt-0 mb-3">
+                        <i class="fas fa-suitcase-rolling"></i> &nbsp; แผน ปกติ
+                    </p>
+                    <div class="d-flex mb-3">
+                        <div>
+                            <img src="images/pictures/17s.jpg" width="50" class="rounded-s shadow-xl">
+
+                        </div>
+                        <div class="pl-3 w-100">
+                            <h4 class="font-16 font-700">
+                                เวียงจันทน์ วังเวียง หลวงพระบาง 3 วัน 2 คืน <span
+                                    class="ml-2 mt-n4 font-15 badge badge-dark">
+                                    VT201
+                                </span>
+                            </h4>
+                        </div>
+                    </div>
+
+                    <div class="divider mb-4"></div>
+
+                    <div class="d-flex mb-2 opacity-80">
+                        <div>
+                            <h4 class="font-700">ค่าใช้จ่ายต่อกรุ๊ป</h4>
+                            <p class="mt-n1 mb-0 opacity-80 font-12"> 2,500 x 8 ท่าน <i class="fas fa-user-friends"></i>
+                            </p>
+                        </div>
+                        <div class="ml-auto">
+                            <h4>20,000 บาท</h4>
+                        </div>
+                    </div>
+
+                    <div class="d-flex mb-3  opacity-80">
+                        <div>
+                            <h4 class="font-700 color-red-dark">ส่วนลด</h4>
+                            <p class="mt-n1 mb-0 color-red-dark opacity-80 font-12"> ส่วนลดที่ฝากรถ <i
+                                    class="fas fa-user-friends"></i></p>
+                        </div>
+                        <div class="ml-auto">
+                            <h4 class="color-red-dark"> -300 บาท</h4>
+                        </div>
+                    </div>
+                    <div class="divider mt-n2 mb-4"></div>
+
+                    <div class="d-flex mb-n1 font-800">
+                        <div>
+                            <h2>รวมที่ต้องชำระ<sup class="font-12 font-300"> [1]</sup></h2>
+                        </div>
+                        <div class="ml-auto">
+                            <h2>19,700 บาท</h2>
+                        </div>
+                    </div>
+
+                    <!-- <div class="d-flex mb-3">
+                        <div>
+                            <h5 class="opacity-70 font-500">ยืนยันการจอง โดยมัดจำ <sup><i class="far fa-question-circle scale-box color-highlight font-18"></i></sup><br> ภายใน 15 มกราคม 2564</h5>
+                        </div>
+                        <div class="ml-auto">
+                            <h5>9,700 บาท </h5>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div>
+                            <h5 class="opacity-70 font-500">ชำระส่วนที่เหลือวันเดินทาง</h5>
+                        </div>
+                        <div class="ml-auto">
+                            <h5>10,000 บาท </h5>
+                        </div>
+                    </div> -->
+
+                </div>
+            </div>
+
+            <!-- หมายเหตุ หัก ณ ที่จ่าย -->
+            <p class="text-right mx-4 mt-n3 mb-n2 font-11 font-400">[1] ถ้าลูกค้าต้องการ ออกใบหัก ณ ที่จ่าย 3% </p>
+            <p class="text-right mx-4 font-11 font-400">ยอดชำระรวมทั้งหมด จะเป็น 20,309.29 บาท นะคะ </p>
+
+
+            <!-- จองทัวร์นี้ -->
+            <div class="card card-style">
+                <!-- tab -->
+                <div class="content">
+                    <div class="tab-controls tab-animated tabs-medium tabs-no-border shadow-xl"
+                        data-tab-active="color-highlight border-tab border-red-dark font-25">
+                        <a href="#" data-tab-active data-tab="tab-1ab" class="scale-box"><i class="far fa-calendar-check"></i> จองทัวร์นี้</a>
+                        <a href="#" class="float-right" data-tab="tab-2ab">เงื่อนไข</a>
+                        <a href="#" class="float-right" data-tab="tab-3ab">ไม่รวม</a>
+                        <a href="#" class="float-right" data-tab="tab-4ab">ทัวร์รวม</a>
+                    </div>
+                    <div class="clearfix mb-3"></div>
+                    <div class="tab-content" id="tab-1ab">
+                        <div class="accordion mt-2" id="accordion-1">
+                            <div class="mb-0">
+                                <button class="btn pl-0 pr-0 accordion-btn color-theme" data-toggle="collapse"
+                                    data-target="#collapse1" aria-expanded="false">
+                                    <i class="fa fa-heart color-red-dark mr-2"></i>
+                                    1) บัญชีมัดจำ <span
+                                        class="font-300 opacity-60 scale-box">(คลิกเพื่อดูรายละเอียด)</span>
+                                    <i class="fa fa-chevron-down font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse1" class="collapse" data-parent="#accordion-1">
+                                    <div class="pt-1 pb-2">
+
+                                        <!-- <div class="card card-style mt-n3"> -->
+                                        <div class="content mb-2 mt-3">
+                                            <div class="d-flex">
+                                                <div class="pr-3 w-60">
+                                                    <p class="font-600 color-highlight mb-0 font-13">ยอดมัดจำ</p>
+                                                    <h1>10,000<sup class="font-10 font-300">บาท</sup></h1>
+                                                </div>
+                                                <div class="w-100 pt-1">
+                                                    <h6 class="font-14 font-700">ภายใน<span
+                                                            class="float-right color-green-dark">20 มกราคม 2564</span>
+                                                    </h6>
+                                                    <div class="divider mb-2 mt-1"></div>
+                                                    <div><img src="images/pictures/34s.jpg" width="35"
+                                                            class="rounded-xl">
+                                                        <img src="images/pictures/34s.jpg" width="35"
+                                                            class="rounded-xl">
+                                                        <img src="images/pictures/34s.jpg" width="35"
+                                                            class="rounded-xl">
+                                                        <img src="images/pictures/34s.jpg" width="35"
+                                                            class="rounded-xl">
+                                                    </div>
+                                                    <!-- <h6 class="font-14 font-700">Taxes<span class="float-right color-red-dark">+$0.15</span></h6> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- </div> -->
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-0">
+                                <button class="btn pl-0 pr-0 accordion-btn color-theme" data-toggle="collapse"
+                                    data-target="#collapse2" aria-expanded="false">
+                                    <i class="fa fa-star color-yellow-dark mr-2"></i>
+                                    2) แจ้งเอกสาร และผู้ติดต่อ
+                                    <i class="fa fa-chevron-down font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse2" class="collapse" data-parent="#accordion-1">
+                                    <div class="pt-1 pb-2">
+                                        This is the accordion content. You can add any content you want to it. Really,
+                                        anything! Add images, text, lists, captions or any element you want.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-0">
+                                <button class="btn pl-0 pr-0 accordion-btn color-theme" data-toggle="collapse"
+                                    data-target="#collapse3" aria-expanded="false">
+                                    <i class="fa fa-cloud color-blue-dark mr-2"></i>
+                                    3) รับใบนัดหมายการเดินทาง
+                                    <i class="fa fa-chevron-down font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse3" class="collapse" data-parent="#accordion-1">
+                                    <div class="pt-1 pb-2">
+                                        This is the accordion content. You can add any content you want to it. Really,
+                                        anything! Add images, text, lists, captions or any element you want.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="tab-2ab">
+                        <div class="accordion mt-2" id="accordion-2">
+                            <div class="mb-0">
+                                <button class="btn pl-0 pr-0 accordion-btn color-theme" data-toggle="collapse"
+                                    data-target="#collapse2-1" aria-expanded="false">
+                                    <i class="fa fa-heart color-red-dark mr-2"></i>
+                                    การยกเลิก คืนเงิน
+                                    <i class="fa fa-plus font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse2-1" class="collapse" data-parent="#accordion-2">
+                                    <div class="pt-1 pb-2">
+                                        This is the accordion content. You can add any content you want to it. Really,
+                                        anything! Add images, text, lists, captions or any element you want.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-0">
+                                <button class="btn pl-0 pr-0 accordion-btn color-theme" data-toggle="collapse"
+                                    data-target="#collapse2-2" aria-expanded="false">
+                                    <i class="fa fa-star color-yellow-dark mr-2"></i>
+                                    วีซ่าสำหรับผู้ที่ไม่ใช่สัญชาติไทย
+                                    <i class="fa fa-chevron-down font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse2-2" class="collapse" data-parent="#accordion-2">
+                                    <div class="pt-1 pb-2">
+                                        This is the accordion content. You can add any content you want to it. Really,
+                                        anything! Add images, text, lists, captions or any element you want.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-0">
+                                <button class="btn pl-0 pr-0 accordion-btn color-theme" data-toggle="collapse"
+                                    data-target="#collapse2-3" aria-expanded="false">
+                                    <i class="fa fa-cloud color-blue-dark mr-2"></i>
+                                    เงื่อนไขอื่นๆ
+                                    <i class="fa fa-arrow-down font-10 accordion-icon"></i>
+                                </button>
+                                <div id="collapse2-3" class="collapse" data-parent="#accordion-2">
+                                    <div class="pt-1 pb-2">
+                                        This is the accordion content. You can add any content you want to it. Really,
+                                        anything! Add images, text, lists, captions or any element you want.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="tab-3ab">
+                        <img class="img-fluid rounded-sm mt-2" src="images/pictures/13w.jpg" alt="img">
+                    </div>
+                    <div class="tab-content" id="tab-4ab">
+                        <p class="bottom-0">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+                            galley of type and scrambled it to make a type specimen book.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+
+            
+
+            <!------------------->
+            <!------------------->
+            <!---Card: ช่องทางการจอง --->
+            <!------------------->
+            <!------------------->
+            <div class="card card-style">
+                <div class="content">
+                    <h1 class="color-highlight"><i class="far fa-comment-dots"></i> &nbsp;สอบถาม</h1>
+                    <div class="tab-controls tabs-round tab-animated tabs-medium tabs-rounded shadow-xl"
+                        data-tab-items="3" data-tab-active="bg-red-dark color-white font-18 scale-box">
+                        <a href="#" data-tab-active data-tab="tab-5" class="color-red-dark">ทางไลน์</a>
+                        <a href="#" data-tab="tab-6" class="color-red-dark">โทร</a>
+                        <a href="#" data-tab="tab-7" class="color-red-dark">ให้เราโทรกลับ</a>
+                    </div>
+                    <div class="clearfix mb-3"></div>
+                    <!-- Tab: จองผ่านไลน์ -->
+                    <div class="tab-content" id="tab-5">
+                        <p class="text-center font-16 mb-n3 ml-3 py-2 color-highlight bg-theme rounded-m">
+                            แจ้งโค้ดในหน้าแชทของไลน์ได้เลยนะคะ <sup><i class="far fa-comment-dots font-16"></i></sup>
+                        </p>
+                        <p class="text-center font-11 font-400 mb-n2">(หรือ capture ในส่วน "สรุปค่าใช้จ่าย"
+                            ส่งรูปทางไลน์ได้นะคะ)</p>
+                        <div class="mt-4 ml-3 mr-3">
+                            <h5 class="mb-1 mt-0 font-400 font-14">
+                                <span class="rounded-xs bg-red-dark px-1 py-0 font-600">1</span> คัดลอกโค้ดด้านล่าง
+                                หรือคลิกที่ &nbsp;&nbsp;&nbsp;
+                                <span class="text-right mb-0 pb-0">
+                                    <a href="#"
+                                        class="copy-code-btn icon icon-xxs rounded-sm bg-red-dark color-white font-600"><i
+                                            class="far fa-copy font-18 scale-box"></i>คัดลอก &nbsp;&nbsp;</a>
+                                </span>
+                            </h5>
+                            <h5
+                                class="copy-this-code font-12 font-500 text-center mb-1 bg-gray-light color-black  rounded-xs px-1 py-1">
+                                VT201-UU-T02H1G0M00F0-P10-02150@24-Dec-2020</h5>
+
+                        </div>
+                        <div class="mt-4 ml-3 mr-3">
+                            <h5 class="mb-1 mt-0 font-400 font-14">
+                                <span class="rounded-xs bg-red-dark px-1 py-0 font-600">2</span> วางโค้ดนี้ ที่หน้าแชท
+                                &nbsp;ไลน์ <span class="font-16 font-600 color-red-dark">
+                                    @nangfatravel</span><br>ทักทายแอดมินนางฟ้าทราเวลได้เลยนะคะ <sup><i
+                                        class="far fa-comment-dots font-16"></i></sup></h5>
+                        </div>
+                        <div class="divider mt-2 mb-0"></div>
+                        <p class="text-right mt-2 mb-n1 pb-0 mr-3">
+                            <a href="https://line.me/R/ti/p/%40nangfatravel"
+                                class="copy-code-btn icon icon-xs rounded-sm gradient-highlight font-16 scale-box"><i
+                                    class="fab fa-line font-20"></i>ไลน์แจ้งโค้ด &nbsp;&nbsp;</a>
+                        </p>
+
+                    </div>
+                    <!-- Tab: โทรจอง -->
+                    <div class="tab-content " id="tab-6">
+                        <p class="text-center font-16 mb-n3 ml-3 py-2 color-highlight bg-theme rounded-m">
+                            โทรแจ้งข้อมูลกับแอดมินได้เลยนะคะ <sup><i class="far fa-comment-dots font-16"></i></sup></p>
+                        <div class="mt-3">
+                            <h5 class="mb-1 mt-1 font-400 font-14">
+                                <span class="rounded-xs bg-red-dark px-1 py-0 font-600">1</span> รหัสทัวร์
+                                &nbsp;&nbsp;&nbsp;
+                                <span
+                                    class="font-16 font-600 font-400 text-center mb-1 bg-gray-light color-black rounded-xs px-1 py-0">VT201</span>
+                            </h5>
+                            <h5 class="mb-1 mt-1 font-400 font-14">
+                                <span class="rounded-xs bg-red-dark px-1 py-0 font-600">2</span> แผนการเดินทาง
+                                &nbsp;&nbsp;&nbsp;
+                                <span
+                                    class="font-16 font-600 font-400 text-center mb-1 bg-gray-light color-black rounded-xs px-1 py-0">ปกติ</span>
+                            </h5>
+                            <h5 class="mb-1 mt-1 font-400 font-14">
+                                <span class="rounded-xs bg-red-dark px-1 py-0 font-600">3</span> รับส่งที่
+                                &nbsp;&nbsp;&nbsp;
+                                <span
+                                    class="font-16 font-600 font-400 text-center mb-1 bg-gray-light color-black rounded-xs px-1 py-0">หนองคาย
+                                    หรือ สนามบินอุดร</span>
+                            </h5>
+                            <h5 class="mb-1 mt-1 font-400 font-14">
+                                <span class="rounded-xs bg-red-dark px-1 py-0 font-600">4</span> เดินทางจำนวน
+                                &nbsp;&nbsp;&nbsp;
+                                <span
+                                    class="font-16 font-600 font-400 text-center mb-1 bg-gray-light color-black rounded-xs px-1 py-0">8
+                                    ท่าน</span>
+                            </h5>
+                            <h5 class="mb-1 mt-1 font-400 font-14">
+                                <span class="rounded-xs bg-red-dark px-1 py-0 font-600">5</span> ราคาท่านละ
+                                &nbsp;&nbsp;&nbsp;
+                                <span
+                                    class="font-16 font-600 font-400 text-center mb-1 bg-gray-light color-black rounded-xs px-1 py-0">2,500</span>
+                                บาท
+                            </h5>
+                            <h5 class="mb-1 mt-1 font-400 font-14">
+                                <span class="rounded-xs bg-red-dark px-1 py-0 font-600">6</span> วันที่เดินทาง
+                                &nbsp;&nbsp;&nbsp;
+                                <span
+                                    class="font-16 font-600 font-400 text-center mb-1 bg-gray-light color-black rounded-xs px-1 py-0">24
+                                    มกราคม 2563</span>
+                            </h5>
+                        </div>
+                        <div class="divider mt-2 mb-0"></div>
+                        <p class="text-right mt-2 mb-n1 pb-0 mr-3">
+                            <a href="tel: 0868616550"
+                                class="icon icon-xs rounded-sm gradient-highlight font-16 scale-box"><i
+                                    class="fas fa-phone font-15"></i>086-8616550 &nbsp;&nbsp;</a>
+                        </p>
+                    </div>
+                    <div class="tab-content" id="tab-7">
+                        <p class="text-center font-16 mb-2 py-2 color-highlight bg-theme rounded-m">
+                            แจ้งข้อมูลให้แอดมินติดต่อกลับได้เลยนะคะ <sup><i
+                                    class="far fa-comment-dots font-16"></i></sup></p>
+                        <div class="input-style input-style-2 has-icon input-required">
+                            <i class="input-icon fa fa-user"></i>
+                            <span class="color-highlight">ชื่อ</span>
+                            <em>(จำเป็น)</em>
+                            <input class="form-control" type="name" placeholder="">
+                        </div>
+
+                        <div class="input-style input-style-2 input-required">
+                            <span class="color-highlight">เบอร์โทร</span>
+                            <em>(จำเป็น)</em>
+                            <input class="form-control" type="tel" placeholder="">
+                        </div>
+
+                        <div class="input-style input-style-2 input-required">
+                            <span class="color-highlight">เบอร์โทรสำรอง (ถ้ามี)</span>
+                            <em></em>
+                            <input class="form-control" type="tel" placeholder="">
+                        </div>
+
+                        <div class="input-style input-style-2 input-required">
+                            <span class="color-highlight">Email (ถ้ามี)</span>
+                            <em></em>
+                            <input class="form-control" type="email" placeholder="">
+                        </div>
+
+                        <div class="divider"></div>
+                        <p class="text-center font-11 mt-n4 mb-3">แอดมินขออนุญาตติดต่อกลับ ในช่วงเวลา 8:00-18:00 น. นะคะ
+                        </p>
+                        <a href="#"
+                            class="btn btn-full btn-s rounded-s font-20 font-600 gradient-highlight scale-box">ตกลง</a>
+                        <!-- <img class="img-fluid rounded-sm mt-2" src="images/pictures/28w.jpg" alt="img"> -->
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <div data-menu-load="menu-footer.html"></div>
+        </div>
+        <!-- Page content ends here-->
+
+
+        <!----------->
+        <!----------->
+        <!-- Toast -->
+        <!---$('#toast-copy-success').toast('show');----->
+        <!----------->
+        <div id="toast-1" class="toast toast-tiny toast-top bg-blue-dark" data-delay="2000" data-autohide="true"><i
+                class="fa fa-sync fa-spin mr-3"></i>กำลังดำเนินการ...</div>
+        <div id="toast-2" class="toast toast-tiny toast-top bg-blue-dark" data-delay="2000" data-autohide="true"><i
+                class="fa fa-info mr-3"></i>We're on it</div>
+        <div id="toast-3" class="toast toast-tiny toast-bottom bg-green-dark" data-delay="2000" data-autohide="true"><i
+                class="fa fa-check mr-3"></i>เรียบร้อย</div>
+        <div id="toast-4" class="toast toast-tiny toast-bottom bg-red-dark" data-delay="2000" data-autohide="true"><i
+                class="fa fa-times mr-3"></i>โปรดลองอีกครั้ง</div>
+        <div id="toast-5" class="toast toast-tiny toast-center bg-green-dark" data-delay="2000" data-autohide="true"><i
+                class="fa fa-check mr-3"></i>เรียบร้อย</div>
+        <div id="toast-6" class="toast toast-tiny toast-center bg-red-dark" data-delay="2000" data-autohide="true"><i
+                class="fa fa-times mr-3"></i>โปรดลองอีกครั้ง</div>
+
+        <div id="toast-copy-success" class="toast toast-tiny toast-center bg-green-dark" data-delay="2000"
+            data-autohide="true"><i class="fa fa-check mr-3"></i>คัดลอกเรียบร้อย
+        </div>
+
+
+
+        <!----------------->
+        <!----------------->
+        <!-- Timed-toast-modal -->
+        <!----------------->
+        <!----------------->
+        <div id="timed-1" class="menu menu-box-modal rounded-m" data-menu-hide="4000" data-menu-width="240"
+            data-menu-height="220">
+            <h1 class="text-center fa-5x mt-2 pt-3 pb-2"><i class="fa fa-check-circle color-green-dark"></i></h1>
+            <h2 class="text-center">คัดลอกโค้ดแล้ว</h2>
+            <p class="text-center mt-3">
+                <a href="https://line.me/R/ti/p/%40nangfatravel"
+                    class="copy-code-btn icon icon-xxs rounded-sm gradient-highlight font-16 scale-box"><i
+                        class="fab fa-line font-20 scale-box"></i>ไลน์แจ้งโค้ด (คลิก) &nbsp;&nbsp;</a>
+            </p>
+            <p class="text-center mt-n3 font-12 ">
+                <a href="#" class="close-menu font-200 color-red-dark">กลับหน้าหลัก</a>
+            </p>
+        </div>
+
+        <div id="timed-2" class="menu menu-box-modal rounded-m" data-menu-hide="3000" data-menu-width="220"
+            data-menu-height="160">
+            <h1 class="text-center fa-5x mt-2 pt-3 pb-2"><i class="fa fa-times-circle color-red-dark"></i></h1>
+            <h2 class="text-center">ไม่สำเร็จ! </h2>
+        </div>
+
+        <!-- Main Menu-->
+        <div id="menu-main" class="menu menu-box-left rounded-0" data-menu-load="menu-main.html" data-menu-width="280"
+            data-menu-active="nav-store"></div>
+
+        <!-- Share Menu-->
+        <div id="menu-share" class="menu menu-box-bottom rounded-m" data-menu-load="menu-share.html"
+            data-menu-height="370"></div>
+
+        <!-- Colors Menu-->
+        <div id="menu-colors" class="menu menu-box-bottom rounded-m" data-menu-load="menu-colors.html"
+            data-menu-height="480"></div>
+
+    </div>
+    <script>
+        let _thisIsCode = document.querySelector(".copy-this-code").textContent;
+        document.querySelector(".copy-code-btn").addEventListener("click", () => {
+            navigator.clipboard.writeText(_thisIsCode).then(function () {
+                /* clipboard successfully set */
+                // $('#toast-copy-success').toast('show');
+                $('#timed-1').showMenu();
+            }, function () {
+                /* clipboard write failed */
+                alert("รุ่นของบราวเซอร์ไม่สนับสนุน กรุณาคัดลอกโค้ดโดยตรง(ไม่ใช้ปุ่ม)นะคะ")
+            });
+        }, false);
+
+    </script>
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+</body>

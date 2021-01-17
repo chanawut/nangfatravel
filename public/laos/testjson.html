@@ -1,0 +1,325 @@
+<html>
+
+<head>
+  <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+
+
+  <style>
+    body {
+      height: 100vh;
+      background-color: #000;
+      font-family: "Roboto", sans-serif;
+      background: linear-gradient(180deg, #DB302A 0%, #62186B 100%) no-repeat;
+    }
+
+    .container-pax {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .box-minmax-pax {
+      margin-top: 30px;
+      width: 160px;
+      /* width: 608px; */
+      display: flex;
+      justify-content: space-between;
+      font-size: 20px;
+      color: #FFFFFF;
+    }
+
+    .box-minmax-pax span:first-child {
+      margin-left: 10px;
+    }
+
+    .range-slider-pax {
+      margin-top: 30vh;
+    }
+
+    .rs-range-pax {
+      margin-top: 29px;
+      width: 100%;
+      /* width: 600px; */
+      -webkit-appearance: none;
+    }
+
+    .rs-range-pax:focus {
+      outline: none;
+    }
+
+    .rs-range-pax::-webkit-slider-runnable-track {
+      width: 100%;
+      height: 1px;
+      cursor: pointer;
+      box-shadow: none;
+      background: #ffffff;
+      border-radius: 0px;
+      border: 0px solid #010101;
+    }
+
+    .rs-range-pax::-moz-range-track {
+      width: 100%;
+      height: 1px;
+      cursor: pointer;
+      box-shadow: none;
+      background: #ffffff;
+      border-radius: 0px;
+      border: 0px solid #010101;
+    }
+
+    .rs-range-pax::-webkit-slider-thumb {
+      box-shadow: none;
+      border: 0px solid #ffffff;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+      height: 42px;
+      width: 22px;
+      border-radius: 22px;
+      background: white;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -20px;
+    }
+
+    .rs-range-pax::-moz-range-thumb {
+      box-shadow: none;
+      border: 0px solid #ffffff;
+      box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.25);
+      height: 42px;
+      width: 22px;
+      border-radius: 22px;
+      background: white;
+      cursor: pointer;
+      -webkit-appearance: none;
+      margin-top: -20px;
+    }
+
+    .rs-range-pax::-moz-focus-outer {
+      border: 0;
+    }
+
+    .rs-label-pax {
+      position: relative;
+      transform-origin: center center;
+      display: block;
+      width: 98px;
+      height: 98px;
+      background: transparent;
+      border-radius: 50%;
+      line-height: 30px;
+      text-align: center;
+      font-weight: bold;
+      padding-top: 22px;
+      box-sizing: border-box;
+      border: 2px solid #fff;
+      margin-top: 20px;
+      margin-left: -38px;
+      left: attr(value);
+      color: #fff;
+      font-style: normal;
+      font-weight: normal;
+      line-height: normal;
+      font-size: 36px;
+    }
+
+    .rs-label-pax::after {
+      content: "ท่าน";
+      display: block;
+      font-size: 20px;
+      letter-spacing: 0.07em;
+      margin-top: -2px;
+    }
+  </style>
+
+
+</head>
+
+<body>
+
+  
+
+  <div class="container-pax">
+
+    <div class="range-slider-pax">
+      <span id="rs-bullet" class="rs-label-pax">8</span>
+      <input id="rs-range-pax-line" class="rs-range-pax" type="range" value="8" min="1" max="100">
+
+    </div>
+
+    <div class="box-minmax-pax">
+      <span>1</span><span>100</span>
+    </div>
+
+  </div>
+
+  <script>
+    var rangeSlider = document.getElementById("rs-range-pax-line");
+    var rangeBullet = document.getElementById("rs-bullet");
+
+    rangeSlider.addEventListener("input", showSliderValue, false);
+
+    function showSliderValue() {
+      rangeBullet.innerHTML = rangeSlider.value;
+      var bulletPosition = (rangeSlider.value / rangeSlider.max);
+      rangeBullet.style.left = (bulletPosition * 120) + "px";
+      // rangeBullet.style.left = (bulletPosition * 578) + "px";
+    }
+  </script>
+
+
+
+
+
+
+
+<!-- 
+
+
+  <div class="card card-style">
+    <div class="content mb-0">
+      <h4>Range Sliders</h4>
+      <p>
+        Slide and increase or decrease their value.
+      </p>
+      <form class="range-slider-pax bottom-15 range-slider-pax-icons">
+        <i class="fa fa-range-icon-1 fa-volume-down color-theme"></i>
+        <i class="fa fa-range-icon-2 fa-volume-up color-theme"></i>
+        <input class="ios-slider" type="range" value="50">
+      </form>
+      <form class="range-slider-pax bottom-15 ">
+        <input class="classic-slider" type="range" value="50">
+      </form>
+      <form class="range-slider-pax">
+        <input class="material-slider" type="range" value="50">
+      </form>
+    </div>
+  </div> -->
+
+
+
+
+
+
+
+  <script>
+    fetch("v1/price.json")
+      .then(res => res.json())
+      .then(data => {
+
+        let priceList
+
+        // // find uniqe program
+        // console.log("find uniqe program")
+        // let unique = [...new Set(data.filter(e => e.status === 'active').map(item => item.name + " | " + item.tourcode + " | " + item.description))];
+        // console.log(unique);
+
+
+        console.log("/// tourcode , pax /// หาแพคเกจทัวร์ VT201 , เดินทาง 8 ท่าน");
+        priceList = data.filter(e => e.tourcode === 'VT201' && e.pax === 8 && e.status === 'active');
+        //console.log(JSON.stringify(priceList));
+
+        // for (const {sku: sku, name: name , day: day, pax: pax, price: priceperpax , included: included, start: start, end: end} of priceList) {
+        //     console.log('sku: ' + sku + ', โปรแกรม: ' + name + ', day:' + day + ', pax: ' + pax +' , price: ' + priceperpax + ' , รวม: ' + included + ' , โปรแกรมเริ่มที่: ' + start + ' , ส่งกลับที่: ' + end);
+        // }
+
+
+
+
+        // // search possible cases //
+
+        //             // undefined data
+        //             console.log("/// undifined data /// ");
+        //             priceList = data.filter(e => e.price <= 0 );
+        //             console.log(priceList);
+        //             console.log('Member of arrays: ' + Object.keys(priceList).length);
+
+        //             for (const {sku: sku, name: name , day: day, pax: pax, price: priceperpax , included: included, start: start, end: end} of priceList) {
+        //                 console.log('sku: ' + sku + ', โปรแกรม: ' + name + ', day:' + day + ', pax: ' + pax +' , price: ' + priceperpax + ' , รวม: ' + included + ' , โปรแกรมเริ่มที่: ' + start + ' , ส่งกลับที่: ' + end);
+        //             }
+
+        //             // day pax price
+        //             console.log("/// day pax price /// หาแพคเกจ 2 วัน , เดินทาง 6 ท่าน , ไม่เกินคนละ 2000 บาท");
+        //             priceList = data.filter(e => e.price <= 2000 && e.pax === 6 && e.day === 2 && e.status === 'active');
+        //             console.log(priceList);
+
+        //             for (const {sku: sku, name: name , day: day, pax: pax, price: priceperpax , included: included, start: start, end: end} of priceList) {
+        //                 console.log('sku: ' + sku + ', โปรแกรม: ' + name + ', day:' + day + ', pax: ' + pax +' , price: ' + priceperpax + ' , รวม: ' + included + ' , โปรแกรมเริ่มที่: ' + start + ' , ส่งกลับที่: ' + end);
+        //             }
+
+
+        //             // city day pax price
+        //             console.log("/// city day pax price /// หาแพคเกจ เวียงจันทน์ , 2 วัน , เดินทาง 10 ท่าน , ไม่เกินคนละ 1500 บาท ");
+        //             priceList = data.filter(e => e.city=== 'VT' && e.price <= 1500 && e.pax === 10 && e.day === 2 && e.status === 'active');
+        //             console.log(priceList);
+
+        //             for (const {sku: sku, name: name , day: day, pax: pax, price: priceperpax , included: included, start: start, end: end} of priceList) {
+        //                 console.log('sku: ' + sku + ', โปรแกรม: ' + name + ', day:' + day + ', pax: ' + pax +' , price: ' + priceperpax + ' , รวม: ' + included + ' , โปรแกรมเริ่มที่: ' + start + ' , ส่งกลับที่: ' + end);
+        //             }
+
+        //             // city pax price
+        //             console.log("/// city pax price /// หาแพคเกจ เวียงจันทน์ , เดินทาง 10 ท่าน , ไม่เกินคนละ 800 บาท ");
+        //             priceList = data.filter(e => e.city=== 'VT' && e.price <= 800 && e.pax === 10 && e.status === 'active');
+        //             console.log(priceList);
+
+        //             for (const {sku: sku, name: name , day: day, pax: pax, price: priceperpax , included: included, start: start, end: end} of priceList) {
+        //                 console.log('sku: ' + sku + ', โปรแกรม: ' + name + ', day:' + day + ', pax: ' + pax +' , price: ' + priceperpax + ' , รวม: ' + included + ' , โปรแกรมเริ่มที่: ' + start + ' , ส่งกลับที่: ' + end);
+        //             }
+
+        //             // pax price
+        //             console.log("/// pax price /// หาแพคเกจ  เดินทาง 10 ท่าน , ไม่เกินคนละ 1000 บาท ");
+        //             priceList = data.filter(e =>  e.price <= 1000 && e.pax === 10 && e.status === 'active');
+        //             // console.log(Object.keys(priceList).length);
+        //             console.log(priceList);
+
+        //             for (const {sku: sku, name: name , day: day, pax: pax, price: priceperpax , included: included, start: start, end: end} of priceList) {
+        //                 console.log('sku: ' + sku + ', โปรแกรม: ' + name + ', day:' + day + ', pax: ' + pax +' , price: ' + priceperpax + ' , รวม: ' + included + ' , โปรแกรมเริ่มที่: ' + start + ' , ส่งกลับที่: ' + end);
+        //             }
+
+        //             // pax promotion
+        //             console.log("/// pax promotion /// หาแพคเกจ ส่วนลดท้ายบิล สำหรับ 3 ท่าน ");
+        //             priceList = data.filter(e =>  e.pax === 3 && e.discount > 0 && e.status === 'active');
+        //             console.log(priceList);
+
+        //             for (const {promotion: promotion, discount: discount, sku: sku, name: name , day: day, pax: pax, price: priceperpax , included: included, start: start, end: end} of priceList) {
+        //                 console.log('promotion:' + promotion + ' , discount: ' + discount +' , sku: ' + sku + ', โปรแกรม: ' + name + ', day:' + day + ', pax: ' + pax +' , price: ' + priceperpax + ' , รวม: ' + included + ' , โปรแกรมเริ่มที่: ' + start + ' , ส่งกลับที่: ' + end);
+        //             }
+
+        //             // city pax promotion
+        //             console.log("/// city pax promotion /// ส่วนลด วังเวียง , สำหรับ 3 ท่าน ");
+        //             priceList = data.filter(e =>  e.city === 'VV' && e.pax === 3 && e.discount > 0 && e.status === 'active');
+        //             // console.log(Object.keys(priceList).length);
+        //             console.log(priceList);
+
+        //             for (const {promotion: promotion, discount: discount, sku: sku, name: name , day: day, pax: pax, price: priceperpax , included: included, start: start, end: end} of priceList) {
+        //                 console.log('promotion:' + promotion + ' , discount: ' + discount +' , sku: ' + sku + ', โปรแกรม: ' + name + ', day:' + day + ', pax: ' + pax +' , price: ' + priceperpax + ' , รวม: ' + included + ' , โปรแกรมเริ่มที่: ' + start + ' , ส่งกลับที่: ' + end);
+        //             }
+
+        //             // day pax promotion
+        //             console.log("/// city pax promotion /// ส่วนลด โปรแกรม 1 วัน , สำหรับ 5 ท่าน ");
+        //             priceList = data.filter(e =>  e.day === 1 && e.pax === 5 && e.discount > 0 && e.status === 'active');
+        //             // console.log(Object.keys(priceList).length);
+        //             console.log(priceList);
+
+        //             for (const {promotion: promotion, discount: discount, sku: sku, name: name , day: day, pax: pax, price: priceperpax , included: included, start: start, end: end} of priceList) {
+        //                 console.log('promotion:' + promotion + ' , discount: ' + discount +' , sku: ' + sku + ', โปรแกรม: ' + name + ', day:' + day + ', pax: ' + pax +' , price: ' + priceperpax + ' , รวม: ' + included + ' , โปรแกรมเริ่มที่: ' + start + ' , ส่งกลับที่: ' + end);
+        //             }
+        // // end search possible case //
+
+      })
+      .catch(e => console.log("ไม่พบข้อมูลที่ค้นหา"))
+
+
+  </script>
+  <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+
+  <!-- <script type="text/javascript" src="scripts/jquery.js"></script>
+  <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+  <script type="text/javascript" src="scripts/custom.js"></script> -->
+</body>
+
+</html>

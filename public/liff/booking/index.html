@@ -1,0 +1,99 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>จองทัวร์</title>
+  <!-- <link rel="stylesheet" href="../css/style.css"> -->
+  <script>
+    document.write('<link rel="stylesheet" href="https://nangfatravel.com/liff/booking/style.css?cache='+ new Date().getTime() +'">')
+  </script>
+</head>
+
+<body>
+  <h1>Hello World!</h1>
+  <p id="pax"><b>Pax: </b></p>
+  <p id="code"><b>Code: </b></p>
+  <p id="price"><b>Price: </b></p>
+  <img id="pictureUrl">
+  <p id="userId"><b>userId:</b> </p>
+  <p id="displayName"><b>displayName:</b> </p>
+  <p id="statusMessage"><b>statusMessage:</b> </p>
+  <p id="decodedIDToken"><b>email:</b> </p>
+  <button id="btnMsg" onclick="sendMsg()">Send Message</button>
+  <h1>Hello World!</h1>
+
+  <div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2 class="active"> Sign In </h2>
+      <h2 class="inactive underlineHover">Sign Up </h2>
+  
+      <!-- Icon -->
+      <div class="fadeIn first">
+        <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
+      </div>
+  
+      <!-- Login Form -->
+      <form>
+        <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
+        <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
+        <input type="submit" class="fadeIn fourth" value="Log In">
+      </form>
+  
+      <!-- Remind Passowrd -->
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Forgot Password?</a>
+      </div>
+  
+    </div>
+  </div>
+
+  
+  <script>
+    // Query Params
+    const queryString = decodeURIComponent(window.location.search);
+    const params = new URLSearchParams(queryString);
+    document.getElementById("pax").append(params.get("pax"));
+    document.getElementById("code").append(params.get("code"));
+    document.getElementById("price").append(params.get("price"));
+</script>
+
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.3.0/sdk.js"></script>
+  <script>
+    async function getUserProfile() {
+      const profile = await liff.getProfile()
+      document.getElementById("pictureUrl").src = profile.pictureUrl
+      document.getElementById("userId").append(profile.userId)
+      document.getElementById("statusMessage").append(profile.statusMessage)
+      document.getElementById("displayName").append(profile.displayName)
+      document.getElementById("decodedIDToken").append(liff.getDecodedIDToken().email)
+    }
+
+    async function sendMsg() {
+      if (liff.getContext().type !== "none") {
+        await liff.sendMessages([
+          {
+            "type": "sticker",
+            "stickerId": 1,
+            "packageId": 1
+          }
+        ])
+        liff.closeWindow()
+        // alert("Message sent")
+      }
+    }
+
+    async function main() {
+      await liff.init({ liffId: "1654480389-bYdxVVJx" })
+      if (liff.isLoggedIn()) {
+        getUserProfile()
+      } else {
+        liff.login({ redirectUri: "https://nangfatravel.com/liff/booking/" })
+      }
+    }
+    main()
+  </script>
+</body>
+
+</html>

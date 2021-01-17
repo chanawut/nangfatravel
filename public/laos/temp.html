@@ -1,0 +1,664 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, viewport-fit=cover" />
+    <title>ราคาทัวร์ลาว นางฟ้าทราเวล</title>
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+    <link rel="stylesheet" type="text/css" href="fonts/css/fontawesome-all.min.css">
+    <link rel="manifest" href="_manifest.json" data-pwa-version="set_in_manifest_and_pwa_js">
+    <link rel="apple-touch-icon" sizes="180x180" href="app/icons/icon-192x192.png">
+
+    <link rel="stylesheet" type="text/css" href="styles/slider.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <script type="text/javascript" src="scripts/date-swap-th-en-th.js"></script>
+</head>
+
+<body class="theme-light">
+
+    <div id="preloader">
+        <div class="spinner-border color-highlight" role="status"></div>
+    </div>
+
+    <div id="page">
+
+        <div class="header header-fixed header-logo-center header-auto-show">
+            <a href="index.html" class="header-title">กดปฏิทิน จองวันเดินทาง</a>
+            <a href="#" data-back-button class="header-icon header-icon-1"><i class="fas fa-chevron-left"></i></a>
+            <a href="#" data-menu="menu-main" class="header-icon header-icon-4"><i class="fas fa-bars"></i></a>
+            <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-dark"><i
+                    class="fas fa-sun"></i></a>
+            <a href="#" data-toggle-theme class="header-icon header-icon-3 show-on-theme-light"><i
+                    class="fas fa-moon"></i></a>
+        </div>
+
+        <div id="footer-bar" class="footer-bar-6">
+            <a href="index-components.html"><i class="fa fa-layer-group"></i><span>Features</span></a>
+            <a href="index-pages.html" class="active-nav"><i class="fa fa-file"></i><span>Pages</span></a>
+            <a href="index.html" class="circle-nav"><i class="fa fa-home"></i><span>Welcome</span></a>
+            <a href="index-projects.html"><i class="fa fa-camera"></i><span>Projects</span></a>
+            <a href="#" data-menu="menu-main"><i class="fa fa-bars"></i><span>Menu</span></a>
+        </div>
+
+        <div class="page-title page-title-fixed">
+            <h1 class="font-22">ราคาต่อท่าน</h1>
+            <a href="#" class="page-title-icon shadow-xl bg-theme color-theme" data-menu="menu-share"><i
+                    class="fa fa-share-alt"></i></a>
+            <a href="#" class="page-title-icon shadow-xl bg-theme color-theme show-on-theme-light" data-toggle-theme><i
+                    class="fa fa-moon"></i></a>
+            <a href="#" class="page-title-icon shadow-xl bg-theme color-theme show-on-theme-dark" data-toggle-theme><i
+                    class="fa fa-lightbulb color-yellow-dark"></i></a>
+            <a href="#" class="page-title-icon shadow-xl bg-theme color-theme" data-menu="menu-main"><i
+                    class="fa fa-bars"></i></a>
+        </div>
+        <div class="page-title-clear"></div>
+
+        <div class="page-content">
+
+            <!-- /////////////////////  Content start here  //////////////////// -->
+            <!-- Tour package & Price Content (to be injected)-->
+            <p class="my-n1 font-11 text-right mx-4">ดูใบเสนอราคา / ส่วนลด / เงื่อนไข คลิกที่ราคา หรือ <i
+                    class="font-13 fas fa-question-circle color-blue-dark opacity-80"></i></p>
+            <p class="mt-n1 mb-0 font-12 text-right mx-4">จองวันเดินทาง คลิกที่ <i
+                    class="font-14 far fa-calendar-alt color-blue-dark opacity-80"></i></p>
+            <div id="tourChoice_div" style="min-height: 30vh;"></div>
+
+            <!-- Range Slider Content-->
+            <div class="content mt-4">
+                <div class="range-slider-pax-slider mx-4 mt-n4 mb-1">
+                    <span id="rs-bullet" class="rs-label-pax-slider color-highlight"></span>
+                    <input id="rs-range-line" class="ios-slider" type="range" value="" min="1" max="50">
+                </div>
+            </div>
+            <p class="mt-n4 font-12 font-500 text-center mx-4"><i class="fas fa-user-friends mr-2"></i>
+                นับผู้เดินทางอายุตั้งแต่ 3 ปี ขึ้นไป (เลื่อนซ้าย <i class="fas fa-arrows-alt-h"></i> ขวา)</p>
+
+            <!-- <div class="card-center text-center pb-4">
+                <a data-menu="sku" href="#" class="icon color-theme bg-theme icon-s rounded-sm scale-box icon-40"><i
+                        class="fa fa-arrow-up"></i></a>
+            </div> -->
+
+            <div class="content">
+                <h2 class="mx-1">ขั้นตอนจองทัวร์</h2>
+                <div class="row font-16 mb-0">
+                    <div class="col-3 text-center py-2 ml-3 bg-blue-dark rounded-xl">จองวัน</div><i
+                        class="ml-auto mt-3 fas fa-chevron-right"></i>
+                    <div class="col-3 ml-auto text-center py-2 mx-1 bg-gray-dark rounded-xl">มัดจำ</div><i
+                        class="ml-auto mt-3 fas fa-chevron-right"></i>
+                    <div class="col-3 ml-auto text-center py-2 mr-3 bg-gray-dark rounded-xl">นัดหมาย</div>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+            <!-- /////////////////////  Script start here  //////////////////// -->
+            <!-- fetch -> Range Slider Script -->
+            <script>
+                let tourPlan = new Object();
+
+                // function to show instant quotation page
+                function renderInstantQuotation(selectedSKU, selectedPax) {
+                    const item = tourPlan.filter(e => e.sku === selectedSKU);
+                    let pax = parseInt(selectedPax);
+                    let totalPrice = item[0].price * pax;
+                    let deposit = totalPrice * 0.5;
+                    let balance = totalPrice - deposit;
+                    let withHolding = (totalPrice * 100 / 97).toLocaleString('en-US', { maximumFractionDigits: 2 });
+                    console.log(new Date(Date.now()).toLocaleDateString('th-TH'))
+                    console.log(new Date(Date.now()).toLocaleString('th-TH', { year: 'numeric', day: 'numeric', month: 'short', hour12: false }))
+                    console.log(new Date(Date.now()).toLocaleString('en-US', { year: 'numeric', day: 'numeric', month: 'short', hour12: false }))
+                    let quotationDate = new Date(Date.now()).toLocaleString('th-TH', { year: 'numeric', day: 'numeric', month: 'long', hour12: false });
+
+
+
+                    // console.log(`${item[0].saleplanname} | ราคา ${item[0].price} บาท/ท่าน | เดินทาง ${selectedPax}`);
+                    document.getElementById("tourName").textContent = item[0].name;
+                    document.getElementById("tourDescription").textContent = item[0].description;
+                    document.getElementById("tourSku").textContent = item[0].sku;
+                    document.getElementById("tourQuotationDate").textContent = quotationDate;
+                    document.getElementById("tourPax").textContent = `${pax} ท่าน`;
+                    document.getElementById("tourMeetingPoint").textContent = item[0].start;
+                    document.getElementById("tourSalePlanName").textContent = item[0].saleplanname;
+                    document.getElementById("priceDetail").textContent = `${numberWithCommas(item[0].price)} x ${pax} ท่าน`;
+                    document.getElementById("priceTotal").textContent = `ทั้งหมด ${numberWithCommas(totalPrice)} บาท`;
+                    document.getElementById("depositAmount").textContent = `${numberWithCommas(deposit)} บาท`;
+                    document.getElementById("balanceAmount").textContent = `${numberWithCommas(balance)} บาท`;
+                    document.getElementById("grandTotal").textContent = `${numberWithCommas(totalPrice)} บาท`;
+                    document.getElementById("withHolding").textContent = `${withHolding} บาท`;
+                    document.getElementById("disCount").textContent = `${item[0].promotion} จำนวน ${numberWithCommas(item[0].discount)} บาท`;
+                    document.getElementById("hotelNight").textContent = item[0].hotel;
+                    document.getElementById("mealAmount").textContent = item[0].meal;
+                    document.getElementById("roomAddedPrice").textContent = numberWithCommas(item[0].hotel * 1100);
+                    document.getElementById("requiredDoc").textContent = item[0].required;
+
+
+
+                    // check if hotel === 0
+                    if (item[0].hotel === 0) {
+                        document.getElementById("hotel_included_li").style.display = "none"
+                        document.getElementById("hotelRemark").style.display = "none"
+                        document.getElementById("hotel_excluded_li").style.display = "block"
+                    } else {
+                        document.getElementById("hotel_included_li").style.display = "block"
+                        document.getElementById("hotelRemark").style.display = "block"
+                        document.getElementById("hotel_excluded_li").style.display = "none"
+                    }
+
+                    // check if meal === 0
+                    if (item[0].meal === 0) {
+                        document.getElementById("meal_included_li").style.display = "none"
+                        document.getElementById("meal_excluded_li").style.display = "block"
+                    } else {
+                        document.getElementById("meal_included_li").style.display = "block"
+                        document.getElementById("meal_excluded_li").style.display = "none"
+                    }
+
+                    // check if guide === 0
+                    if (item[0].guide === 0) {
+                        document.getElementById("guide_included_li").style.display = "none"
+                        document.getElementById("guide_excluded_li").style.display = "block"
+                    } else {
+                        document.getElementById("guide_included_li").style.display = "block"
+                        document.getElementById("guide_excluded_li").style.display = "none"
+                    }
+
+                    // call instant page
+                    $('#quotationInstantPage').showMenu();
+                }
+
+                // 1.) fetch first : query(tourCode, pickup)
+                fetch(LA_P_MODEL)
+                    .then(res => res.json())
+                    .then(data => {
+                        // 1) หา tourcode และ pickup point ที่ส่งมาก่อนหน้า
+                        const queryString = window.location.search;
+                        const urlParams = new URLSearchParams(queryString);
+                        const _program = "VT101";
+                        const _pickup = "NN";
+                        // const _program = urlParams.get('program');
+                        // const _pickup = urlParams.get('pickup')
+
+                        // function เช็คค่า pax ก่อนเอาไป filter หาแผนการเดินทาง
+                        let adjustPaxAmount = (pax) => (pax >= 13 && pax < 26) ? 13
+                            : (pax >= 26 && pax < 35) ? 26
+                                : pax >= 35 ? 35
+                                    : pax;
+
+                        // 2) filter หาจำนวน sku ที่มี
+                        const skuList = data.filter(e => e.tourcode === _program && e.tripcode === _pickup && e.status === 'active');
+                        console.log(`โปรแกรม ${_program}-${_pickup} มีจำนวน : ${Object.keys(skuList).length} sku`);
+
+                        // 3) เร่ิม render range slider elements
+                        var rangeSlider = document.getElementById("rs-range-line");
+                        var rangeBullet = document.getElementById("rs-bullet");
+
+                        const _pax = 10; // ระบบเลือกผู้เดินทางเริ่มต้นให้ก่อน 
+                        rangeSlider.value = _pax // set range value
+                        rangeBullet.textContent = _pax // set bullet label
+                        rangeBullet.style.left = _pax * 2 + "%";  // set label position
+                        renderTourChoice(_pax) // จากนั้นแสดงราคาตาม tour plan ที่มี
+
+
+                        // Function : render ส่วนของแสดงราคา ปุ่มจอง และปุ่มใบเสนอราคา
+                        function renderTourChoice(p) {
+                            // 1) รับค่า pax มา filter -> จะได้จำนวนแผนการเดินทางมา
+                            tourPlan = skuList.filter(e => e.pax === parseInt(adjustPaxAmount(p)));
+                            // console.log(`เดินทาง ${p} ท่าน มีราคาให้เลือก : ${Object.keys(tourPlan).length} แบบ ดังนี้`);
+
+                            // 2) แสดงรูปแบบราคาที่มีให้ลูกค้าเลือก
+                            const tourChoice_div = document.getElementById("tourChoice_div");
+                            let content = `<div class="content mt-3 mx-4"><div class="row mb-0">`;
+
+                            tourPlan.forEach(e => {
+                                // loop the price
+                                content = content + `
+                                <div class="col-6 px-1">
+                                    <div class="card card-style mx-0 mb-2 p-2 rounded-sm bg-yellow-light shadow-xl">
+                                        <h6 class="font-13 color-black"><a href="#" onclick="renderInstantQuotation('${e.sku}', '${rangeSlider.value}');return false;"><i class="font-15 fas fa-question-circle color-blue-dark scale-box mr-1"></i></a> ${e.saleplanname}</h6>
+                                        <p class="text-right font-11 mr-0 py-0 mb-1 mt-n1 color-black opacity-60"> จากปกติ <i class="font-10 fas fa-tags"></i> <s>${numberWithCommas(e.maxprice)}</s>.-</p>
+                                        <div class="row mb-0">
+                                            <div class="col-8 px-1">
+                                                <h3 class="text-center font-800 color-red-dark rounded-xs shadow-xl border border-highlight mb-0 ml-2 py-1">
+                                                    <a href="#" onclick="renderInstantQuotation('${e.sku}', '${rangeSlider.value}');return false;">${numberWithCommas(e.price)} .-</a></h3>
+                                            </div>
+                                            <div class="col-4 ml-auto">
+                                                <a href="#" class="btn btn-3d btn-xs btn-half mx-n2 rounded-xs text-uppercase font-10 font-900 shadow-xl border-red-dark bg-red-light"><i class="far fa-calendar-alt scale-box font-15"></i></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                `
+                            });
+
+                            content = content + `</div></div>`;
+                            tourChoice_div.innerHTML = content;
+                        }
+
+                        // 4) ส่วนของลูกค้าเลือกจำนวนผู้เดินทางเอง โดยการเลืื่อน slider
+                        rangeSlider.addEventListener("input", showPricebySliderValue, false);
+
+                        function showPricebySliderValue() {
+                            rangeBullet.innerHTML = rangeSlider.value;
+                            var bulletPosition = (rangeSlider.value / rangeSlider.max);
+                            rangeBullet.style.left = (bulletPosition * 98) + "%";
+
+                            //
+                            renderTourChoice(rangeSlider.value)
+                            // console.log(`เดินทาง ${rangeSlider.value} ท่าน มีราคาให้เลือก : ${Object.keys(tourPlan).length} แบบ ดังนี้`);
+
+                        }
+
+
+
+                    })
+                    .catch(e => {
+                        // yet to add this template
+                        console.log(`ขออภัย!! ระบบไม่สามารถเข้าถึงข้อมูลได้ในตอนนี้ค่ะ error: ${e.message}`);
+                    });
+
+            </script>
+        </div>
+        <!-- Page-content ends here -->
+
+
+
+        <!------------------>
+        <!------------------>
+        <!--data-menu-quotationInstantPage -->
+        <!------------------>
+        <!------------------>
+
+
+        <div id="quotationInstantPage" class="menu menu-box-bottom menu-box-bottom-full rounded-0"
+            data-menu-height="100%">
+
+            <div class="card rounded-0 bg-2" data-card-height="380">
+                <div class="card-top pt-4 pl-3 pr-3">
+                    <a href="#" class="close-menu icon icon-s rounded-l bg-theme color-theme "><i
+                            class="fa fa-arrow-down"></i></a>
+                    <a href="#" class="float-right icon icon-s rounded-l bg-theme color-theme ml-3 show-on-theme-light"
+                        data-toggle-theme><i class="fa fa-moon"></i></a>
+                    <a href="#" class="float-right icon icon-s rounded-l bg-theme color-theme ml-3 show-on-theme-dark"
+                        data-toggle-theme><i class="fa fa-sun"></i></a>
+                </div>
+                <div class="card-bottom pl-3 pr-3 mb-5 pb-4">
+                    <h1 id="tourName" class="color-white font-30">${e.name}</h1>
+                    <p id="tourDescription" class="color-white opacity-50">
+                        ${e.description}
+                    </p>
+                </div>
+                <div class="card-overlay bg-gradient"></div>
+            </div>
+
+            <div class="card card-style card-full-right" style="margin-top:-100px; margin-bottom:-80px; z-index:1">
+                <div class="content">
+
+                    <div class="d-flex">
+                        <div class="mt-1">
+                            <p class="color-highlight font-600 mb-n1">นางฟ้าทราเวล</p>
+                            <p class="color-highlight font-12 font-600 mb-n1">ใบอนุญาตนำเที่ยว 51/00835</p>
+                            <p class="color-highlight font-10 font-600 mb-n1">ที่อยู่ 594 หมู่ 4 ต.ในเมือง อ.เมือง
+                                จ.หนองคาย 43000</p>
+                            <p class="color-theme font-12 font-400 mb-n1"><a href="tel:0868616550"
+                                    class="bg-blue-light px-1 py-0 rounded-xs"><i class="fas fa-mobile-alt"> </i> โทร
+                                    086-8616550</a> <a href="https://line.me/R/ti/p/%40nangfatravel"
+                                    class="bg-blue-light px-1 py-0 rounded-xs"><i class="fab fa-line"> </i> ไลน์
+                                    @nangfatravel</a></p>
+                            <h1 class="mt-2">ใบเสนอราคา</h1>
+                        </div>
+                        <div class="ml-auto">
+                            <img src="images/pictures/34s.jpg" width="60" class="rounded-xl">
+                        </div>
+                    </div>
+
+                    <div class="row mb-0 mt-0">
+                        <h5 class="col-3 text-left font-12 opacity-80">รหัส</h5>
+                        <h5 id="tourSku" class="col-9 text-right font-12 opacity-60 font-400">${e.sku}</h5>
+
+                        <h5 class="col-3 text-left font-12 opacity-80">วันที่</h5>
+                        <h5 id="tourQuotationDate" class="col-9 text-right font-12 opacity-60 font-400">John Doe</h5>
+                    </div>
+                    <div class="divider"></div>
+
+                    <div class="row mb-0 mt-0">
+                        <h5 class="col-4 opacity-70 text-left font-15">เดินทาง</h5>
+                        <h5 id="tourPax" class="col-8 color-theme text-right font-14 font-400">${e.pax} ท่าน</h5>
+
+                        <h5 class="col-3 opacity-70 text-left font-15">รับส่งที่</h5>
+                        <h5 id="tourMeetingPoint" class="col-9 color-theme text-right font-14 font-400">${e.start}</h5>
+
+                        <h5 class="col-5 opacity-70 text-left font-15">แผนการเดินทาง</h5>
+                        <h5 id="tourSalePlanName" class="col-7 color-theme text-right font-14 font-400">
+                            ${e.saleplanname}</h5>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="mb-3">
+                        <h3 class="font-500">ค่าใช้จ่าย</h3>
+                        <div class="pl-3 w-100">
+                            <p id="priceDetail" class="text-right mb-0 color-highlight">${numberWithCommas(e.price)}.- x
+                                ${e.pax} ท่าน
+                            </p>
+                            <h4 id="priceTotal" class="text-right">ทั้งหมด ${numberWithCommas(e.price * e.pax)} บาท
+                            </h4>
+                        </div>
+
+                    </div>
+
+                    <div class="divider mt-4"></div>
+
+                    <div class="d-flex mb-3">
+                        <div>
+                            <h5 class="opacity-70 font-500">มัดจำจอง</h5>
+                            <h5 class="opacity-50 font-12 font-500 mt-n2">ก่อนเดินทางอย่างน้อย 14 วัน</h5>
+                        </div>
+                        <div class="ml-auto">
+                            <h5 id="depositAmount">${numberWithCommas(e.price * e.pax * 0.5)} บาท</h5>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div>
+                            <h5 class="opacity-70 font-500">ชำระที่เหลือ</h5>
+                            <h5 class="opacity-50 font-12 font-500 mt-n2">ในวันเดินทาง ก่อนเข้าลาว</h5>
+                        </div>
+                        <div class="ml-auto">
+                            <h5 id="balanceAmount">${numberWithCommas(e.price * e.pax * 0.5)} บาท</h5>
+                        </div>
+                    </div>
+                    <div class="d-flex mb-3">
+                        <div>
+                            <h3 class="font-700">รวมทั้งหมด</h3>
+                        </div>
+                        <div class="ml-auto">
+                            <h3 id="grandTotal">${numberWithCommas(e.price * e.pax * 0.5)} บาท</h3>
+                        </div>
+                    </div>
+                    <p class="font-10 font-400 opacity-80 mt-n2">(กรณีออกใบหัก ณ ที่จ่าย 3% ราคารวมคือ
+                        <span id="withHolding">${numberWithCommas(e.price * e.pax * 100 / 97)}</span> บาท)
+                    </p>
+
+                    <div class="divider"></div>
+
+                    <div class="mb-3 mt-4">
+                        <div class="d-flex mb-2">
+                            <div>
+                                <h5 class="font-500 opacity-70 color-red-dark"><i class="fas fa-gift mr-2"></i>พิเศษ
+                                </h5>
+                            </div>
+                            <div class="ml-auto">
+                                <h4 id="disCount" class="text-right font-16 font-500 color-red-dark">${e.promotion}
+                                    ${e.discount} บาท</h4>
+                            </div>
+
+
+                        </div>
+                        <div class="text-center scale-box">
+                            <a href="#"
+                                class="text-center ml-n3 font-14 font-400 color-red-dark px-2 py-2 border border-red-dark rounded-m">
+                                คลิก > ขั้นตอนรับส่วนลด <i
+                                    class="fas fa-question-circle font-15 color-blue-dark scale-box"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card rounded-0 bg-1" data-card-height="300">
+                <div class="card-center">
+                    <a href="tel:0868616550" class="color-white font-italic font-800 font-40 ml-4">086-8616550</a>
+                    <p class="color-white text-center mb-0 mt-1">"คลิกที่เบอร์โทร สอบถามได้เลยนะคะ"</p>
+                </div>
+                <div class="card-overlay bg-gradient"></div>
+            </div>
+
+            <div class="card card-style card-full-left" style="margin-top:-100px; z-index:1">
+                <div class="content">
+                    <p class="font-600 color-highlight mb-n1">แผนการเดินทาง</p>
+                    <h1 class="mb-n3">รวม</h1>
+                    <div class="row mb-0 mt-n2">
+                        <div class="col-6">
+                            <ul class="icon-list font-500 color-theme font-13 mt-4 line-height-l">
+                                <li><i class="fas fa-road mr-2 color-blue-dark"></i> ค่าด่านไทยลาว</li>
+                                <li><i class="fas fa-gas-pump mr-2 color-blue-dark"></i> รถส่วนตัวรวมน้ำมัน</li>
+                                <li><i class="fas fa-user-tie mr-2 color-blue-dark"></i> พร้อมคนขับนำเที่ยว</li>
+                                <li><i class="fas fa-user-shield mr-2 color-blue-dark"></i> ประกันอุบัติเหตุ</li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="icon-list font-500 color-theme font-13 mt-4 line-height-
+                                   l">
+                                <li><i class="fas fa-camera mr-2 color-blue-dark"></i> ค่าเข้าชมที่ระบุ</li>
+                                <li id="hotel_included_li"><i class="fas fa-bed mr-2 color-blue-dark"></i> ที่พัก
+                                    <span id="hotelNight"></span> คืน<sup>[1]</sup>
+                                </li>
+                                <li id="meal_included_li"><i class="fas fa-utensils mr-2 color-blue-dark"></i> อาหาร
+                                    <span id="mealAmount"></span> มื้อ
+                                </li>
+                                <li id="guide_included_li"><i class="fas fa-microphone-alt mr-2 color-blue-dark"></i>
+                                    ไกด์บรรยายไทย</li>
+                            </ul>
+                        </div>
+                        <p id="hotelRemark" class="font-13 font-400 mx-3 mt-n1"><sup>[1]</sup> ที่พัก 3 ดาว นอน 2
+                            ท่าน/ห้อง
+                            พักเดี่ยวเพิ่ม <span id="roomAddedPrice">${numberWithCommas(e.hotel * 1100)}</span> บาท</p>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <h1 class="mb-n3">ไม่รวม</h1>
+                    <div class="row mb-0 mt-n2">
+                        <div class="col-6">
+                            <ul class="icon-list font-500 color-theme font-13 mt-4 line-height-l">
+                                <li><i class="fas opacity-40 fa-parachute-box mr-2"></i> ค่าเข้าชมที่ไม่ได้ระบุ</li>
+                                <li><i class="fas opacity-40 fa-passport mr-2"></i> วีซ่าผู้ที่ไม่ใช่คนไทย</li>
+                                <li><i class="fas opacity-40 fa-balance-scale mr-2"></i> ค่าปรับของต้องภาษี</li>
+                                <li><i class="fas opacity-40 fa-paw mr-2"></i> สัตว์เลี้ยง</li>
+                                <li><i class="fas opacity-40 fa-wifi mr-2"></i> ค่าโทร, อินเตอร์เน็ท</li>
+                                <li id="hotel_excluded_li"><i class="fas opacity-40 fa-bed mr-2"></i> ที่พัก</li>
+                                <li id="guide_excluded_li"><i class="fas opacity-40 fa-microphone-alt-slash mr-2"></i>
+                                    ไกด์บรรยาย</li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="icon-list font-500 color-theme font-13 mt-4 line-height-
+                                   l">
+                                <li><i class="fas opacity-40 fa-beer mr-2"></i> ค่าอาหารที่สั่งเพิ่ม</li>
+                                <li><i class="fas opacity-40 fa-cocktail mr-2"></i> มินิบาร์ที่โรงแรม</li>
+                                <li><i class="fas opacity-40 fa-key mr-2"></i> ห้องจัดเลี้ยงส่วนตัว</li>
+                                <li><i class="fas opacity-40 fa-briefcase-medical mr-2"></i> ประกันสุขภาพ</li>
+                                <li><i class="fas opacity-40 fa-ticket-alt mr-2"></i> ตั๋วเครื่องบิน รถไฟ</li>
+                                <li id="meal_excluded_li"><i class="fas opacity-40 fa-utensils mr-2"></i> อาหาร</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <h1 class="mb-n3">ไม่เก็บเพิ่ม</h1>
+                    <div class="row mb-0 mt-n2">
+                        <div class="col-6">
+                            <ul class="icon-list font-500 color-theme font-13 mt-4 line-height-l">
+                                <li><i class="fas opacity-40 fa-gift mr-2"></i> ค่าทิปไกด์</li>
+                                <li><i class="fas opacity-40 fa-gift mr-2"></i> ค่าทิปหัวหน้าทัวร์</li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="icon-list font-500 color-theme font-13 mt-4 line-height-
+                                   l">
+                                <li><i class="fas opacity-40 fa-gift mr-2"></i> ค่าทิปคนขับ</li>
+                            </ul>
+                        </div>
+                        <h5 class="font-12 font-400 color-red-dark py-n2 mx-3 mt-n1 opacity-70"><i
+                                class="fas fa-heart mr-2"></i>นางฟ้าไม่บังคับเก็บค่าทิปเพิ่มเติมนะคะ
+                            ลูกค้าประทับใจในบริการ และต้องการให้ทิปคนขับ, ไกด์,
+                            หรือหัวหน้าทัวร์เป็นการส่วนตัวในภายหลังได้ค่ะ</h5>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card rounded-0 bg-1" data-card-height="50">
+
+            </div>
+
+            <div class="card card-style card-full-left" style="margin-top:-100px; z-index:1">
+                <div class="content">
+                    <p class="font-600 color-highlight mb-n1">เงื่อนไข</p>
+                    <h1 class="mb-n3">เอกสารที่ใช้</h1>
+                    <div class="row mb-0 mt-n2">
+                        <div class="col-12">
+                            <ul class="icon-list font-500 color-theme font-13 mt-4 line-height-l">
+                                <li><i class="fas fa-address-card mr-2"></i> <span id="requiredDoc">${e.required}</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <h1 class="mb-n3">การชำระเงิน</h1>
+                    <div class="row mb-0 mt-n2">
+                        <div class="col-12">
+                            <ul class="icon-list font-500 color-theme font-13 mt-3 line-height-l">
+                                ทัวร์แบ่งรับชำระเป็น 2 งวด ค่ะ
+                                <li><i class="mr-1"></i>
+                                    งวดที่ 1: ลูกค้าชำระมัดจำ สำหรับยืนยันจองการเดินทาง</li>
+                                <li><i class="mr-1"></i>
+                                    งวดที่ 2: ลูกค้าชำระส่วนที่เหลือ ในวันเดินทาง หรือก่อนเดินทางอย่างน้อย 3 วัน</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <h1 class="mb-n3">การแจ้งเอกสาร</h1>
+                    <div class="row mb-0 mt-n2">
+                        <div class="col-12">
+                            <ul class="icon-list font-500 color-theme font-13 mt-3 line-height-l">
+                                แจ้งล่วงหน้า อย่างน้อย 7-14 วัน ทางไลน์ @nangfatravel
+                                <li><i class="fas opacity-40 fa-info-circle ml-2"></i>
+                                    เพื่อให้ทัวร์ตรวจสอบอายุของเอกสาร เราช่วยแจ้งลูกค้าให้ทราบล่วงหน้า
+                                    เผื่อเวลาหากต้องทำเอกสารใหม่ค่ะ</li>
+                                <li><i class="fas opacity-40 fa-info-circle ml-2"></i>
+                                    เพื่อให้ทัวร์ตรวจสอบหากผู้เดินทางไม่ใช่คนไทย กรณีต้องทำวีซ่า หรือทำ re-entry
+                                    ก่อนออกไทยค่ะ
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="divider"></div>
+
+                    <h1 class="mb-n3">การคืนเงิน</h1>
+                    <div class="row mb-0 mt-n2">
+                        <div class="col-12">
+                            <ul class="icon-list font-500 color-theme font-13 mt-4 line-height-l">
+                                <li><i class="fas opacity-40 fa-circle mr-1"></i>
+                                    ลดจำนวนผู้เดินทาง หรือ เปลี่ยนแปลงวันเดินทาง หรือ ยกเลิกการเดินทางก่อนกำหนดอย่างน้อย
+                                    30 วัน
+                                    ทัวร์คืนเงินค่ามัดจำให้ทั้งหมดนะคะ (ยกเว้นสำรองเดินทางวันหยุดเทศกาล,หยุดนักขัตฤกษ์,
+                                    หยุดจากประกาศรัฐบาล
+                                    ทัวร์ขอสงวนสิทธิ์การคืนเงินมัดจำโดยไม่มีเงื่อนไขนะคะ)</li>
+                                <li><i class="fas opacity-40 fa-circle mr-1"></i>
+                                    ลดจำนวนผู้เดินทาง หรือ เปลี่ยนแปลงวันเดินทาง หรือ ยกเลิกการเดินทาง 15-29 วัน
+                                    ก่อนการเดินทาง
+                                    ทัวร์คืนเงินค่ามัดจำ 50% (ยกเว้นสำรองเดินทางวันหยุดเทศกาล,หยุดนักขัตฤกษ์,
+                                    หยุดจากประกาศรัฐบาล
+                                    ทัวร์ขอสงวนสิทธิ์การคืนเงินมัดจำโดยไม่มีเงื่อนไขนะคะ)</li>
+                                <li><i class="fas opacity-40 fa-circle mr-1"></i>
+                                    ลดจำนวนผู้เดินทาง หรือ เปลี่ยนแปลงวันเดินทาง หรือ ยกเลิกการเดินทางภายใน 14 วัน
+                                    ก่อนกำหนดเดินทาง
+                                    ทัวร์ขอสงวนสิทธิ์การคืนเงินมัดจำ และทัวร์ขออนุญาตเก็บเงินส่วนที่เหลือเต็มจำนวนนะคะ
+                                </li>
+                                <li><i class="fas opacity-40 fa-circle mr-1"></i>
+                                    ระหว่างเดินทาง หากลูกค้างดเว้นเข้าชม งดเว้นอาหาร
+                                    หรืองดเว้นเข้าที่พักที่ระบุในโปรแกรม
+                                    ทัวร์ขอสงวนสิทธิ์ในการคืนเงินโดยไม่มีเงื่อนไขนะคะ</li>
+                                <li><i class="fas opacity-40 fa-circle mr-1"></i>
+                                    กรณีลูกค้ามีเหตุสุดวิสัย ณ วันเดินทาง อาทิเช่น เจ็บป่วย, เที่ยวบินยกเลิก,
+                                    ลืมหรือไม่มีพาสปอร์ต หรือพาสปอร์ตอายุไม่ถึง 6 เดือน(กรณีต้องใช้พาสปอร์ตเดินทาง),
+                                    วีซ่าขาดกรณีไม่ใช่คนไทย
+                                    หรือถูกปฏิเสธในการเข้าออกประเทศ
+                                    ไม่สามารถเดินทางได้ ทัวร์ขอสงวนสิทธิ์ในการเก็บเงินส่วนที่เหลือเต็มจำนวนนะคะ </li>
+                                <li><i class="fas opacity-40 fa-circle mr-1"></i>
+                                    หากมีการระงับการเดินทางกระทันหัน อันเนื่องจาก ภัยธรรมชาติ เหตุความวุ่นวายทางการเมือง
+                                    จลาจล ประท้วง
+                                    ด่านปิด ภัยจากโรคระบาด หรือประกาศฉุกเฉินจากรัฐบาล
+                                    ทัวร์ขอสงวนสิทธิ์การคืนเงินมัดจำและเลื่อนกำหนดการเดินทาง รอจนกว่าสถานการณ์ปกติ
+                                    โดยลูกค้าแจ้งวันเดินทางให้ทราบอีกครั้งนะคะ </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <h1 class="mb-n3">เงื่อนไขทัวร์</h1>
+                    <div class="row mb-0 mt-n2">
+                        <div class="col-12">
+                            <ul class="icon-list font-500 color-theme font-13 mt-4 line-height-l">
+                                <li><i class="fas opacity-40 fa-info-circle mr-1"></i>
+                                    ทัวร์ขอสงวนสิทธิ์ในการเปลี่ยนแปลงโปรแกรมทัวร์ในกรณีที่เกิดเหตุสุดวิสัย
+                                    โดยคำนึงถึงความปลอดภัยของลูกค้าเป็นสำคัญ โดยไม่ต้องแจ้งให้ทราบล่วงหน้า</li>
+                                <li><i class="fas opacity-40 fa-info-circle mr-1"></i>
+                                    เอกสารผู้เดินทางแจ้งทางไลน์ให้ทัวร์ทราบล่วงหน้าอย่างน้อย 7-14 วัน
+                                    เพื่อประโยชน์ต่อผู้เดินทางนะคะ ทัวร์ช่วยตรวจสอบเรื่องอายุเอกสาร
+                                    หรือหากต้องทำวีซ่าเพิ่มในกรณีที่ไม่ใช่คนไทยค่ะ</li>
+                                <li><i class="fas opacity-40 fa-info-circle mr-1"></i>
+                                    กรณีลูกค้ามีกำหนดการบิน
+                                    ขอให้แจ้งตั๋วสายการบินให้ทัวร์ให้ทราบล่วงหน้าก่อนกำหนดเดินทางนะคะ
+                                    เพื่อให้ทัวร์จัดการเผื่อเวลาสำหรับเดินทางไปสนามบินและเวลาเช็คอินค่ะ
+                                    (โดยปกติถึงสนามบินก่อนเวลาเดินทางอย่างน้อย 2 ชั่วโมง)</li>
+                                <li><i class="fas opacity-40 fa-info-circle mr-1"></i>
+                                    ทัวร์ขอปฏิเสธความรับผิดชอบอันเนื่องมาจาก สายการบินล่าช้าหรือยกเลิก
+                                    ลูกค้าตกเครื่องขาไปหรือขากลับ สภาวะฉุกเฉินจากโรคประจำตัว สิ่งของ,ทรัพย์สิน
+                                    หรือเอกสารเดินทางสูญหายหรือชำรุดในระหว่างการเดินทาง
+                                    หรือผู้เดินทางถูกปฏิเสธในการเข้าและออกประเทศไม่ว่ากรณีใดๆ</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a href="#"
+                class="close-menu btn btn-l rounded-sm font-600 btn-full btn-margins gradient-red">กลับหน้าหลัก</a>
+
+        </div>
+
+
+
+
+        <!-- Main Menu-->
+        <div id="menu-main" class="menu menu-box-left rounded-0" data-menu-load="menu-main.html" data-menu-width="280"
+            data-menu-active="nav-pages"></div>
+
+        <!-- Share Menu-->
+        <div id="menu-share" class="menu menu-box-bottom rounded-m" data-menu-load="menu-share.html"
+            data-menu-height="370"></div>
+
+        <!-- Colors Menu-->
+        <div id="menu-colors" class="menu menu-box-bottom rounded-m" data-menu-load="menu-colors.html"
+            data-menu-height="480"></div>
+    </div>
+
+    <script type="text/javascript" src="scripts/jquery.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="scripts/custom.js"></script>
+
+    <script>
+
+
+    </script>
+
+</body>
