@@ -264,8 +264,8 @@
                     // เก็บ code [sku + tripstart + pax] ไว้ก่อนทุกครั้งที่มีการตกลงเลือกวันที่เดินทาง
                     localStorage.setItem('nangfa-laos-bookthiscode', itemsku[0].sku + "&" + localStorage.getItem('nangfa-laos-tripstart') + "&" + localStorage.getItem('nangfa-laos-pax'));
 
-                    // สร้างหมายเลข invoice [วันปัจจุบัน#หมายเลข 3 หลัก] ไว้ reference
-                    localStorage.setItem('nangfa-laos-invoice-id', `${changeEnDateFormat(new Date())}#${Math.floor(Math.random() * (999 - 100 + 1) + 100)}`);
+                    // สร้างหมายเลข invoice [หมายเลข 6 หลัก ตัวอย่าง 345630] ไว้ reference
+                    localStorage.setItem('nangfa-laos-invoice-id', `${Math.floor(Math.random() * (999999 - 100000 + 1) + 100000)}`);
 
                     // element ของ #invoice
                     document.getElementById("finalTourName").textContent = itemsku[0].name;
@@ -763,9 +763,9 @@
             data-menu-height="520">
             <div class="menu-title mb-n1 mt-n1">
                 <a href="#" class="close-menu mt-n5 mr-n1"><i class="fa fa-times-circle"></i></a>
-                <h2 class="ml-3 mt-4 mb-n2 font-400 color-highlight">เลือกวันที่ต้องการเดินทาง &nbsp;<i
+                <h2 class="ml-3 mt-4 mb-n2 font-400 color-highlight">เลือกวันที่เดินทาง &nbsp;<i
                         class="font-20 far fa-calendar-check"></i></h2>
-                <p class="text-left font-13 font-300 color-theme opacity-70">(หากไม่แน่ใจ ระบุคร่าวๆ
+                <p class="text-left font-13 font-300 color-theme opacity-70">(ระบุคร่าวๆ
                     แล้วยืนยันภายหลังได้นะคะ)
                 </p>
             </div>
