@@ -278,7 +278,8 @@
                     document.getElementById("finalDiscount").innerHTML = `รับส่วนลดอีก ${numberWithCommas(itemsku[0].discount)} บาท`;
 
                     // element ของ #lineBookingThankYouPage
-                    document.getElementById("bookingCode").innerHTML = `รหัสจอง ${localStorage.getItem('nangfa-laos-bookthiscode')}`;
+                    document.getElementById("invoiceCode").innerHTML = localStorage.getItem('nangfa-laos-invoice-id');
+                    document.getElementById("invoiceCode_telPage").innerHTML = localStorage.getItem('nangfa-laos-invoice-id');
 
                     // element ของ #telBookingThankYouPage
                     document.getElementById("telProgram").innerHTML = itemsku[0].tourcode;
@@ -337,8 +338,8 @@
                                 // loop the price
                                 content = content + `
                                 <div class="col-6 px-1">
-                                    <div class="card card-style mx-0 mb-2 p-2 rounded-sm bg-yellow-light shadow-xl">
-                                        <h6 class="font-13 color-black"><a href="#" onclick="renderInstantQuotation('${e.sku}', '${rangeSlider.value}');return false;"><i class="font-16 fas fa-question-circle color-blue-dark scale-box mr-1"></i> ${e.saleplanname}</a></h6>
+                                    <div class="card card-style mx-0 mb-2 p-2 rounded-sm bg-yellow-light shadow-xxl">
+                                        <h6 class="font-13 color-black"><a href="#" onclick="renderInstantQuotation('${e.sku}', '${rangeSlider.value}');return false;"><i class="font-16 fas fa-question-circle color-blue-dark scale-icon mr-1"></i> ${e.saleplanname}</a></h6>
                                         <p class="text-right font-11 mr-0 py-0 mb-1 mt-n1 color-black opacity-60"> จากปกติ <i class="font-10 fas fa-tags"></i> <s>${numberWithCommas(e.maxprice)}</s>.-</p>
                                         <div class="row mb-0">
                                             <div class="col-8 px-1">
@@ -346,7 +347,7 @@
                                                     <a href="#" onclick="renderInstantQuotation('${e.sku}', '${rangeSlider.value}');return false;">${numberWithCommas(e.price)} .-</a></h3>
                                             </div>
                                             <div class="col-4 ml-auto">
-                                                <a href="#" onclick="showActionSheetCalendar('${e.sku}', '${rangeSlider.value}');return false;" class="btn btn-3d btn-xs btn-half mx-n2 rounded-xs text-uppercase font-10 font-900 shadow-xl border-red-dark bg-red-light"><i class="far fa-calendar-check scale-box font-18"></i></a>
+                                                <a href="#" onclick="showActionSheetCalendar('${e.sku}', '${rangeSlider.value}');return false;" class="btn btn-3d btn-xs btn-half mx-n2 rounded-xs text-uppercase font-10 font-900 shadow-xl border-red-dark bg-red-light"><i class="far fa-calendar-check scale-icon font-18"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -903,39 +904,20 @@
                     </div>
 
                     <div class="text-center">
-                        <p class="mb-0 color-white">รหัสส่วนลด 
+                        <p class="mb-2 color-white font-22">แจ้งรหัสนี้กับแอดมินนะคะ
                         </p>
-                        <p class="badge bg-yellow-dark color-black font-18 font-800 pb-1">
-                            รับส่วนลดเพิ่ม</p>                        
-                        <p id="copyStatus" class="mb-0 scale-box color-white">ส่งรหัสจองด้านล่างให้แอดมินได้เลยนะคะ
-                            <br>(กำลังคัดลอก .. อัตโนมัติ)
+                        <p id="invoiceCode"
+                            class="py-2 bg-yellow-dark color-black font-28 font-800 text-shadow-l boxed-text-s border-s rounded-m">
+                            รับส่วนลดเพิ่ม</p>
+                        <p id="copyStatus" class="mb-4 opacity-80 font-300">..รหัสกำลังถูกคัดลอก
+                            <br>
                         </p>
-                        <p id="bookingCode" class="badge mb-3 mx-3 px-2 py-1 bg-black color-white mt-0"></p>
-                    </div>
-                    <div class="row font-11 mb-3 mx-1">
-                        <div class="col-3 text-center py-2 pb-0 px-1 ml-2 bg-gray-light rounded-sm color-black font-10">
-                            <div class="badge bg-red-dark rounded-l font-16 px-2 py-1 mb-1 opacity-60">1</div>
-                            <br>แอดไลน์ <br>@nangfatravel
-                        </div>
-                        <div class="col-1 text-center mt-4"><i class="ml-auto fas fa-chevron-right"></i>
-                        </div>
-                        <div
-                            class="col-3 text-center py-2 pb-0 px-1 ml-auto bg-gray-light rounded-sm color-black font-10">
-                            <div class="badge bg-red-dark rounded-l font-16 px-2 py-1 mb-1 opacity-60">2</div>
-                            <br>ส่งรหัส <br>ส่วนลด
-                        </div>
-                        <div class="col-1 text-center mt-4"><i class="ml-auto fas fa-chevron-right"></i>
-                        </div>
-                        <div
-                            class="col-3 text-center py-2 pb-0 px-1 ml-auto mr-2 bg-gray-light rounded-sm color-black font-10">
-                            <div class="badge bg-red-dark rounded-l font-16 px-2 py-1 mb-1 opacity-60">3</div>
-                            <br>แอดมิน<br>ตอบกลับนะคะ
-                        </div>
                     </div>
                     <div class="text-center"><a href="https://line.me/R/ti/p/%40nangfatravel"
-                            class="btn btn-3d btn-xs btn-half mx-n2 rounded-xs font-20 font-900 shadow-xl border-red-dark bg-red-light">
-                            แอดไลน์ ส่งรหัสตอนนี้ <i class="ml-1 fab fa-line font-20"></i></a></div>
-                    <p class="font-14 text-center color-white mt-3">กำลังนำท่านเข้าสู่ไลน์นางฟ้าทราเวล (อัตโนมัติใน
+                            class="btn btn-xs btn-half mx-n2 rounded-s font-20 shadow-xl border-black bg-line color-white text-shadow-l">
+                            แอดไลน์ ส่งรหัส รับส่วนลด <i class="ml-1 fab fa-line font-20 scale-icon"></i></a></div>
+                    <p class="font-14 text-center color-white mt-4 opacity-70 font-300">
+                        ..กำลังนำท่านเข้าสู่ไลน์นางฟ้าทราเวล<br>(อัตโนมัติใน
                         <span id="countdownline"></span> s)
                     </p>
 
@@ -958,45 +940,48 @@
             data-menu-height="101vh" data-menu-effect="menu-over">
             <div class="card bg-17 mb-0" data-card-height="101vh">
                 <div class="card-center ml-2 mr-2">
-                    <div class="text-center">
-                        <img src="images/telBooking.svg" width="50%" class="text-center">
-                    </div>
-                    <div class="text-center">
-                        <p class="mt-0 scale-box">ข้อมูลด้านล่าง แจ้งแอดมินได้เลยนะคะ</p>
-                    </div>
-                    <div class="row font-11 mb-3 mx-1 mr-2">
+                    <div class="row font-11 mb-2 mx-1 mr-2 opacity-70">
                         <div class="col-3 text-center py-2 pb-0 px-1 ml-2 bg-gray-light rounded-sm color-black font-10">
-                            <div class="badge bg-red-dark rounded-l font-12 px-2 py-1 mb-1 opacity-60">โปรแกรม</div>
-                            <br><span id="telProgram" class="font-16">VT101</span>
+                            <div class="badge bg-red-dark rounded-l font-12 px-2 py-1 pb-0 mb-1 opacity-60">โปรแกรม</div>
+                            <br><span id="telProgram" class="font-14">VT101</span>
                         </div>
                         <div
                             class="col-8 text-center py-2 pb-0 px-1 ml-auto bg-gray-light rounded-sm color-black font-10">
-                            <div class="badge bg-red-dark rounded-l font-12 px-2 py-1 mb-1 opacity-60">แผน</div>
-                            <br><span id="telPlanName" class="font-16">รวมที่พัก+อาหาร+ไกด์</span>
+                            <div class="badge bg-red-dark rounded-l font-12 px-2 py-1 pb-0 mb-1 opacity-60">แผน</div>
+                            <br><span id="telPlanName" class="font-14">รวมที่พัก+อาหาร+ไกด์</span>
                         </div>
                     </div>
-                    <div class="row font-11 mb-3 mx-1 mr-2">
+                    <div class="row font-11 mb-2 mx-1 mr-2 opacity-70">
                         <div
                             class="col-3 text-center py-2 pb-0 px-1 ml-auto mr-2 bg-gray-light rounded-sm color-black font-10">
-                            <div class="badge bg-red-dark rounded-l font-12 px-2 py-1 mb-1 opacity-60">จำนวน</div>
-                            <br><span id="telPax" class="font-16">10</span> ท่าน
+                            <div class="badge bg-red-dark rounded-l font-12 px-2 py-1 pb-0 mb-1 opacity-60">จำนวน</div>
+                            <br><span id="telPax" class="font-14">10</span> ท่าน
                         </div>
                         <div
                             class="col-8 text-left py-2 pb-0 px-1 ml-auto bg-gray-light rounded-sm color-black font-10">
-                            <div class="badge bg-red-dark rounded-l font-12 px-2 py-1 mb-1 opacity-60">เดินทาง</div>
+                            <div class="badge bg-red-dark rounded-l font-12 px-2 py-1 pb-0 mb-1 opacity-60">เดินทาง</div>
                             <span id="telStartDate" class="ml-2 font-14">24 ธันวาคม 2564</span>
                             <br>
-                            <div class="badge bg-red-dark rounded-l font-12 px-2 py-1 mb-1 opacity-60">รับส่ง</div><span
+                            <div class="badge bg-red-dark rounded-l font-12 px-2 py-1 pb-0 mb-1 opacity-60">รับส่ง</div><span
                                 id="telStartTrip" class="ml-2 font-12">หนองคาย หรือ สนามบินอุดร</span>
                         </div>
                     </div>
-                    <div class="text-center"><a href="tel:0868616550"
+                    <div class="text-center">
+                        <img src="images/telBooking.svg" width="30%" class="text-center">
+
+                        <p class="mb-3 color-white font-22">แจ้งรหัสนี้กับแอดมินนะคะ
+                        </p>
+                        <p id="invoiceCode_telPage"
+                            class="py-2 bg-yellow-dark color-black font-28 font-800 text-shadow-l boxed-text-s border-s rounded-m">
+                            รับส่วนลดเพิ่ม</p>
+                    </div>
+                    <div class="text-center mt-5"><a href="tel:0868616550"
                             class="btn btn-3d btn-xs btn-half mx-n2 rounded-xs font-16 font-900 shadow-xl border-red-dark bg-red-light">
                             <i class="mr-2 fas fa-phone rotate-90 font-16"></i>กดโทรตอนนี้ 086-8616550 </a></div>
-                    <div class="text-center"><a href="#" onclick="lineBooking('#telBookingThankYouPage'); return false;"
-                            class="mt-4 btn btn-3d btn-xs btn-half mx-n2 rounded-xs font-16 font-900 shadow-xl border-yellow-dark bg-yellow-light color-black scale-box">
-                            <i class="mr-2 fas fa-gift font-16"></i>หรือจองทางไลน์ รับส่วนลด <span
-                                id="telDiscount"></span> บาท </a></div>
+                    <div class="text-center mt-2"><a href="#" onclick="lineBooking('#telBookingThankYouPage'); return false;"
+                        class="font-14 shadow-xl border-black bg-line color-white text-shadow-l py-1 px-2 rounded-xs">
+                            <i class="mr-2 fas fa-gift font-16 scale-icon"></i>รับส่วนลดอีก <span
+                                id="telDiscount"></span> บาท เมื่อจองทางไลน์ (คลิก) </a></div>
 
                 </div>
                 <div class="card-overlay bg-black opacity-90"></div>
@@ -1082,26 +1067,26 @@
                 $(closeThis).hideMenu();
                 $('#lineBookingThankYouPage').showMenu();
                 // ระบบคัดลอกรหัสจองให้อีกครั้ง เผื่อลูกค้าไม่กดคัดลอกเอง
-                navigator.clipboard.writeText(`จองทัวร์ ${localStorage.getItem('nangfa-laos-bookthiscode')}`).then(function () {
+                navigator.clipboard.writeText(`${localStorage.getItem('nangfa-laos-invoice-id')}`).then(function () {
                     /* clipboard successfully set */
-                    console.log(`คัดลอกอัตโนมัติ : ${localStorage.getItem('nangfa-laos-bookthiscode')}`)
+                    console.log(`คัดลอกแล้ว : ${localStorage.getItem('nangfa-laos-invoice-id')}`)
 
                     setTimeout(function () {
-                        document.getElementById("copyStatus").innerHTML = `<i class="fas fa-check-circle mr-1"></i>คัดลอกรหัสแล้ว (อัตโนมัติ)<br>เข้าไลน์ เลือกวาง และกดส่งได้เลยค่ะ`
-                    }, 6000);
+                        document.getElementById("copyStatus").innerHTML = `<span class="color-white"><i class="fas fa-check-circle mr-1 scale-icon"></i>รหัสถูกคัดลอกแล้ว (อัตโนมัติ)</span>`
+                    }, 3000);
                 }, function () {
                     /* clipboard write failed */
                     document.getElementById("copyStatus").innerHTML = "คัดลอกไม่สำเร็จ!! รุ่นของบราวเซอร์ไม่สนับสนุน กรุณาคัดลอกโค้ดโดยตรงนะคะ"
                 });
 
                 // timer สำหรับ redirect ไปยังไลน์
-                var timeleft = 20;
+                var timeleft = 10;
                 document.getElementById("countdownline").innerHTML = timeleft + 1;
                 var downloadTimer = setInterval(function () {
                     if (timeleft <= 0) {
                         clearInterval(downloadTimer);
                         document.getElementById("countdownline").innerHTML = "0";
-                        // window.location = 'https://line.me/R/ti/p/%40nangfatravel';
+                        window.location = 'https://line.me/R/ti/p/%40nangfatravel';
                     } else {
                         document.getElementById("countdownline").innerHTML = timeleft;
                     }

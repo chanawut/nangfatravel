@@ -840,6 +840,14 @@ h1 .badge, h2 .badge, h3 .badge, h4 .badge, h5 .badge {
   background-color: #27ae60 !important;
 }
 
+.color-line {
+  color: #00b902 !important;
+}
+
+.bg-line {
+  background-color: #00b902 !important;
+}
+
 .color-instagram {
   color: #e1306c !important;
 }
