@@ -20,6 +20,10 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/introjs.css">
+    <link rel="stylesheet" href="styles/introjs-modern.css">
+        
     <script type="text/javascript" src="scripts/date-swap-th-en-th.js"></script>
 </head>
 
@@ -74,8 +78,7 @@
             <!--------------------------------------->
             <!--walkthrough คร่าวๆ แจ้งว่าหน้านี้ทำอะไรบ้าง-->
             <!--------------------------------------->
-            <div class="content opacity-50 mt-n3">
-                <!-- <h2 class="font-14 text-right mx-1">ขั้นตอนจองทัวร์</h2> -->
+            <!-- <div class="content opacity-50 mt-n3">
                 <div class="row font-11 mb-n1">
                     <div class="col-3 text-center pt-2 pb-0 px-1 ml-2 bg-gray-light rounded-sm color-black font-10">
                         <div><i class="fas fa-user-plus font-16"></i></div>ปุ่มเลื่อนซ้ายขวา จำนวนผู้เดินทาง
@@ -92,7 +95,7 @@
                         <div><i class="far fa-calendar-check font-18"></i></div>คลิกปุ่มปฏิทิน ระบุวันเดินทาง
                     </div>
                 </div>
-            </div>
+            </div> -->
 
             <!--------------------------------------->
             <!--ส่วนของราคา เปลี่ยนไปตามจำนวนของผู้เดินทาง-->
@@ -105,7 +108,7 @@
             <!-- ส่วนของตัวเลื่อนซ้ายขวา ปรับจำนวนผู้เดินทาง-->
             <!--------------------------------------->
             <div class="content mt-4">
-                <div class="range-slider-pax-slider mx-4 mt-n4 mb-1">
+                <div id="range-slider-area" class="range-slider-pax-slider mx-4 mt-n4 mb-1">
                     <span id="rs-bullet" class="rs-label-pax-slider color-highlight"></span>
                     <input id="rs-range-line" class="ios-slider" type="range" value="" min="1" max="50">
                 </div>
@@ -322,6 +325,7 @@
                         rangeBullet.textContent = _pax // set bullet label
                         rangeBullet.style.left = _pax * 2 + "%";  // set label position
                         renderTourChoice(_pax) // จากนั้นนำ pax ที่ได้ ส่งไปหาราคา และแสดงกล่องราคาให้ลูกค้าเลือก
+                        document.getElementById("planLinkNo-1").addEventListener("load", startWebTour()); // จากนั้น intro user walkthrough (ทำครั้งเดียว)
 
 
                         // Function : render ส่วนของแสดงราคา ปุ่มจอง และปุ่มใบเสนอราคา
@@ -334,20 +338,22 @@
                             const tourChoice_div = document.getElementById("tourChoice_div");
                             let content = `<div class="content mt-3 mx-4"><div class="row mb-0">`;
 
+                            let cardNo = 0;
                             tourPlan.forEach(e => {
                                 // loop the price
+                                cardNo += 1;
                                 content = content + `
                                 <div class="col-6 px-1">
                                     <div class="card card-style mx-0 mb-2 p-2 rounded-sm bg-yellow-light shadow-xxl">
-                                        <h6 class="font-13 color-black"><a href="#" onclick="renderInstantQuotation('${e.sku}', '${rangeSlider.value}');return false;"><i class="font-16 fas fa-question-circle color-blue-dark scale-icon mr-1"></i> ${e.saleplanname}</a></h6>
+                                        <h6 id="planLinkNo-${cardNo}" class="font-13 color-black"><a href="#"  onclick="renderInstantQuotation('${e.sku}', '${rangeSlider.value}');return false;"><i class="font-16 fas fa-question-circle color-blue-dark mr-1"></i> ${e.saleplanname}</a></h6>
                                         <p class="text-right font-11 mr-0 py-0 mb-1 mt-n1 color-black opacity-60"> จากปกติ <i class="font-10 fas fa-tags"></i> <s>${numberWithCommas(e.maxprice)}</s>.-</p>
                                         <div class="row mb-0">
                                             <div class="col-8 px-1">
-                                                <h3 class="text-center font-800 color-red-dark rounded-xs shadow-xl border border-highlight mb-0 ml-2 py-1">
-                                                    <a href="#" onclick="renderInstantQuotation('${e.sku}', '${rangeSlider.value}');return false;">${numberWithCommas(e.price)} .-</a></h3>
+                                                <h3 id="priceLinkNo-${cardNo}" class="text-center font-800 color-red-dark rounded-xs shadow-xl border border-highlight mb-0 ml-2 py-1">
+                                                    <a href="#"  onclick="renderInstantQuotation('${e.sku}', '${rangeSlider.value}');return false;">${numberWithCommas(e.price)} .-</a></h3>
                                             </div>
-                                            <div class="col-4 ml-auto">
-                                                <a href="#" onclick="showActionSheetCalendar('${e.sku}', '${rangeSlider.value}');return false;" class="btn btn-3d btn-xs btn-half mx-n2 rounded-xs text-uppercase font-10 font-900 shadow-xl border-red-dark bg-red-light"><i class="far fa-calendar-check scale-icon font-18"></i></a>
+                                            <div id="bookingLinkNo-${cardNo}" class="col-4 ml-auto">
+                                                <a href="#"  onclick="showActionSheetCalendar('${e.sku}', '${rangeSlider.value}');return false;" class="btn btn-3d btn-xs btn-half mx-n2 rounded-xs text-uppercase font-10 font-900 shadow-xl border-red-dark bg-red-light"><i class="far fa-calendar-check scale-icon font-18"></i></a>
                                             </div>
                                         </div>
                                     </div>
@@ -356,6 +362,7 @@
                             });
 
                             content = content + `</div></div>`;
+                            // ส่งไป render
                             tourChoice_div.innerHTML = content;
                         }
 
@@ -942,7 +949,8 @@
                 <div class="card-center ml-2 mr-2">
                     <div class="row font-11 mb-2 mx-1 mr-2 opacity-70">
                         <div class="col-3 text-center py-2 pb-0 px-1 ml-2 bg-gray-light rounded-sm color-black font-10">
-                            <div class="badge bg-red-dark rounded-l font-12 px-2 py-1 pb-0 mb-1 opacity-60">โปรแกรม</div>
+                            <div class="badge bg-red-dark rounded-l font-12 px-2 py-1 pb-0 mb-1 opacity-60">โปรแกรม
+                            </div>
                             <br><span id="telProgram" class="font-14">VT101</span>
                         </div>
                         <div
@@ -959,11 +967,12 @@
                         </div>
                         <div
                             class="col-8 text-left py-2 pb-0 px-1 ml-auto bg-gray-light rounded-sm color-black font-10">
-                            <div class="badge bg-red-dark rounded-l font-12 px-2 py-1 pb-0 mb-1 opacity-60">เดินทาง</div>
+                            <div class="badge bg-red-dark rounded-l font-12 px-2 py-1 pb-0 mb-1 opacity-60">เดินทาง
+                            </div>
                             <span id="telStartDate" class="ml-2 font-14">24 ธันวาคม 2564</span>
                             <br>
-                            <div class="badge bg-red-dark rounded-l font-12 px-2 py-1 pb-0 mb-1 opacity-60">รับส่ง</div><span
-                                id="telStartTrip" class="ml-2 font-12">หนองคาย หรือ สนามบินอุดร</span>
+                            <div class="badge bg-red-dark rounded-l font-12 px-2 py-1 pb-0 mb-1 opacity-60">รับส่ง</div>
+                            <span id="telStartTrip" class="ml-2 font-12">หนองคาย หรือ สนามบินอุดร</span>
                         </div>
                     </div>
                     <div class="text-center">
@@ -978,8 +987,9 @@
                     <div class="text-center mt-5"><a href="tel:0868616550"
                             class="btn btn-3d btn-xs btn-half mx-n2 rounded-xs font-16 font-900 shadow-xl border-red-dark bg-red-light">
                             <i class="mr-2 fas fa-phone rotate-90 font-16"></i>กดโทรตอนนี้ 086-8616550 </a></div>
-                    <div class="text-center mt-2"><a href="#" onclick="lineBooking('#telBookingThankYouPage'); return false;"
-                        class="font-14 shadow-xl border-black bg-line color-white text-shadow-l py-1 px-2 rounded-xs">
+                    <div class="text-center mt-2"><a href="#"
+                            onclick="lineBooking('#telBookingThankYouPage'); return false;"
+                            class="font-14 shadow-xl border-black bg-line color-white text-shadow-l py-1 px-2 rounded-xs">
                             <i class="mr-2 fas fa-gift font-16 scale-icon"></i>รับส่วนลดอีก <span
                                 id="telDiscount"></span> บาท เมื่อจองทางไลน์ (คลิก) </a></div>
 
@@ -1197,9 +1207,38 @@
     <script type="text/javascript" src="scripts/custom.js"></script>
     <script type="text/javascript" src="scripts/1.12.1-jquery-ui.min.js"></script>
 
+    <script src="scripts/intro.js"></script>
     <script>
 
-
+        let displayWebTour = true;
+        function startWebTour() {
+            if (!displayWebTour) { return false; }
+            introJs().setOptions({
+                steps: [
+                    {
+                        element: document.querySelector('#bookingLinkNo-1'),
+                        title: '<h1 class="color-white">จองทัวร์</h1>',
+                        intro: '<h2 class="color-gray-light">คลิก เพื่อจองวันเดินทาง</h2>',
+                        position: 'auto'
+                    },
+                    {
+                        element: document.querySelector('#planLinkNo-1'),
+                        intro: 'Tooltip has position right',
+                        position: 'top'
+                    },
+                    {
+                        element: document.querySelector('#priceLinkNo-1'),
+                        intro: 'Tooltip has position bottom',
+                        position: 'top'
+                    },
+                    {
+                        element: document.querySelector('#rs-range-line'),
+                        intro: 'Tooltip has position top',
+                        position: 'top'
+                    }]
+            }).start();
+            displayWebTour = false;
+            
+        }
     </script>
-
 </body>
