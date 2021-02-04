@@ -23,8 +23,9 @@
 
     <link rel="stylesheet" href="styles/introjs.css">
     <link rel="stylesheet" href="styles/introjs-modern.css">
-        
+
     <script type="text/javascript" src="scripts/date-swap-th-en-th.js"></script>
+    <script type="text/javascript" src="scripts/intro.js"></script>
 </head>
 
 <body class="theme-light">
@@ -126,6 +127,42 @@
                 let tourPlan = new Object();
                 let itemsku = new Object();
                 let _selectedDate;
+
+                // show intro สำหรับ user walkthrough
+                let displayWebTour = true;
+                function startWebTour() {
+                    if (!displayWebTour) { return false; }
+                    introJs().setOptions({
+                        steps: [
+                            {
+                                element: document.querySelector('#rs-range-line'),
+                                title: '<h1 class="badge bg-red-dark font-18 color-white text-shadow-l">เช็คราคาทัวร์</h1>',
+                                intro: '<h2 class="color-white font-22 text-shadow-s"><span class="badge bg-red-dark rounded-s mr-2">1</span>เลื่อนที่ปุ่ม ราคาทัวร์จะเปลี่ยนตามจำนวนผู้เดินทาง</h2>',
+                                position: 'auto'
+                            },
+                            // {
+                            //     element: document.querySelector('#planLinkNo-1'),
+                            //     title: '<h1 class="color-white">ราคาต่อท่าน</h1>',
+                            //     intro: '<h2 class="color-gray-light">เปลี่ยนตามจำนวนผู้เดินทาง</h2>',
+                            //     position: 'auto'
+                            // }, 
+                            {
+                                element: document.querySelector('#priceLinkNo-1'),
+                                title: '<h1 class="badge bg-red-dark font-18 color-white text-shadow-l">ดูใบเสนอราคา</h1>',
+                                intro: '<h2 class="color-white font-22 text-shadow-s"><span class="badge bg-red-dark rounded-s mr-2">2</span>คลิกที่ราคา ดูเงื่อนไข ค่าใช้จ่าย และส่วนลด</h2>',
+                                position: 'auto'
+                            },
+                            {
+                                element: document.querySelector('#bookingLinkNo-1'),
+                                title: '<h1 class="badge bg-red-dark font-18 color-white text-shadow-l">กดจองทัวร์</h1>',
+                                intro: '<h2 class="color-white font-22 text-shadow-s"><span class="badge bg-red-dark rounded-s mr-2">3</span>กดปุ่มจอง เพื่อเลือกวันเดินทาง และขั้นตอนสำรองทัวร์</h2>',
+                                position: 'auto'
+                            }
+                        ]
+                    }).start();
+                    displayWebTour = false;
+
+                }
 
                 // เมื่อเข้ามาโดยตรงที่หน้านี้  เช็คก่อนว่าหากไม่มีการระบุโปรแกรมมาก่อน ให้กลับไปหน้า index เพื่อเลือกโปรแกรมมาก่อน
                 if (localStorage.getItem("nangfa-laos-program") === null) {
@@ -1207,38 +1244,4 @@
     <script type="text/javascript" src="scripts/custom.js"></script>
     <script type="text/javascript" src="scripts/1.12.1-jquery-ui.min.js"></script>
 
-    <script src="scripts/intro.js"></script>
-    <script>
-
-        let displayWebTour = true;
-        function startWebTour() {
-            if (!displayWebTour) { return false; }
-            introJs().setOptions({
-                steps: [
-                    {
-                        element: document.querySelector('#bookingLinkNo-1'),
-                        title: '<h1 class="color-white">จองทัวร์</h1>',
-                        intro: '<h2 class="color-gray-light">คลิก เพื่อจองวันเดินทาง</h2>',
-                        position: 'auto'
-                    },
-                    {
-                        element: document.querySelector('#planLinkNo-1'),
-                        intro: 'Tooltip has position right',
-                        position: 'top'
-                    },
-                    {
-                        element: document.querySelector('#priceLinkNo-1'),
-                        intro: 'Tooltip has position bottom',
-                        position: 'top'
-                    },
-                    {
-                        element: document.querySelector('#rs-range-line'),
-                        intro: 'Tooltip has position top',
-                        position: 'top'
-                    }]
-            }).start();
-            displayWebTour = false;
-            
-        }
-    </script>
 </body>
