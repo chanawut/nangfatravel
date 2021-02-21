@@ -5,7 +5,7 @@
     "ignore": [
       "firebase.json",
       "firebase-debug.log",
-      "hosting.cHVibGlj.cache",
+      "**/hosting.cHVibGlj.cache",
       "**/.*",
       "**/node_modules/**"
     ]
