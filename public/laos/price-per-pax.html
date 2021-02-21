@@ -137,7 +137,7 @@
                             {
                                 element: document.querySelector('#rs-range-line'),
                                 title: '<h1 class="badge bg-red-dark font-18 color-white text-shadow-l">เช็คราคาทัวร์</h1>',
-                                intro: '<h2 class="color-white font-22 text-shadow-s"><span class="badge bg-red-dark rounded-s mr-2">1</span>เลื่อนที่ปุ่ม ราคาทัวร์จะเปลี่ยนตามจำนวนผู้เดินทาง</h2>',
+                                intro: '<h2 class="color-white font-22 text-shadow-s"><span class="badge bg-red-dark rounded-s mr-2">1</span>เลื่อนที่ปุ่ม ราคาเปลี่ยนตามจำนวนผู้เดินทางนะคะ</h2>',
                                 position: 'auto'
                             },
                             // {
@@ -383,7 +383,7 @@
                                 <div class="col-6 px-1">
                                     <div class="card card-style mx-0 mb-2 p-2 rounded-sm bg-yellow-light shadow-xxl">
                                         <h6 id="planLinkNo-${cardNo}" class="font-13 color-black"><a href="#"  onclick="renderInstantQuotation('${e.sku}', '${rangeSlider.value}');return false;"><i class="font-16 fas fa-question-circle color-blue-dark mr-1"></i> ${e.saleplanname}</a></h6>
-                                        <p class="text-right font-11 mr-0 py-0 mb-1 mt-n1 color-black opacity-60"> จากปกติ <i class="font-10 fas fa-tags"></i> <s>${numberWithCommas(e.maxprice)}</s>.-</p>
+                                        <p class="text-right font-12 font-600 mr-0 py-0 mb-1 mt-n1 color-black opacity-60"> จากปกติ <i class="font-10 fas fa-tags"></i> <s>${numberWithCommas(e.maxprice)}</s>.-</p>
                                         <div class="row mb-0">
                                             <div class="col-8 px-1">
                                                 <h3 id="priceLinkNo-${cardNo}" class="text-center font-800 color-red-dark rounded-xs shadow-xl border border-highlight mb-0 ml-2 py-1">
