@@ -30,3 +30,35 @@
 [debug] [2021-02-21T10:50:37.194Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
 [debug] [2021-02-21T10:50:37.195Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
  <request body omitted>
+[debug] [2021-02-21T12:28:23.499Z] ----------------------------------------------------------------------
+[debug] [2021-02-21T12:28:23.502Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\chana\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only hosting --project nangfatravel-1486099402149
+[debug] [2021-02-21T12:28:23.502Z] CLI Version:   9.4.0
+[debug] [2021-02-21T12:28:23.503Z] Platform:      win32
+[debug] [2021-02-21T12:28:23.503Z] Node Version:  v12.16.2
+[debug] [2021-02-21T12:28:23.515Z] Time:          Sun Feb 21 2021 19:28:23 GMT+0700 (Indochina Time)
+[debug] [2021-02-21T12:28:23.516Z] ----------------------------------------------------------------------
+[debug] [2021-02-21T12:28:23.516Z] 
+[debug] [2021-02-21T12:28:23.529Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-02-21T12:28:23.530Z] > authorizing via signed-in user
+[debug] [2021-02-21T12:28:23.530Z] [iam] checking project nangfatravel-1486099402149 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2021-02-21T12:28:23.535Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-02-21T12:28:23.536Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-02-21T12:28:23.823Z] <<< HTTP RESPONSE 200 {"cache-control":"no-cache, no-store, max-age=0, must-revalidate","pragma":"no-cache","expires":"Mon, 01 Jan 1990 00:00:00 GMT","date":"Sun, 21 Feb 2021 12:28:23 GMT","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-02-21T12:28:23.830Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/nangfatravel-1486099402149:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2021-02-21T12:28:25.161Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Sun, 21 Feb 2021 12:28:24 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=1107","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-02-21T12:28:25.168Z] > refreshing access token with scopes: []
+[debug] [2021-02-21T12:28:25.170Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2021-02-21T12:28:25.368Z] <<< HTTP RESPONSE 200 {"date":"Sun, 21 Feb 2021 12:28:25 GMT","cache-control":"no-cache, no-store, max-age=0, must-revalidate","expires":"Mon, 01 Jan 1990 00:00:00 GMT","pragma":"no-cache","content-type":"application/json; charset=utf-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","server":"scaffolding on HTTPServer2","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-Q050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2021-02-21T12:28:25.387Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/nangfatravel-1486099402149 [none]
+[debug] [2021-02-21T12:28:25.824Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/nangfatravel-1486099402149 200
+[debug] [2021-02-21T12:28:25.824Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/nangfatravel-1486099402149 {"projectId":"nangfatravel-1486099402149","projectNumber":"538359598216","displayName":"Nangfatravel","name":"projects/nangfatravel-1486099402149","resources":{"hostingSite":"nangfatravel-1486099402149","realtimeDatabaseInstance":"nangfatravel-1486099402149","storageBucket":"nangfatravel-1486099402149.appspot.com","locationId":"asia-southeast2"},"state":"ACTIVE"}
+[info] 
+[info] === Deploying to 'nangfatravel-1486099402149'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2021-02-21T12:28:25.837Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2021-02-21T12:28:25.838Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
