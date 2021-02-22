@@ -4,8 +4,6 @@
     "cleanUrls": true,
     "ignore": [
       "firebase.json",
-      "firebase-debug.log",
-      ".firebase/hosting.cHVibGlj.cache",
       "**/.*",
       "**/node_modules/**"
     ]
