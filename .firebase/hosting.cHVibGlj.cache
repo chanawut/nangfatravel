@@ -1329,12 +1329,14 @@ service/borderpass/assets/images/บัตรผ่านแดน หนอง�
 service/borderpass/assets/images/บัตรผ่านแดน หนองคาย ไปลาว เวียงจันทน์_files/nangfatravel-header-logo-web.png,1614510264533,b34c1199f7ea87926c091dbf8609eba86c9a728d24522c34ba267908fd555e2d
 service/borderpass/assets/images/บัตรผ่านแดน หนองคาย ไปลาว เวียงจันทน์_files/v0.js,1614510264188,15b4a47c1a559523d32c434ad0a81fe358a0523af0b7d804189b779b02ff1def
 service/css/page.css,1613954032599,e1b71d826cb9468fb0848f12c4993cd0658e8cde73cc5822d32ec91518697a7b
-service/img/nangfatravel-header-logo-web.png,1614393869916,b34c1199f7ea87926c091dbf8609eba86c9a728d24522c34ba267908fd555e2d
+service/img/nangfatravel-contact-tel-line-banner-hero-1056.webp,1614728701511,2145dc30c6401336d8595254ded8e51b1dc22fa8d82a5635daa2eb3d4b39a6ed
 service/img/borderpass/arrow-right-white.svg,1614500540148,72c07b4f34b4ad62981c9455cc36cdfd77ae3fba6057cbfff25c4cece4db61ae
-service/img/borderpass/borderpass-avif-312w.avif,1614393869915,86c1c9c0a60fd8eccd95a14b8ab1c92c52f5f3469d18727c23c59730572b65ca
-service/img/borderpass/borderpass-avif-652w.avif,1614393869916,81e0525accb9ed0647282b44736795db83e5a4327e52894fb525fa18237cdfe2
-service/img/borderpass/borderpass-webp-312w.webp,1614393869916,298fdbde016cf26b05d1cc76fdc10280477ec571ed2a0597c8ca1573035a2b16
-service/img/borderpass/borderpass-webp-652w.webp,1614393869916,20a1dbe80cad45ccfb93d6eb0aee1da08ee4474104da98d8ee61eda3d7aac4bc
+service/img/borderpass/borderpass-hero-1280.webp,1614726118073,f161fe46e43cb8f643787bf3ce88aab688ec26eb8ec9b7c4fd4caee0b4c6a1c9
+service/img/borderpass/borderpass-hero-720.webp,1614726368800,4b9d06dd2ea566cc5049b073f68687413bdcf0e4e43173fecf73057079024416
+service/img/borderpass/borderpass-require-1-615.webp,1614758619820,8e53fbaac2b82b9a12668d77b2f550644002cb04250144a1706929a62a1cd534
+service/img/borderpass/borderpass-require-2-615.webp,1614758090793,7365040def2082806bc853de4fc16289821f3fa89f3336f98d2ddc16219d0ffb
+service/img/borderpass/borderpass-require-3-615.webp,1614761190289,a16fc217db86eba235f4c0577802b1b0dd38617549f718b505d05488428fb07c
+service/img/borderpass/borderpass-require-4-615.webp,1614804639013,81ddf4e472581872de44ea75934eb2f072204fee22e377fa6bc814b493d59612
 service/img/borderpass/ingredient1.jpg,1613954032599,d98267e3c084cf5c33f34781c88db0d8ab6b6d618b264d090ffdd52fc0dae35a
 service/img/borderpass/ingredient2.jpg,1613954032600,85cb76d9d7b83d3285b533d046df096f534bd6a3f5762dc26bb9ca1371dbe9dc
 service/img/borderpass/ingredient3.jpg,1613954032600,b501112fea3838aef5cbf4be915a70b35c9e66f7c2a4253337be1e9519b2c928
@@ -1346,4 +1348,5 @@ service/img/borderpass/spritzer.jpg,1613954032602,b1b6b6fbea5dfc470b2e7b3ed24f51
 service/img/borderpass/want1.png,1613954032603,991e0b9cba0d47157930aa7b718620c5d462ee2ed89c95ea9d1b719b240f9fcf
 service/img/borderpass/want2.png,1613954032604,35c50f3c7d76fa0c441b79f48173b4240ba098ada9b308df3698be0f913c3532
 service/img/borderpass/want3.png,1613954032605,792c940fb138e93d88977346454e4504302db5c346050a933143b98fb7ca77e1
-service/borderpass/nongkhai.amp.html,1614584697303,03b049677f11683c1dc61df79b726f01e9ed72bc415f879710e6076fb4f58662
+service/img/borderpass/nangfatravel-map-nongkhai.webp,1614832994938,c6e83a5d27acbc690217c29301fd7f77e0710db7d9e72fd8d661693c804a8d2c
+service/borderpass/nongkhai.amp.html,1614837126098,f1443db59c322a92f69742670b9c3aca87207a59a3fe8e61dda3098f80c846ca
